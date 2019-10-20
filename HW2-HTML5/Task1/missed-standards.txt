@@ -1,0 +1,18 @@
+1. Missed <!DOCTYPE html>
+2. Missed closed tag BODY
+3. Change div tag with class 'up' and change div to header and change name in css class
+4. Change 4 div tags on section tags.
+5. Add in tag meta atribut charset. Delete name atribut in meta tag
+6. Add audio and video tags with sources inside
+7. Add picture tag with 3 pictures inside different sizes.
+8. Add alt atribute in img div in 18 line
+9. Add tag title in head tag.
+10. Replace all ' on "
+11. Change tag p on 41, 58, 74 and 133  line on span, cause we cant use block element inside inline element.
+12. Change ateibute name on meta tag on data-name 
+13. Delete inline style in 41, 74, 133 and 58 lines and add in main.css style
+14. Add articals in independent blocks
+15. Change span on h4. Cause artical needs heading
+16. Fix extra spaces in css files
+17. Fix error with a atributes width in tags img and create a special classes in css for this
+18. In media css fix duplicating with gallery_block class
