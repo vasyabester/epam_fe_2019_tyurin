@@ -9,3 +9,23 @@ fieldset {
 .center {
   text-align: center;
 }
+
+#color {
+  width: 100%;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.padding-right {
+  padding-right: 70px;
+}
+
+.width-full {
+  width: 100%;
+}

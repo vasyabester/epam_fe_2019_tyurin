@@ -9,19 +9,17 @@
   <link rel="stylesheet" href="./css/media.css"/>
 </head>
 <body>
-<form method="GET">
+<form method="GET" name="autorization">
   <h2 class="center">Login</h2>
   <fieldset>
-
     <legend>Autorization</legend>
     <table>
-
       <tr>
         <td>
           <label for="login">Login</label>
         </td>
         <td>
-          <input type="email" placeholder="user@user.com" name="company" form="my_form" id="login"/>
+          <input type="email" placeholder="user@user.com" name="company" id="login"/>
         </td>
       </tr>
       <tr>
@@ -29,16 +27,230 @@
           <label for="password">Password</label>
         </td>
         <td>
-          <input type="password" placeholder="password" name="company" form="my_form" id="password"/>
+          <input type="password" placeholder="password" name="company" id="password"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="center">
+          <button type="submit">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
+<br>
+<form method="GET">
+  <h2 class="center">Feedback</h2>
+  <fieldset class="padding-right">
+    <legend>Feedback</legend>
+    <table>
+      <tr>
+        <td>
+          <label for="name">First name</label>
+        </td>
+        <td>
+          <input type="text" name="name" id="name"/>
         </td>
       </tr>
       <tr>
         <td>
-          <button type="button" form="my_form">Submit</button>
+          <label for="email">Email</label>
+        </td>
+        <td>
+          <input type="email" placeholder="user@user.com" name="email" id="email"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="pros">Pros</label>
+        </td>
+        <td>
+          <input type="text" placeholder="Main pros" id="pros"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="cons">Cons</label>
+        </td>
+        <td>
+          <input type="text" placeholder="Main cons" id="cons"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="overview">Overview</label>
+        </td>
+        <td>
+          <textarea id="overview"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="rating">Rating</label>
+        </td>
+        <td>
+          <input type="text" value="5" id="rating">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="center">
+          <input type="checkbox" value="newsletter">Subscribe me to the newsletter<br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="center">
+          <button type="submit">Send</button>
         </td>
       </tr>
     </table>
-
+  </fieldset>
+</form>
+<br>
+<form method="GET" name="registration" id="registration">
+  <h2 class="center">Registration</h2>
+  <fieldset class="padding-right">
+    <legend>Registration</legend>
+    <table>
+      <tr>
+        <td><span class="bold">Common:</span></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="name1">Name</label>
+        </td>
+        <td>
+          <input class="width-full" type="text" placeholder="John" id="name1" required="required">
+        </td>
+        <td><span class="italic">*Field is required</span></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="surename">Surename</label>
+        </td>
+        <td>
+          <input class="width-full" type="text" placeholder="Doe" id="surename" required="required">
+        </td>
+        <td><span class="italic">*Field is required</span></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="male">Gender</label>
+        </td>
+        <td colspan="2">
+          <input type="radio" name="gender" value="male" id="male">
+          <label for="male">Male</label>
+          <input type="radio" name="gender" value="female" id="female">
+          <label for="female">Female</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="date">Date of birth</label>
+        </td>
+        <td>
+          <input class="width-full" type="date" id="date" required="required">
+        </td>
+        <td>
+          <span class="italic">*01/01/1900</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="bold">Address:</span></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="country">Country</label>
+        </td>
+        <td>
+          <select id="country" name="Select">
+            <option>Ukraine</option>
+            <option>Russia</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="bold">Other:</span></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="color">Favourite color</label>
+        </td>
+        <td colspan="2">
+          <input type="color" id="color">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="avatar">Upload avatar</label>
+        </td>
+        <td>
+          <input type="file" id="avatar">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td class="bold"><span>Security:</span></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password1">Password</label>
+        </td>
+        <td>
+          <input class="width-full" type="password" id="password1" placeholder="Your password" required="required">
+        </td>
+        <td>
+          <span class="italic">*Field is required</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="repeatPassword">Repeat password</label>
+        </td>
+        <td>
+          <input class="width-full" type="password" id="repeatPassword">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="email" id="email1">Email</label>
+        </td>
+        <td>
+          <input class="width-full" type="email" placeholder="john_doe@gmail.com">
+        </td>
+        <td>
+          <span class="italic">*Field is required</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+          <input type="checkbox" value="newsletter">I agree with a Terms and conditions<br>
+        </td>
+        <td class="center">
+          <button>Register</button>
+        </td>
+      </tr>
+    </table>
   </fieldset>
 </form>
 </body>
