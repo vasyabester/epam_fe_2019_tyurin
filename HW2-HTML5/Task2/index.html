@@ -19,7 +19,7 @@
           <label for="login">Login</label>
         </td>
         <td>
-          <input type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" name="company" id="login"/>
+          <input type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" name="company" required="required" id="login"/>
         </td>
       </tr>
       <tr>
@@ -27,7 +27,7 @@
           <label for="password">Password</label>
         </td>
         <td>
-          <input type="password" placeholder="password" name="company" id="password"/>
+          <input type="password" placeholder="password" name="company" id="password" required="required"/>
         </td>
       </tr>
       <tr>
@@ -49,7 +49,7 @@
           <label for="name">First name</label>
         </td>
         <td>
-          <input type="text" name="name" id="name"/>
+          <input type="text" name="name" id="name" required="required"/>
         </td>
       </tr>
       <tr>
@@ -57,7 +57,7 @@
           <label for="email">Email</label>
         </td>
         <td>
-          <input type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" name="email" id="email"/>
+          <input type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" name="email" id="email" required="required"/>
         </td>
       </tr>
       <tr>
@@ -65,7 +65,7 @@
           <label for="pros">Pros</label>
         </td>
         <td>
-          <input type="text" placeholder="Main pros" id="pros"/>
+          <input type="text" placeholder="Main pros" id="pros" required="required"/>
         </td>
       </tr>
       <tr>
@@ -73,7 +73,7 @@
           <label for="cons">Cons</label>
         </td>
         <td>
-          <input type="text" placeholder="Main cons" id="cons"/>
+          <input type="text" placeholder="Main cons" id="cons" required="required"/>
         </td>
       </tr>
       <tr>
@@ -89,12 +89,12 @@
           <label for="rating">Rating</label>
         </td>
         <td>
-          <input type="text" value="5" id="rating">
+          <input type="text" value="5" id="rating" required="required">
         </td>
       </tr>
       <tr>
         <td colspan="2" class="center">
-          <input type="checkbox" value="newsletter">Subscribe me to the newsletter<br>
+          <input type="checkbox" value="newsletter" required="required">Subscribe me to the newsletter<br>
         </td>
       </tr>
       <tr>
@@ -137,9 +137,9 @@
           <label for="male">Gender</label>
         </td>
         <td colspan="2">
-          <input type="radio" name="gender" value="male" id="male">
+          <input type="radio" name="gender" value="male" id="male" required="required">
           <label for="male">Male</label>
-          <input type="radio" name="gender" value="female" id="female">
+          <input type="radio" name="gender" value="female" id="female" required="required">
           <label for="female">Female</label>
         </td>
       </tr>
@@ -194,7 +194,7 @@
           <label for="avatar">Upload avatar</label>
         </td>
         <td>
-          <input type="file" id="avatar">
+          <input type="file" id="avatar" required="required">
         </td>
       </tr>
       <tr>
@@ -221,7 +221,7 @@
           <label for="repeatPassword">Repeat password</label>
         </td>
         <td>
-          <input class="width-full" type="password" id="repeatPassword">
+          <input class="width-full" type="password" id="repeatPassword" required="required">
         </td>
       </tr>
       <tr>
@@ -229,7 +229,7 @@
           <label for="email" id="email1">Email</label>
         </td>
         <td>
-          <input class="width-full" type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="john_doe@gmail.com">
+          <input class="width-full" type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="john_doe@gmail.com" required="required">
         </td>
         <td>
           <span class="italic">*Field is required</span>
@@ -244,7 +244,7 @@
         <td>
         </td>
         <td>
-          <input type="checkbox" value="newsletter">I agree with a Terms and conditions<br>
+          <input type="checkbox" value="newsletter" required="required">I agree with a Terms and conditions<br>
         </td>
         <td class="center">
           <button>Register</button>
