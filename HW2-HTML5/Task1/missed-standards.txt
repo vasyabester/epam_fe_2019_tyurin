@@ -15,4 +15,5 @@
 15. Change span on h4. Cause artical needs heading
 16. Fix extra spaces in css files
 17. Fix error with a atributes width in tags img and create a special classes in css for this
-18. In media css fix duplicating with gallery_block class
+18. In media css fix duplicating with gallery_block class, fieldset p etc.
+19. 

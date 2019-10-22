@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/media.css"/>
 </head>
 <body>
-<form method="GET" name="autorization">
+<form method="GET">
   <h2 class="center">Login</h2>
   <fieldset>
     <legend>Autorization</legend>
@@ -19,7 +19,7 @@
           <label for="login">Login</label>
         </td>
         <td>
-          <input type="email" placeholder="user@user.com" name="company" id="login"/>
+          <input type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" name="company" id="login"/>
         </td>
       </tr>
       <tr>
@@ -57,7 +57,7 @@
           <label for="email">Email</label>
         </td>
         <td>
-          <input type="email" placeholder="user@user.com" name="email" id="email"/>
+          <input type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" name="email" id="email"/>
         </td>
       </tr>
       <tr>
@@ -229,7 +229,7 @@
           <label for="email" id="email1">Email</label>
         </td>
         <td>
-          <input class="width-full" type="email" placeholder="john_doe@gmail.com">
+          <input class="width-full" type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="john_doe@gmail.com">
         </td>
         <td>
           <span class="italic">*Field is required</span>
