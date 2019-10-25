@@ -36,6 +36,7 @@
 
 .week__day:hover {
   background-color: #6840d7;
+  color: white;
 }
 
 .week__day-name {
@@ -51,6 +52,7 @@
 
 .week__day--non-current-month:hover {
   background-color: #ddd;
+  color: silver;
 }
 
 .week__day-number {
@@ -58,6 +60,8 @@
   width: 100%;
   height: 100%;
   -webkit-transition: color 1s ease;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .week__radio-button {
@@ -71,6 +75,7 @@
 
 .week__day--current {
   background-color: #df5f86;
+  color: white;
 }
 
 .week__day--current:hover {

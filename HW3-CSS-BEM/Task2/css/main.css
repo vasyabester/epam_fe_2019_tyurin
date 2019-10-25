@@ -1,0 +1,51 @@
+.container {
+  font-size: 0;
+}
+
+.messenger {
+  background-image: url(../img/sprites.png);
+  background-repeat: no-repeat;
+  height: 84px;
+  width: 83px;
+  display: inline-block;
+}
+
+.messenger--transition-ease {
+  transition: all 1s ease;
+}
+
+.messenger__facebook {
+  background-position: left -168px;
+}
+
+.messenger__facebook:hover {
+  background-position: left -84px;
+}
+
+.messenger__facebook:active {
+  background-position: left top;
+}
+
+.messenger__youtube {
+  background-position: -840px -168px;
+}
+
+.messenger__youtube:hover {
+  background-position: -840px -84px;
+}
+
+.messenger__youtube:active {
+  background-position: -840px top;
+}
+
+.messenger__vimeo {
+  background-position: -756px -168px;
+}
+
+.messenger__vimeo:hover {
+  background-position: -756px -84px;
+}
+
+.messenger__vimeo:active {
+  background-position: -756px top;
+}
