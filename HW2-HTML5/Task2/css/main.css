@@ -29,3 +29,7 @@ fieldset {
 .width-full {
   width: 100%;
 }
+
+.feedback_overview {
+  width: 155px;
+}
