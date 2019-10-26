@@ -1,0 +1,87 @@
+.registration {
+  width: 630px;
+}
+
+.registration__frame {
+  border: 2px solid #0a7ac1;
+  padding-right: 80px;
+}
+
+.common-section__input {
+  width: 250px;
+}
+
+.common-section__title {
+  margin: 10px 0;
+}
+
+.common-section__label-for-input {
+  display: inline-block;
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+.common-section__required-field {
+  font-style: italic;
+}
+
+.address-section__label-for-input {
+  display: inline-block;
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+.address-section__title {
+  margin: 10px 0;
+}
+
+.address-section__select {
+  width: 250px;
+  height: 24px;
+}
+
+.other-section__label-for-input {
+  display: inline-block;
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+.other-section__title {
+  margin: 10px 0;
+}
+
+.other-section__input {
+  width: 390px;
+}
+
+.security-section__label-for-input {
+  display: inline-block;
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+.security-section__title {
+  margin: 10px 0;
+}
+
+.security-section__required-field {
+  font-style: italic;
+}
+
+.security-section__input {
+  width: 250px;
+}
+
+.registration__footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.registration__checkbox {
+  margin-left: 60px;
+}
+
+.registration__submit {
+  float: right;
+  margin-right: 30px;
+}

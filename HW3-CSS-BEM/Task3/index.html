@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/feedback.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+<form class="login" method="GET">
+  <h2 class="login__header">Login</h2>
+  <fieldset class="login__frame">
+    <legend class="login__legend">Autorization</legend>
+    <label class="login__label-for-input" for="login">Login</label>
+    <input class="login__input" type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" name="company" required="required" id="login"/>
+    <br>
+    <label class="login__label-for-input" for="password">Password</label>
+    <input class="login__input" type="password" placeholder="password" name="company" id="password" required="required"/>
+    <br>
+    <footer class="login__footer">
+      <button class="login__submit" type="submit">Submit</button>
+    </footer>
+  </fieldset>
+</form>
+<form class="feedback" method="GET">
+  <h2 class="feedback__header">Feedback</h2>
+  <fieldset class="feedback__frame">
+    <legend class="feedback__legend">Feedback</legend>
+    <label class="feedback__label-for-input" for="firstName">First name</label>
+    <input class="feedback__input" type="text"  id="firstName"/>
+    <br>
+    <label class="feedback__label-for-input" for="email">Email</label>
+    <input class="feedback__input" type="email" pattern="/\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b/i" placeholder="user@user.com" required="required" id="email"/>
+    <br>
+    <label class="feedback__label-for-input" for="pros">Pros</label>
+    <input class="feedback__input" type="text" placeholder="Main pros" id="pros" required="required"/>
+    <br>
+    <label class="feedback__label-for-input" for="cons">Cons</label>
+    <input class="feedback__input" type="text" placeholder="Main cons" id="cons" required="required"/>
+    <br>
+    <label class="feedback__label-for-input feedback__label-for-input--textarea" for="overview">Overview</label>
+    <textarea class="feedback__input feedback__input--textarea" id="overview"  required="required"></textarea>
+    <br>
+    <label class="feedback__label-for-input" for="rating">Rating</label>
+    <input class="feedback__input feedback__input--short" type="number" placeholder="5" name="company" id="rating" required="required"/>
+    <br>
+    <footer class="feedback__footer">
+      <input class="feedback__checkbox" type="checkbox" name="company" id="subscribeToNewsletter" required="required"/>
+      <label class="feedback__label-for-checkbox" for="subscribeToNewsletter">Subscribe me to the newsletter</label>
+      <br>
+      <button class="feedback__submit" type="submit">Send</button>
+    </footer>
+  </fieldset>
+</form>
+<form class="registration" method="GET">
+  <h2 class="registration__title">Registration</h2>
+  <fieldset class="registration__frame">
+    <legend class="registration__legend">Registration</legend>
+    <section class="common-section">
+      <h4 class="common-section__title">Common:</h4>
+      <label class="common-section__label-for-input" for="registrationName">Name</label>
+      <input class="common-section__input" placeholder="John" id="registrationName">
+      <span class="common-section__required-field">* Field is required</span>
+      <br>
+      <label class="common-section__label-for-input" for="registrationSurname">Surname</label>
+      <input class="common-section__input" placeholder="Doe" id="registrationSurname"/>
+      <span class="common-section__required-field">* Field is required</span>
+      <br>
+      <span class="common-section__label-for-input">Gender</span>
+      <input class="common-section__gender" type="radio" name="gender" value="male" id="male" />
+      <label class="common-section__label-for-input-radio" for="male">Male</label>
+      <input class="common-section__gender" type="radio" name="gender" value="female" id="female" />
+      <label class="common-section__label-for-input-radio" for="female">Female</label>
+      <br>
+      <label class="common-section__label-for-input" for="date">Date of birth</label>
+      <input class="common-section__input" type="text" id="date" placeholder="дд.мм.гггг">
+      <span class="common-section__required-field">* 01/01/1990</span>
+      <hr class="common-section__line">
+    </section>
+    <section class="address-section">
+      <h4 class="address-section__title">Address:</h4>
+      <label class="address-section__label-for-input" for="country">Country</label>
+      <select class="address-section__select" id="country" name="select">
+        <option class="address-section__country" selected hidden>Select</option>
+        <option class="address-section__country">Ukraine</option>
+        <option class="address-section__country">Russia</option>
+      </select>
+      <hr class="address-section__line">
+    </section>
+    <section class="other-section">
+      <h4 class="other-section__title">Other:</h4>
+      <label class="other-section__label-for-input" for="color">Favourite color</label>
+      <input class="other-section__input" type="color" id="color"/>
+      <br>
+      <label class="other-section__label-for-input" for="avatar">Upload avatar</label>
+      <input class="other-section__input" type="file" id="avatar"/>
+      <hr class="other-section__line">
+    </section>
+    <section class="security-section">
+      <h4 class="security-section__title">Security</h4>
+      <label class="security-section__label-for-input" for="passwordSecurity">Password:</label>
+      <input class="security-section__input" type="password" id="passwordSecurity" placeholder="Your password"/>
+      <span class="security-section__required-field">* Field is required</span>
+      <br>
+      <label class="security-section__label-for-input" for="passwordSecurityRepeat">Repeat password:</label>
+      <input class="security-section__input" type="password" id="passwordSecurityRepeat"/>
+      <br>
+      <label class="security-section__label-for-input" for="email">Email</label>
+      <input class="security-section__input" type="email" placeholder="john_doe@gmail.com"/>
+      <span class="security-section__required-field">* Field is required</span>
+      <hr class="security-section__line">
+    </section>
+    <footer class="registration__footer">
+      <input class="registration__checkbox" type="checkbox" name="company" id="terms" required="required"/>
+      <label class="registration__label-for-checkbox" for="terms">I agree the terms and conditions</label>
+      <button class="registration__submit" type="submit">Register</button>
+    </footer>
+  </fieldset>
+</form>
+</body>
+</html>

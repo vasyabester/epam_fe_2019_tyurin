@@ -1,0 +1,45 @@
+.feedback {
+  position: relative;
+  width: 440px;
+}
+
+.feedback__header {
+  text-align: center;
+}
+
+.feedback__frame {
+  border: 2px solid #0a7ac1;
+}
+
+.feedback__input {
+  width: 250px;
+  margin: 10px;
+}
+
+.feedback__input--short {
+  width: 50px;
+}
+
+.feedback__input--textarea {
+  height: 70px;
+}
+
+.feedback__label-for-input {
+  display: inline-block;
+  width: 70px;
+  margin: 3px;
+}
+
+.feedback__label-for-input--textarea {
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.feedback__footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.feedback__submit {
+  margin-top: 10px;
+}
