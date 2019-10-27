@@ -1,0 +1,96 @@
+.container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.house__wall {
+  position: absolute;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  background-color: #9e4f76;
+  bottom: 200px;
+  z-index: 2;
+  margin-left: -150px;
+}
+
+.house__wall:first-child::before {
+  content: '';
+  height: 65px;
+  width: 63px;
+  display: inline-block;
+  background-color: #eeee1d;
+  margin-right: 10px;
+  z-index: 30;
+}
+
+.grass {
+  position: absolute;
+  background-color: #12650b;
+  width: 100%;
+  height: 300px;
+  bottom: 0;
+  z-index: 1;
+}
+
+.house__roof {
+  position: absolute;
+  display: inline-block;
+  margin-left: -175px;
+  bottom: 500px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 300px 115px 100px;
+  border-color: transparent transparent #007bff transparent;
+  z-index: 1;
+}
+
+.house__door {
+  position: absolute;
+  display: inline-block;
+  margin-left: 80px;
+  bottom: 200px;
+  width: 70px;
+  height: 150px;
+  background-color: #993255;
+  z-index: 3;
+}
+
+.house__duct {
+  position: absolute;
+  display: inline-block;
+  margin-left: 75px;
+  bottom: 455px;
+  width: 43px;
+  height: 150px;
+  background-color: #9a3f54;
+}
+
+.house__window {
+  position: absolute;
+  display: inline-block;
+  margin-left: -115px;
+  bottom: 320px;
+  z-index: 3;
+  border: 5px solid black;
+  width: 120px;
+  height: 120px;
+  background: -webkit-linear-gradient(90deg, black 6.1px, rgba(0, 0, 0, 0) 5%), -webkit-linear-gradient(0deg, black 6.1px, rgba(0, 0, 0, 0) 5%), #909374;
+  background-position: -2px -2px;
+  background-origin: padding-box, border-box;
+  background-size: 100px 64px, 64px 100px;
+}
+
+.house__handle-door {
+  position: absolute;
+  display: inline-block;
+  margin-left: 135px;
+  bottom: 275px;
+  background-color: #937643;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  z-index: 3;
+}
