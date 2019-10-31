@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="css/aboutme.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <header class="header">
+      <img class="header__logo" src="img/logo.png" alt="Here must be logo"/>
+      <span class="header__title">PixelStudio</span>
+      <nav class="nav">
+        <a class="nav__item nav__item--home">Home</a>
+        <a class="nav__item nav__item--portfolio">Portfolio</a>
+        <a class="nav__item">My work</a>
+        <a class="nav__item">About me</a>
+        <a class="nav__item">Element</a>
+        <a class="nav__item nav__item--last">Contact</a>
+      </nav>
+    </header>
+    <section class="container">
+      <section class="content">
+        <section class="welcome">
+          <h1 class="welcome__title">Welcome  !</h1>
+          <hr class="welcome__line"/>
+          <article class="description">
+            <span class="description__title">Welcome to <span class="description__title--bold">PixelStudio</span></span>
+            <p class="description__paragraph">
+              From a designer’s perspective, it’s all about downloads. Some fonts are tightly held intellectual property with very intentionally limited sharing. So, at a minimum, a Typography page must provide direct download or instructions on how to get approval to obtain them. Most teams provide a downloadable ZIP that includes all the files you need to install and use fonts locally. Headings are a critical contributor to page hierarchy. Most systems offer at least four, although some offer many more. Page titles usually (but not always) align with the largest heading level.
+            </p>
+            <p class="description__paragraph">
+              Additionally, some systems offer specialized headers outside the typical heading scale, such as a picture’s caption or an eyebrow Morningstar Design System. Just because a header exists outside the traditional scale doesn’t mean it’s not a header viably reused across a catalog.
+            </p>
+          </article>
+          <aside class="gallery">
+            <img class="gallery__image" src="img/alex-gruber.png" alt="Here must be gallery image"/>
+            <a class="gallery__icon-prev"></a>
+            <a class="gallery__icon-next"></a>
+            <span class="gallery__image-title">Magic grape</span>
+            <span class="gallery__page-number">1/3</span>
+          </aside>
+          <article class="question">
+            <h3 class="question__item">
+              <span class="question__logo question__logo--i-do"></span>
+              <span class="question__text">What I do?</span>
+            </h3>
+            <p class="question__answer">
+              A misconception I debunk early and often: developing a typography system for UI components is equivalent to solving.
+            </p>
+          </article>
+          <article class="question">
+            <h3 class="question__item">
+              <span class="question__logo question__logo--i-do-it"></span>
+              <span class="question__text">Who I do it?</span>
+            </h3>
+            <p class="question__answer">
+              Article typography is made of headings, body text, and a few other components like an captioned image.
+            </p>
+          </article>
+          <article class="question question--last">
+            <h3 class="question__item">
+              <span class="question__logo question__logo--about-me"></span>
+              <span class="question__text">About me</span>
+            </h3>
+            <p class="question__answer">
+              Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.
+            </p>
+          </article>
+        </section>
+        <section class="about-me">
+          <h1 class="about-me__title">About me</h1>
+          <hr class="about-me__line"/>
+          <section class="about-me__left">
+            <p class="about-me___paragraph">
+              Applying heading scales shouldn’t require use of a specific HTML element. Instead, tease apart the two concerns. A system should weave <span class="about-me___paragraph--heading-space"> heading </span> levels consistently throughout components and offers tools for adopters to do the same with their custom creations. In particular, line-height is challenging. In some libraries, we’ll use conventions and tools to crop away negative space established by line-height from all text included in components, as described in <span class="about-me___paragraph--heading-space">Space in Design Systems</span>. Libraries cropping line height include Morningstar Design System, Discovery Education’s Comet Design System.
+            </p>
+            <article class="quote quote--red">
+              <span class="quote__quotes"></span>
+              <span class="quite__text">Advantages for the customers: using the same design language for the complex interface, or even different digital channels, results in product consistency and the reduction of cognitive load for the users.</span>
+            </article>
+            <article class="quote quote--blue">
+              <span class="quote__quotes"></span>
+              <span class="quite__text">This is our journey to the the simplest and most beautiful banking design in the world, as we see it. Light Bank was created by the UXDA team in order to inspire change.</span>
+            </article>
+            <article class="quote quote--green">
+              <span class="quote__quotes"></span>
+              <span class="quite__text">We encourage you to go one step further beyond average and create the best financial solutions that your customers are seeking. We hope you can use this UX design case study as a guide to get there.</span>
+            </article>
+            <article class="heading-levels">
+              <h2 class="heading-levels__title">Heading Levels and Special Cases</h2>
+              <p class="heading-levels__main-paragraph"><span class="heading-levels__main-letter">S</span><span class="heading-levels__text">ystems can offer centrally-tuned responsive type sizes across a predictable set of breakpoints. For body text, size increases slowly.</span></p>
+              <p class="heading-levels__second-paragraph">As a system gets started with type, dig into details and start some conventions, such as how you’ll cope with line-height. However, avoid finalizing all rules before making the first thing. Instead, be comfortable with chaos early and smooth details as a library takes shape. As you near a major release, lock in conventions and ensure tools are consistently applied.</p>
+            </article>
+            <article class="text-color">
+              <h2 class="text-color__title">Text color</h2>
+              <div class="text-color__item">
+                <span class="text-color__check-icon"></span><span class="text_color__text"><span class="text-color__name">Primary</span>, for most interface text whether body or heading.</span>
+              </div>
+              <div class="text-color__item">
+                <span class="text-color__check-icon"></span><span class="text_color__text"><span class="text-color__name">Secondary</span>, for diminished contrast (often, the “gray text”) for supplemental <span class="text_color__text text_color__text--second-line">information.</span></span>
+              </div>
+              <div class="text-color__item">
+                <span class="text-color__check-icon"></span><span class="text_color__text"><span class="text-color__name">Interactive</span>, not just for links but also flat buttons, tab labels, and more.</span>
+              </div>
+              <div class="text-color__item">
+                <span class="text-color__check-icon"></span><span class="text_color__text"><span class="text-color__name">Disabled</span>, often resulting is especially lower contrast treatments.</span>
+              </div>
+              <div class="text-color__item">
+                <span class="text-color__check-icon"></span><span class="text_color__text"><span class="text-color__name">An invitation</span> to contact a technical architect, since a license for the font is required. <span class="text_color__text text_color__text--last-lines">Organizations requires this to control the recurring and often non-trivial cost of hosting and serving the font.</span></span>
+              </div>
+            </article>
+          </section>
+          <section class="about-me__right">
+            <section class="images">
+              <h2 class="images__title">From Flickr</h2>
+              <img src="img/flickr1.png" class="images_item" alt="flickr picture"/>
+              <img src="img/flickr2.png" class="images_item" alt="flickr picture"/>
+              <img src="img/flickr3.png" class="images_item image-tem--last" alt="flickr picture"/>
+              <img src="img/flickr4.png" class="images_item" alt="flickr picture"/>
+              <img src="img/flickr5.png" class="images_item" alt="flickr picture"/>
+              <img src="img/flickr6.png" class="images_item image-tem--last" alt="flickr picture"/>
+            </section>
+            <section class="theme-links">
+              <h2 class="theme-links__title">Links</h2>
+              <a class="theme-links__item"><span class="theme-links__arrow-icon"></span>Themeforest</a>
+              <a class="theme-links__item"><span class="theme-links__arrow-icon"></span>GraphicRiver</a>
+              <a class="theme-links__item"><span class="theme-links__arrow-icon"></span>CodeCanyon</a>
+              <a class="theme-links__item"><span class="theme-links__arrow-icon"></span>ActiveDen</a>
+              <a class="theme-links__item"><span class="theme-links__arrow-icon"></span>3DOcean</a>
+              <a class="theme-links__item"><span class="theme-links__arrow-icon"></span>VideoHive</a>
+              <a class="theme-links__item"><span class="theme-links__arrow-icon"></span>Audiojungle</a>
+            </section>
+          </section>
+        </section>
+        <section class="contact">
+          <h1 class="contact__title">Contact</h1>
+          <hr class="contact__line"/>
+          <section class="contact__left">
+            <section class="form-container">
+              <h2 class="form-container__title">Just say hello!</h2>
+              <form class="form">
+                <article class="form__item">
+                  <label class="form__label" for="firstName">First name *</label>
+                  <input id="firstName" class="form__text-input" type="text" required placeholder="John" value="John">
+                </article>
+                <article class="form__item">
+                  <label class="form__label" for="lastName">Last name</label>
+                  <input id="lastName" class="form__text-input" type="text" placeholder="Johnson" value="Johnson">
+                </article>
+                <article class="form__item">
+                  <label class="form__label" for="email">Email *</label>
+                  <input id="email" class="form__text-input" type="email" required placeholder="example@email.com">
+                </article>
+                <article class="form__item">
+                  <label class="form__label" for="phone">Phone *</label>
+                  <input id="phone" class="form__text-input" type="text" required placeholder="+ 000 123 456 789" value="+ 000 123 456 789">
+                </article>
+                <article class="form__gender-container">
+                  <h4 class="form__gender-title">Choose option:</h4>
+                  <div class="form__gender-item">
+                    <input id="male" name="gender" class="form__text-radio" type="radio">
+                    <label class="form__label form__label--gender" for="male">Male</label>
+                  </div>
+                  <div class="form__gender-item">
+                    <input id="female" name="gender" class="form__text-radio" type="radio">
+                    <label class="form__label form__label--gender" for="female">Female</label>
+                  </div>
+                  <div class="form__gender-item">
+                    <input id="other" name="gender" class="form__text-radio" type="radio">
+                    <label class="form__label form__label--gender" for="other">Other</label>
+                  </div>
+                </article>
+                <article class="form__item form-item--message">
+                  <textarea class="form__textarea" placeholder="Message">Message</textarea>
+                </article>
+                <article class="form__item form__item--terms-conditions">
+                  <input id="termsConditions" name="terms-conditions" class="form__text-checkbox" type="checkbox">
+                  <label class="form__label form__label--terms-conditions" for="termsConditions">Terms &amp; Conditions</label>
+                </article>
+                <article class="form__item form-item--submit">
+                  <button class="form__submit">Submit</button>
+                </article>
+              </form>
+            </section>
+          </section>
+          <section class="contact__right">
+            <article class="contact-information">
+              <h2 class="contact-information__title">Contact information</h2>
+              <p class="contact-information__paragraph">Feel free to contact us for any of your questions, we’ll get back to you as soon as possible</p>
+              <article class="contact-information__item">
+                <span class="contact-information__icon contact-information__icon--address"></span>
+                <span class="contact-information__text contact-information__text--address">Company name </span>
+                <span class="contact-information__text contact-information__text--address contact-information__text--address-middle">798 Street name </span>
+                <span class="contact-information__text contact-information__text--address">999 00 City name </span>
+              </article>
+              <article class="contact-information__item contact-information__item--phone">
+                <span class="contact-information__icon contact-information__icon--phone"></span>
+                <span class="contact-information__text contact-information__text--phone">Phone: +000 987 654 321</span>
+              </article>
+              <article class="contact-information__item">
+                <span class="contact-information__icon contact-information__icon--email"></span>
+                <span class="contact-information__text contact-information__text--email">Email: <a href="#" class="contact-information__email-value">sales@yourcompany.com</a></span>
+              </article>
+            </article>
+          </section>
+        </section>
+      </section>
+      <footer class="footer">
+        <article class="footer__link-list footer__link-list--description">
+          <h3 class="footer__title">PixelStudio</h3>
+          <p class="footer__description">
+            A true business companion a true business companion a true business companion A true business companion a true business companion a true business companion
+          </p>
+          <section class="footer__network-links">
+            <h3 class="footer__column-title">SOCIAL</h3>
+            <a class="footer__network-icon footer__network-icon--youtube"></a>
+            <a class="footer__network-icon footer__network-icon--instagramm"></a>
+            <a class="footer__network-icon footer__network-icon--twitter"></a>
+            <a class="footer__network-icon footer__network-icon--facebook"></a>
+          </section>
+        </article>
+        <article class="footer__link-list">
+          <h3 class="footer__column-title">FEATURES</h3>
+          <a class="footer__link">Engagement</a>
+          <a class="footer__link">Retentiop</a>
+          <a class="footer__link">Funnels</a>
+        </article>
+        <article class="footer__link-list">
+          <h3 class="footer__column-title">RESOURCES</h3>
+          <a class="footer__link">Enterprice</a>
+          <a class="footer__link">SaaS</a>
+          <a class="footer__link">Financial services</a>
+          <a class="footer__link">Consumer Tech</a>
+        </article>
+        <article class="footer__link-list">
+          <h3 class="footer__column-title">MENU</h3>
+          <a class="footer__link">Home</a>
+          <a class="footer__link">Portfolio</a>
+          <a class="footer__link">My work</a>
+          <a class="footer__link">About me</a>
+          <a class="footer__link">Element</a>
+          <a class="footer__link">Contact</a>
+        </article>
+        <article class="footer__link-list">
+          <h3 class="footer__column-title">INFORMATION</h3>
+          <a class="footer__link">About us</a>
+          <a class="footer__link">Terms &amp; Conditions</a>
+          <a class="footer__link">User's guide</a>
+          <a class="footer__link">Support center</a>
+          <a class="footer__link">Press info</a>
+        </article>
+      </footer>
+    </section>
+</body>
+</html>

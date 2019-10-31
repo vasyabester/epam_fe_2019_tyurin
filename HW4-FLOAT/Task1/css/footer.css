@@ -1,0 +1,119 @@
+.footer {
+  width: 100%;
+  height: 329px;
+  background-color: #474747;
+  color: #fff;
+  font-size: 18px;
+  padding: 30px 70px 30px 250px;
+  box-sizing: border-box;
+}
+
+.footer__column-title {
+  font-weight: normal;
+  margin-bottom: 22px;
+  margin-top: 23px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.footer__title {
+  font-weight: normal;
+  color: #ec6767;
+  font-size: 30px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.footer__link-list {
+  display: inline-block;
+  width: 236px;
+  vertical-align: top;
+}
+
+.footer__link-list--description {
+  width: 343px;
+  margin-right: 133px;
+}
+
+.footer__link {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 22px;
+  word-spacing: -3px;
+  letter-spacing: 0.2px;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+  color: #cec7c7;
+  cursor: pointer;
+}
+
+.footer__description {
+  display: inline-block;
+  line-height: 27px;
+  word-spacing: -0.7px;
+  margin-bottom: 7px;
+}
+
+.footer__network-icon {
+  width: 30px;
+  height: 30px;
+  background: url('../img/sprites.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.footer__network-icon--youtube {
+  background-position: -54px -122px;
+}
+
+.footer__network-icon--youtube:hover {
+  background-position: -163px -10px;
+  cursor: pointer;
+}
+
+.footer__network-icon--youtube:active {
+  background-position: -95px -122px;
+}
+
+.footer__network-icon--instagramm {
+  background-position: -130px -161px;
+}
+
+.footer__network-icon--instagramm:hover {
+  background-position: -204px -10px;
+  cursor: pointer;
+}
+
+.footer__network-icon--instagramm:active {
+  background-position: -166px -161px;
+}
+
+.footer__network-icon--twitter {
+  background-position: -10px -161px;
+}
+
+.footer__network-icon--twitter:hover {
+  background-position: -90px -161px;
+  cursor: pointer;
+}
+
+.footer__network-icon--twitter:active {
+  background-position: -50px -161px;
+}
+
+.footer__network-icon--facebook {
+  background-position: -204px -78px;
+}
+
+.footer__network-icon--facebook:hover {
+  background-position: -204px -150px;
+  cursor: pointer;
+}
+
+.footer__network-icon--facebook:active {
+  background-position: -204px -114px;
+}
