@@ -12,6 +12,63 @@
 
 .videoclips--grey-border {
   border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.videoclips--grey-border::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+
+.videoclips--grey-border::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  width: 50%;
+  top: 80%;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.videoclips--grey-bold-border {
+  position: relative;
+}
+
+.videoclips--grey-bold-border::before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 12px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+
+.videoclips--grey-bold-border::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 12px;
+  width: 50%;
+  top: 80%;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
 }
 
 .videoclips--bob-position {
