@@ -1,0 +1,94 @@
+.share {
+  float: left;
+  width: 165px;
+  height: 75px;
+  margin-top: 15px;
+  margin-left: 15px;
+  background-color: white;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.share--snap-position {
+  position: relative;
+  left: 360px;
+  top: -136px;
+}
+
+.share__share-name {
+  font-family: "Helvetica", sans-serif;
+  display: inline-block;
+  letter-spacing: -0.41px;
+  float: left;
+  margin-left: 15px;
+  font-size: 17px;
+  line-height: 22px;
+  color: #000;
+  margin-top: 15px;
+}
+
+.share__share-bet {
+  display: inline-block;
+  width: 75px;
+  height: 20px;
+  color: #bebebe;
+  font-family: "Helvetica", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.15px;
+  line-height: 19px;
+  float: left;
+  position: relative;
+  right: 41px;
+  top: 42px;
+}
+
+.share__share-bet--right {
+  right: 20px;
+}
+
+.share__bet-color {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: -4px;
+  border-radius: 5px;
+}
+
+.share__bet-color--background-mint {
+  background-image: linear-gradient(to bottom, #3eabb7, #78cbb6);
+}
+
+.share__bet-color--background-mint:hover {
+  background-image: linear-gradient(to right, #4ddde9, #327783);
+  cursor: pointer;
+}
+
+.share__bet-color--background-red {
+  background-image: linear-gradient(to right, #bc5564, #912a39);
+  margin-left: 70px;
+}
+
+.share__bet-color--background-red:hover {
+  background-image: linear-gradient(to right, #e58eb9, #7a3e5c);
+  cursor: pointer;
+}
+
+.share__bet-color--background-yellow {
+  background-image: linear-gradient(to right, #f7ae38, #f7ae38);
+  margin-left: 46px;
+}
+
+.share__bet-color--background-yellow:hover {
+  background-image: linear-gradient(to right, #f2f74f, #d09233);
+  cursor: pointer;
+}
+
+.share__arrow {
+  margin-left: 17px;
+  margin-top: 11px;
+}
+
+.share__arrow--path {
+  margin-top: 15px;
+}

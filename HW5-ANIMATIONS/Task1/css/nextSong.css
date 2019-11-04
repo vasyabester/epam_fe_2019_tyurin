@@ -1,0 +1,51 @@
+.next-song {
+  width: 165px;
+  height: 245px;
+  float: left;
+  background-color: white;
+  margin: 0 15px 15px 15px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.next-song--frank-position {
+  position: relative;
+  left: -180px;
+  top: 14px;
+}
+
+.next-song--del-rey-position {
+  position: relative;
+  left: -195px;
+  top: 14px;
+}
+
+.next-song__album-image {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.next-song__album-name {
+  width: 135px;
+  height: 50px;
+  color: #000;
+  font-family: "Helvetica", sans-serif;
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 22px;
+  margin-left: 15px;
+  margin-top: 7px;
+  display: inline-block;
+}
+
+.next-song__singer-name {
+  width: 135px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 15px;
+  color: #d0021b;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.41px;
+  font-family: "Helvetica", sans-serif;
+}

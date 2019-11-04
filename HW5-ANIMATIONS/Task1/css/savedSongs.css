@@ -1,0 +1,83 @@
+.saved-songs {
+  float: left;
+  width: 345px;
+  height: 75px;
+  margin-top: 15px;
+  margin-left: 15px;
+  background-color: white;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.saved-songs__song-name {
+  width: 170px;
+  height: 25px;
+  margin-left: 15px;
+  margin-top: 15px;
+  font-family: "Helvetica", sans-serif;
+  display: inline-block;
+  letter-spacing: -0.41px;
+  float: left;
+  font-size: 17px;
+  line-height: 22px;
+  color: #000;
+}
+
+.saved-songs__album-name {
+  float: left;
+  width: 170px;
+  height: 20px;
+  color: #bebebe;
+  font-family: "Helvetica", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.15px;
+  line-height: 19px;
+  margin-left: 15px;
+}
+
+.saved-songs__song-color {
+  width: 100px;
+  height: 45px;
+  display: inline-block;
+  margin-top: 16px;
+  margin-left: 47px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  font-family: "Helvetica", sans-serif;
+  padding-top: 12px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.saved-songs__song-color--background-red {
+  background-image: linear-gradient(to right, #bc5564, #912a39);
+}
+
+.saved-songs__song-color--background-red:hover {
+  background-image: linear-gradient(to right, #e58eb9, #7a3e5c);
+  cursor: pointer;
+}
+
+.saved-songs__song-color--background-mint {
+  background-image: linear-gradient(to right, #3eabb7, #78cbb6);
+  width: 114px;
+  margin-left: 40px;
+  margin-top: 14px;
+  height: 51px;
+}
+
+.saved-songs__song-color--background-mint:hover {
+  background-image: linear-gradient(to right, #4ddde9, #327783);
+  cursor: pointer;
+}
+
+.saved-songs__song-color--background-yellow {
+  background-image: linear-gradient(to right, #f7ae38, #f7ae38);
+}
+
+.saved-songs__song-color--background-yellow:hover {
+  background-image: linear-gradient(to right, #f2f74f, #d09233);
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+.song-block {
+  padding: 15px;
+  float: left;
+  background-color: white;
+  margin-top: 16px;
+  margin-left: 15px;
+  width: 345px;
+  height: 130px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.song-block--top {
+  position: relative;
+  top: -66px;
+}
+
+.song-block--secondTop {
+  position: relative;
+  top: -1px;
+  left: -720px;
+}
+
+.song-block__album-name {
+  width: 170px;
+  height: 50px;
+  display: inline-block;
+  color: #000;
+  font-family: "Helvetica", sans-serif;
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 22px;
+}
+
+.song-block__singer-name {
+  width: 170px;
+  height: 20px;
+  display: inline-block;
+  float: left;
+  margin-top: 5px;
+  color: #d0021b;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.41px;
+  font-family: "Helvetica", sans-serif;
+}
+
+.song-block__song-name {
+  color: #bebebe;
+  width: 315px;
+  height: 20px;
+  float: left;
+  position: relative;
+  top: -19px;
+  font-family: "Helvetica", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.15px;
+  line-height: 19px;
+}
+
+.song-block__album-image {
+  float: right;
+}

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Helvetica/Helvetica.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SF-Semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/SF-Semibold/SF-UI-Text-Semibold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "SF-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/SF-Regular/SF-Regular.otf") format("truetype");
+}

@@ -1,0 +1,46 @@
+.fauvorite-songs {
+  float: left;
+  width: 165px;
+  height: 220px;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.fauvorite-songs--nick-position {
+  left: -360px;
+  top: -31px;
+}
+
+.fauvorite-songs--bongarang-position {
+  left: -345px;
+  top: -31px;
+}
+
+.fauvorite-songs__singer-name {
+  font-family: "Helvetica", sans-serif;
+  display: inline-block;
+  letter-spacing: -0.41px;
+  float: left;
+  margin-left: 15px;
+  font-size: 17px;
+  line-height: 22px;
+  color: #000;
+  margin-top: 6px;
+}
+
+.fauvorite-songs__song-name {
+  margin-left: 15px;
+  color: #d0021b;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.41px;
+  font-family: "Helvetica", sans-serif;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.fauvorite-songs__bird {
+  margin-left: 50px;
+}

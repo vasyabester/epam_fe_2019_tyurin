@@ -1,0 +1,41 @@
+.pictures {
+  float: right;
+  width: 165px;
+  height: 145px;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.pictures--suvs-position {
+  left: 165px;
+  top: -176px;
+}
+
+.pictures--cars-position {
+  left: 510px;
+  top: -216px;
+}
+
+.pictures__image {
+  margin: 15px;
+}
+
+.pictures__sign {
+  width: 135px;
+  height: 25px;
+  position: relative;
+  color: #fff;
+  font-family: "Helvetica", sans-serif;
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 22px;
+  text-align: center;
+  top: -89px;
+  left: 62px;
+}
+
+.pictures__sign--left {
+  left: 38px;
+}
