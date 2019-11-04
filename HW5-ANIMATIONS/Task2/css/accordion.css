@@ -1,0 +1,55 @@
+.accordion-container {
+  width: 482px;
+  transform: translateX(-550%);
+  position: absolute;
+  transition: transform 2s cubic-bezier(0.77, 0.2, 0.05, 1.4);
+  opacity: 0;
+}
+
+.accordion-container:target {
+  transform: none;
+  opacity: 1;
+  right: 25%;
+}
+
+.accordion__header {
+  text-decoration: none;
+  color: #0f0d32;
+  text-align: center;
+  font-size: 22px;
+}
+
+.accordion__checkbox {
+  display: none;
+}
+
+.accordion__checkbox-label {
+  background: #eee;
+  width: 57px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 1px;
+  padding: 5px 11px;
+  color: #0f0d32;
+}
+
+.accordion__text {
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+}
+
+.accordion__text-container {
+  background: #180d32;
+  height: 0;
+  color: #fff;
+  width: 240px;
+  transform: translate(-550%, 0);
+  transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1.4);
+}
+
+.accordion__checkbox:checked ~ .accordion__text-container {
+  margin: 5px 0 10px 5px;
+  height: auto;
+  transform: none;
+}

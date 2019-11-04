@@ -1,0 +1,32 @@
+.dropdown-container {
+  margin: 0 0 0 725px;
+  transform: translateY(-200%);
+  position: absolute;
+  transition: transform 2s;
+  opacity: 0;
+  z-index: -1;
+}
+
+.dropdown-container:target {
+  transform: none;
+  opacity: 1;
+}
+
+.dropdown-container__item {
+  display: block;
+  background-color: #0f0d32;
+  color: white;
+  border-bottom: 2px solid white;
+  border-top: 3px solid #007bff;
+  width: 200px;
+  height: 47px;
+  text-align: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+  font-size: 21px;
+  text-decoration: none;
+}
+
+.dropdown-container__item:hover {
+  background-color: #3530b4;
+}

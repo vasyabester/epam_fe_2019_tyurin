@@ -1,0 +1,77 @@
+.custom-checkbox {
+  display: block;
+  margin-left: 507px;
+  position: absolute;
+  color: #0f0d32;
+  background: #fff;
+  list-style-type: none;
+  transform-origin: 0 0;
+  transform: translateX(-550%);
+  transition: transform 2s cubic-bezier(0.77, 0.2, 0.05, 1.4);
+  opacity: 0;
+}
+
+.custom-checkbox:target {
+  transform: none;
+  opacity: 1;
+}
+
+.switcher {
+  display: block;
+  height: 54px;
+  margin-bottom: 40px;
+}
+
+.switcher__input {
+  display: none;
+}
+
+.switcher__label {
+  cursor: pointer;
+  height: 0;
+  position: relative;
+  width: 40px;
+}
+
+.switcher__label::before {
+  background-color: grey;
+  border-radius: 8px;
+  content: '';
+  height: 16px;
+  margin-top: -8px;
+  position: absolute;
+  width: 57px;
+}
+
+.switcher__label::after {
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  content: '';
+  height: 24px;
+  left: -4px;
+  margin-top: -8px;
+  position: absolute;
+  top: -4px;
+  transition: all 0.3s ease-in-out;
+  width: 24px;
+}
+
+.switcher__input--disabled + label::before {
+  opacity: 0.5;
+}
+
+.switcher__input:checked + label::before {
+  background: #274680;
+  opacity: 1;
+}
+
+.switcher__input:checked + label::after {
+  background: white;
+  left: 34px;
+}
+
+.switcher__input--disabled-checked:checked + label::before {
+  background: #274680;
+  opacity: 0.5;
+}

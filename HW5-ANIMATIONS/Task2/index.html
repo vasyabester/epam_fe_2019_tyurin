@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/customCheckbox.css">
+    <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+</head>
+<body>
+  <header class="header">
+      <div class="menu">
+          <input class="menu__icon-input" type="checkbox" />
+          <span class="menu__icon-stick"></span>
+          <span class="menu__icon-stick"></span>
+          <span class="menu__icon-stick"></span>
+          <nav class="navigation">
+              <a class="navigation__item" href="#customCheckbox">Checkbox</a>
+              <a class="navigation__item" href="#accordion">Accordion</a>
+              <a class="navigation__item" href="#dropdown">Drop-down</a>
+          </nav>
+      </div>
+  </header>
+  <section id="customCheckbox" class="custom-checkbox">
+      <article class="switcher">
+          <h2 class="custom-checkbox__header">Custom checkbox</h2>
+          <input class="switcher__input" id="activeSwitcher" type="checkbox"/>
+          <label class="switcher__label" for="activeSwitcher"></label>
+      </article>
+      <article class="switcher">
+          <h2 class="custom-checkbox__header">Custom checkbox (disabled)</h2>
+          <input class="switcher__input switcher__input--disabled" id="disabledSwitcher" type="checkbox" disabled/>
+          <label class="switcher__label" for="disabledSwitcher"></label>
+      </article>
+      <article class="switcher">
+          <h2 class="custom-checkbox__header">Custom checkbox (disabled)</h2>
+          <input class="switcher__input switcher__input--disabled-checked" id="checkedDisabledSwitcher" type="checkbox" disabled checked/>
+          <label class="switcher__label" for="checkedDisabledSwitcher"></label>
+      </article>
+  </section>
+  <section id="accordion" class="accordion-container">
+      <section class="accordion">
+          <h4 class="accordion__header">Accordion</h4>
+          <article class="accordion__item">
+              <input class="accordion__checkbox" type="checkbox" id="acc1" />
+              <label class="accordion__checkbox-label" for="acc1">Acc 1</label>
+              <div class="accordion__text-container">
+                  <p class="accordion__text">Acc 1 content</p>
+              </div>
+          </article>
+          <article class="accordion__item">
+              <input class="accordion__checkbox" type="checkbox" id="acc2" />
+              <label class="accordion__checkbox-label" for="acc2">Acc 2</label>
+              <div class="accordion__text-container">
+                  <p class="accordion__text">Acc 2 content</p>
+              </div>
+          </article>
+          <article class="accordion__item">
+              <input class="accordion__checkbox" type="checkbox" id="acc3" />
+              <label class="accordion__checkbox-label" for="acc3">Acc 3</label>
+              <div class="accordion__text-container">
+                  <p class="accordion__text">Acc 3 content</p>
+              </div>
+          </article>
+      </section>
+      <section class="accordion">
+          <h4 class="accordion__header">Accordion (collapsible)</h4>
+          <article class="accordion__item">
+              <input class="accordion__checkbox" type="radio" name="accordion" id="acc4" />
+              <label class="accordion__checkbox-label" for="acc4">Acc 4</label>
+              <div class="accordion__text-container">
+                  <p class="accordion__text">Acc 4 content</p>
+              </div>
+          </article>
+          <article class="accordion__item">
+              <input class="accordion__checkbox" type="radio" name="accordion" id="acc5" />
+              <label class="accordion__checkbox-label" for="acc5">Acc 5</label>
+              <div class="accordion__text-container">
+                  <p class="accordion__text">Acc 5 content</p>
+              </div>
+          </article>
+          <article class="accordion__item">
+              <input class="accordion__checkbox" type="radio" name="accordion" id="acc6" />
+              <label class="accordion__checkbox-label" for="acc6">Acc 6</label>
+              <div class="accordion__text-container">
+                  <p class="accordion__text">Acc 6 content</p>
+              </div>
+          </article>
+      </section>
+  </section>
+  <section class="dropdown-container" id="dropdown">
+      <a class="dropdown-container__item dropdown-container__item--top" href="#">Checkbox</a>
+      <a class="dropdown-container__item dropdown-container__item--top" href="#">Accordion</a>
+      <a class="dropdown-container__item dropdown-container__item--top" href="#">Menu</a>
+  </section>
+</body>
+</html>
