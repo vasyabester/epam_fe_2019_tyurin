@@ -3,6 +3,7 @@ body {
   background-color: #fbfbfb;
   font-family: "Lato", serif;
   color: #474747;
+  overflow-x: hidden;
 }
 
 .container {
