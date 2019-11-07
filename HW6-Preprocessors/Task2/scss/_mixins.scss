@@ -1,0 +1,35 @@
+@mixin checkbox__description--color ($color) {
+  color: $color;
+}
+
+@mixin review-rate-content($content) {
+  content: $content;
+}
+
+@mixin navigation-link-line() {
+  border-bottom: 1px solid white;
+}
+
+@mixin font-roboto($font-name, $line-height, $font-size, $letter-spacing, $font-weight, $word-spacing) {
+  font-family: $font-name, sans-serif;
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+
+  @if $font-size {
+    font-size: $font-size;
+  }
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+
+  @if $word-spacing {
+    word-spacing: $word-spacing;
+  }
+
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
+}

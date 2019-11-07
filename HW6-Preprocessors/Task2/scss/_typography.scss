@@ -1,0 +1,46 @@
+@include font-face($font-roboto-light, $font-roboto-light-path, 300);
+@include font-face($font-roboto-medium, $font-roboto-medium-path, 500);
+
+.font-roboto-bold {
+  @include font-roboto("RobotoBold", 24px, 20px, false, bold, false);
+}
+
+.font-roboto-rate-date {
+  @include font-roboto("RobotoRegular", 28px, 20px, -0.4px, false, -1px);
+}
+
+.font-roboto-light {
+  @include font-roboto("RobotoLight", 28px, 20px, -0.15px, false, false);
+}
+
+.font-roboto-bold-price {
+  @include font-roboto("RobotoBold", 24px, 30px, 0.9px, bold, false);
+}
+
+.font-roboto-gallery {
+  @include font-roboto("RobotoRegular", 24px, 20px, -0.1px, false, -2px);
+}
+
+.font-roboto-property-description {
+  @include font-roboto("RobotoRegular", 30px, false, 1px, false, -1.1px);
+}
+
+.font-roboto-medium {
+  @include font-roboto("RobotoMedium", 21px, 18px, false, 500, false);
+}
+
+.font-roboto-bold-navigation-link {
+  @include font-roboto("RobotoBold", false, 18px, -0.4px, bold, -0.8px);
+}
+
+.font-roboto-header-title {
+  @include font-roboto("RobotoRegular", false, false, -2.5px, false, false);
+}
+
+.font-roboto-header-location {
+  @include font-roboto("RobotoRegular", false, false, 1.4px, false, -3.1px);
+}
+
+.font-roboto-bold-footer-content {
+  @include font-roboto("RobotoBold", 24px, 20px, -0.7px, bold, false);
+}

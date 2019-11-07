@@ -1,0 +1,224 @@
+@import "_extends.scss";
+@import "_color-matrix.scss";
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.ttf');
+  }
+}
+
+@mixin button ($height, $width, $border-radius) {
+  height: $height;
+  width: $width;
+  border-radius: $border-radius;
+  vertical-align: top;
+  background-color: $default-button-color;
+  text-align: center;
+  color: $btn-letter-color;
+  box-shadow: 0 2px 2px 0 rgba(155, 155, 155, 0.5);
+
+  &:hover {
+    background-color: $default-button-hover-color;
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: $default-button-active-color;
+    box-shadow: none;
+  }
+}
+
+@mixin button--color($background-color, $background-color-hover, $background-color-active) {
+  background-color: $background-color;
+
+  &:hover {
+    background-color: $background-color-hover;
+  }
+
+  &:active {
+    background-color: $background-color-active;
+  }
+}
+
+@mixin checkbox ($height, $width, $border-radius, $background-color, $background-color-disabled, $checkbox-label-unchecked-color, $checkbox-label-unchecked-disabled-color) {
+  display: none;
+
+  & + .checkbox__label {
+    @extend .checkbox__label-basic;
+
+    background-color: $checkbox-label-unchecked-color;
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+  }
+
+  &:checked + .checkbox__label {
+    background-color: $background-color;
+
+    & .checkbox__span {
+      display: inline-block;
+      width: 19px;
+      height: 14px;
+      background: url(../img/check.svg) no-repeat;
+    }
+  }
+
+  &:disabled + .checkbox__label {
+    background-color: $checkbox-label-unchecked-disabled-color;
+  }
+
+  &:checked:disabled + .checkbox__label {
+    background-color: $background-color-disabled;
+  }
+}
+
+@mixin checkbox--color($background-color, $background-color-disabled, $checkbox-label-unchecked-color, $checkbox-label-unchecked-disabled-color) {
+  & + .checkbox__label {
+    background-color: $checkbox-label-unchecked-color;
+  }
+
+  &:checked + .checkbox__label {
+    background-color: $background-color;
+  }
+
+  &:disabled + .checkbox__label {
+    background-color: $checkbox-label-unchecked-disabled-color;
+  }
+
+  &:checked:disabled + .checkbox__label {
+    background-color: $background-color-disabled;
+  }
+}
+
+@mixin tabContainer() {
+  font-size: 0;
+}
+
+@mixin tabOpen ($color, $font-size) {
+  display: none;
+
+  & + .tabs__label {
+    display: inline-block;
+    text-align: center;
+    border-bottom: 2px solid $tab-border-color;
+    color: $tab-font-color;
+    width: 115px;
+    height: 38px;
+    font-size: $font-size;
+
+    &:hover {
+      color: $roboto-font-color;
+      cursor: pointer;
+    }
+  }
+
+  &:checked + .tabs__label {
+    border-bottom: 2px solid $color;
+    color: $roboto-font-color;
+  }
+}
+
+@mixin tabOpen--color ($color) {
+  &:checked + .tabs__label {
+    border-bottom: 2px solid $color;
+
+    &:hover {
+      border-bottom: 2px solid $color;
+    }
+  }
+}
+
+@mixin tabClosed ($color, $font-size) {
+  display: none;
+
+  & + .tabs__label {
+    @extend .label-basic;
+
+    border: 1px solid $tab-border-color;
+    color: $tab-font-color;
+    width: 91px;
+    height: 44px;
+    font-size: $font-size;
+
+    &:hover {
+      color: $roboto-font-color;
+      cursor: pointer;
+    }
+
+    &:nth-child(2) {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:nth-last-child(-n+1) {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  &:checked + .tabs__label {
+    background: $color;
+    color: $checkbox-label-unchecked-color;
+  }
+}
+
+@mixin tabClosed--color ($color) {
+  &:checked + .tabs__label {
+    background: $color;
+
+    &:hover {
+      border-bottom: 2px solid $color;
+    }
+  }
+}
+
+@mixin paginations ($color) {
+  display: none;
+
+  & + .tabs__label {
+    @extend .label-basic;
+
+    border-radius: 5px;
+    background: $pagination-background-color;
+    color: $roboto-font-color;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+
+    &:hover {
+      background: $pagination-background-color-hover;
+      cursor: pointer;
+    }
+
+    .arrow-icon {
+      background: url(../img/arrow-right.svg) no-repeat;
+      display: inline-block;
+      width: 23px;
+      height: 17px;
+    }
+
+    .arrow-icon--back {
+      background: url(../img/arrow-left.svg) no-repeat;
+    }
+  }
+
+  &:checked + .tabs__label {
+    background: $color;
+    color: $checkbox-label-unchecked-color;
+  }
+
+  &:disabled + .checkbox__label {
+    color: $pagination-disabled-font-color;
+
+    &:hover {
+      background: $pagination-background-color;
+    }
+  }
+}
+
+@mixin paginations--color ($color) {
+  &:checked + .tabs__label {
+    background: $color;
+  }
+}

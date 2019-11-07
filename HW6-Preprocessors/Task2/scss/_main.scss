@@ -1,0 +1,331 @@
+@import "color-matrix";
+@import "_mixins.scss";
+@import "_reset.scss";
+@import "_vars";
+@import "_typography.scss";
+@import "_grid.scss";
+
+.header {
+  width: $max-container-width;
+  height: $header-height;
+  background: url("../img/#{$background-header-name}") no-repeat;
+
+  .header__logo {
+    margin-top: 31px;
+    letter-spacing: -0.96px;
+    color: $header-font-color;
+    display: inline-block;
+  }
+
+  .navigation {
+    color: $header-font-color;
+    display: inline-block;
+    margin-left: 755px;
+
+    .navigation__item {
+      @extend .font-roboto-bold-navigation-link;
+
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 2px 5px 0;
+      margin-left: 25px;
+      margin-right: 7px;
+
+      &:hover {
+        @include navigation-link-line();
+      }
+    }
+
+    .navigation__item--main {
+      @include navigation-link-line();
+    }
+  }
+
+  .header__footer {
+    color: white;
+    position: relative;
+    top: 350px;
+    margin-bottom: 19px;
+
+    .header__title {
+      @extend .font-roboto-header-title;
+
+      margin-bottom: 19px;
+    }
+
+    .header__location {
+      @extend .font-roboto-header-location;
+
+      padding-left: 4px;
+    }
+  }
+}
+
+.tab-container {
+  width: $max-container-width;
+  height: 100px;
+  padding: 31px $padding-left-right;
+  line-height: 24px;
+  background-color: $tab-container-color;
+
+  .tab-open {
+    @include tabOpen--color($open-tab-color);
+  }
+
+  .tabs__label {
+    letter-spacing: 1px;
+  }
+}
+
+.container {
+  width: $max-container-width - $padding-left-right * 2;
+  margin: 0 $padding-left-right;
+  background-color: $main-content-color;
+
+  .hostel-world-says__title {
+    margin-top: 51px;
+    margin-bottom: 0;
+    letter-spacing: 0.41px;
+  }
+
+  .hostel-world-says__text {
+    line-height: 30px;
+    margin-top: 15px;
+    padding-left: 2px;
+    letter-spacing: 1px;
+    word-spacing: -1.1px;
+  }
+
+  .property-description {
+    margin-bottom: -4px;
+
+    .property-description__title {
+      padding-left: 2px;
+      margin-top: 24px;
+      letter-spacing: 0.2px;
+      word-spacing: -4px;
+      margin-bottom: 0;
+    }
+
+    .property-description__text {
+      @extend .font-roboto-property-description;
+
+      margin-top: 15px;
+      padding-left: 2px;
+    }
+  }
+
+  .gallery {
+    margin-bottom: 23px;
+
+    .gallery__title {
+      margin-top: 27px;
+    }
+
+    .gallery__item {
+      width: 460px;
+      height: 400px;
+      box-shadow: 0 0 10px $galery-item-color;
+      border-radius: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        box-shadow: 5px 10px 20px 0 $galery-item-hover-color;
+      }
+    }
+
+    .gallery__photo {
+      width: 460px;
+      height: 248px;
+    }
+
+    .button {
+      @include button--color($button-color, $button-hover-color, $button-active-color);
+
+      @extend .font-roboto-medium;
+
+      float: right;
+      position: relative;
+      top: 38px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    .gallery__description {
+      @extend .font-roboto-gallery;
+
+      margin-top: 17px;
+      margin-left: 19px;
+      display: inline-block;
+    }
+
+    .gallery__price {
+      @extend .font-roboto-bold-price;
+
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 51px;
+    }
+  }
+
+  .reviews-rates__title {
+    margin-top: 36px;
+    margin-bottom: 32px;
+    letter-spacing: -1.4px;
+    word-spacing: 3px;
+  }
+
+  .checkbox-container {
+    margin-bottom: 40px;
+
+    .checkbox {
+      margin-left: 20px;
+    }
+
+    .checkbox__label {
+      cursor: pointer;
+    }
+
+    .checkbox__description {
+      @extend .font-roboto-bold;
+
+      display: inline-block;
+      margin-left: 9px;
+      margin-right: 43px;
+      margin-top: 3px;
+    }
+
+    .checkbox__description--black {
+      @include checkbox__description--color($checkbox-color-black);
+    }
+
+    .checkbox__description--blue {
+      @include checkbox__description--color($checkbox-color-blue);
+    }
+
+    .checkbox__description--pink {
+      @include checkbox__description--color($checkbox-color-pink);
+    }
+
+    .checkbox__description--orange {
+      @include checkbox__description--color($checkbox-color-orange);
+    }
+
+    .checkbox__description--green {
+      @include checkbox__description--color($checkbox-color-green);
+    }
+  }
+
+  .reviews-showing-title {
+    margin-top: 35px;
+  }
+
+  .reviews-rates__item {
+    background-color: $reviews-rates-item-background;
+    padding: 31px 0 0 30px;
+    letter-spacing: -0.7px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+
+    .reviews-rates__name {
+      @extend .font-roboto-bold;
+
+      margin-right: 28px;
+    }
+
+    .reviews-rates__type {
+      @extend .font-roboto-bold;
+    }
+
+    .reviews-rates__country-gender-time {
+      @extend .font-roboto-light;
+
+      border-right: 1px solid $reviews-rates-country-border-right;
+      padding-right: 30px;
+      margin-right: 26px;
+    }
+
+    .reviews-rates__date {
+      @extend .font-roboto-rate-date;
+
+      float: right;
+    }
+
+    .reviews-rates__text {
+      line-height: 30px;
+      font-size: 20px;
+      margin-top: 24px;
+      word-spacing: -0.2px;
+      letter-spacing: -0.1px;
+    }
+  }
+
+  .reviews-rates__item--middle {
+    margin-bottom: 24px;
+  }
+
+  .reviews-rates__type--color {
+    color: #{$pagination-color};
+  }
+
+  .reviews-rates__type::before {
+    @include review-rate-content($review-rate-content);
+  }
+
+  .pagination-container {
+    margin-top: 32px;
+    padding-left: 234px;
+    font-size: 0;
+
+    .paginations {
+      @include paginations--color($pagination-color);
+    }
+
+    .tabs__label {
+      margin-right: 20px;
+    }
+  }
+}
+
+.footer {
+  width: $max-container-width;
+  padding: 0 $padding-left-right;
+  height: 338px;
+  background-color: $footer-color;
+  margin-top: 118px;
+
+  .footer-content {
+    padding-top: 54px;
+
+    .footer-content__title {
+      @extend .font-roboto-bold-footer-content;
+
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .footer-content__item {
+      margin-right: 25px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .footer__link {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: -0.3px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+}

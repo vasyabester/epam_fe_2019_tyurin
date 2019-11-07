@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preprocessors</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <header class="header">
+        <h3 class="header__logo">HotelsWorld</h3>
+        <nav class="navigation">
+            <a class="navigation__item navigation__item--main">Hotels</a>
+            <a class="navigation__item">Flights</a>
+            <a class="navigation__item">Airport transfer</a>
+            <a class="navigation__item">Today's deals</a>
+        </nav>
+        <div class="header__footer">
+            <h1 class="header__title">GRAND HOSTEL BERLIN CLASSIC</h1>
+            <span class="header__location">Tempelhofer Ufer 14,  Berlin,  Germany</span>
+        </div>
+    </header>
+    <div class="tab-container">
+        <input class="tab-open" id="description" type="radio" name="tabs" checked/>
+        <label for="description" class="tabs__label">Description</label>
+        <input class="tab-open" id="map" type="radio" name="tabs"/>
+        <label for="map" class="tabs__label">Map</label>
+        <input class="tab-open" id="reviews" type="radio" name="tabs"/>
+        <label for="reviews" class="tabs__label">Reviews</label>
+        <input class="tab-open" id="facilitles" type="radio" name="tabs"/>
+        <label for="facilitles" class="tabs__label">Facilitles</label>
+    </div>
+    <section class="container">
+        <article class="hostel-world-says column-8">
+            <h2 class="hostel-world-says__title">Hostelworld says</h2>
+            <p class="hostel-world-says__text">
+                Majestic luxury isn't always easy to come by when you're on a budget, but at the Grand Hostel in Berlin you won't have to feel guilty while you're enjoying its stunning historical setting. The staff here are an added bonus, 'always so friendly' and 'willing to help', you'll feel right at home. The hostel is within walking distance from the Jewish Museum and Checkpoint Charlie, and promise regular pub crawls and guided tours with the staff. Perfect for solo travellers looking to get orientated and make some new friends.
+            </p>
+        </article>
+        <article class="property-description column-8">
+            <h2 class="property-description__title">Property Description</h2>
+            <p class="property-description__text">
+                HOSCARS 2019: 'Best Hostel in Germany', 'No.1 Hostel in Berlin'.<br>
+                Moreover Winner Hostel of the German Hostel Contest 'My heavenly Hostel' on VOX TV.<br>
+                Top location - right in the city's centre. A great yet cheap luxury hostel in the centre of Berlin. Great value accommodation in a central location for travellers to Berlin on a budget.<br>
+                We serve every morning a large all you can eat breakfast buffet (€ 6.80) and all the things travellers need.<br>
+                Most of the city's main attractions such as Checkpoint Charlie, the Jewish Museum and the famous Brandenburg Gate are in walking distance.
+            </p>
+        </article>
+        <section class="gallery column-12">
+            <h2 class="gallery__title">Available family rooms</h2>
+            <div class="gallery__item column-4">
+                <img class="gallery__photo" src="img/room-img1.png" alt="here must be a logo">
+                <span class="gallery__description">Deluxe Double Bed Private</span><br>
+                <span class="gallery__price">$115</span>
+                <button class="button">Book now</button>
+            </div>
+            <div class="gallery__item column-4">
+                <img class="gallery__photo" src="img/room-img2.png" alt="here must be a photo">
+                <span class="gallery__description">Standard Single Private</span><br>
+                <span class="gallery__price">$100</span>
+                <button class="button">Book now</button>
+            </div>
+            <div class="gallery__item column-4">
+                <img class="gallery__photo" src="img/room-img3.png"  alt="here must be a photo">
+                <span class="gallery__description">Standard 7 Bed Mixed Dorm</span><br>
+                <span class="gallery__price">$199</span>
+                <button class="button">Book now</button>
+            </div>
+        </section>
+        <section class="gallery column-12">
+            <h2 class="gallery__title">Available guest rooms</h2>
+            <div class="gallery__item column-4">
+                <img class="gallery__photo" src="img/room-img4.png"  alt="here must be a photo">
+                <span class="gallery__description">Standard 5 Bed Mixed Dorm</span><br>
+                <span class="gallery__price">$135</span>
+                <button class="button">Book now</button>
+            </div>
+            <div class="gallery__item column-4">
+                <img class="gallery__photo" src="img/room-img5.png"  alt="here must be a photo">
+                <span class="gallery__description">Standard 8 Bed Mixed Dorm</span><br>
+                <span class="gallery__price">$185</span>
+                <button class="button">Book now</button>
+            </div>
+            <div class="gallery__item column-4">
+                <img class="gallery__photo" src="img/room-img6.png"  alt="here must be a photo">
+                <span class="gallery__description">Standard 3 Bed Mixed Dorm</span><br>
+                <span class="gallery__price">$85</span>
+                <button class="button">Book now</button>
+            </div>
+        </section>
+        <section class="reviews-rates column-12">
+            <h2 class="reviews-rates__title">Reviews &amp; Rates</h2>
+            <h4 class="reviews-showing-title">Show reviews with rates:</h4>
+            <div class="checkbox-container">
+                <input class="checkbox checkbox--black" name="review-rate" id="bad" type="radio" />
+                <label class="checkbox__label" for="bad"><span class="checkbox__span"></span></label>
+                <span class="checkbox__description checkbox__description--black">Bad</span>
+                <input class="checkbox checkbox--pink" name="review-rate" id="excellent" type="radio" />
+                <label class="checkbox__label" for="excellent"><span class="checkbox__span"></span></label>
+                <span class="checkbox__description checkbox__description--pink">Good</span>
+                <input class="checkbox checkbox--blue" name="review-rate" id="good" type="radio" checked/>
+                <label class="checkbox__label" for="good"><span class="checkbox__span"></span></label>
+                <span class="checkbox__description checkbox__description--blue">Very good</span>
+                <input class="checkbox checkbox--orange" name="review-rate" id="veryGood" type="radio" />
+                <label class="checkbox__label" for="veryGood"><span class="checkbox__span"></span></label>
+                <span class="checkbox__description checkbox__description--orange">Excellent</span>
+                <input class="checkbox checkbox--brilliant" name="review-rate" id="brilliant" type="radio" />
+                <label class="checkbox__label" for="brilliant"><span class="checkbox__span"></span></label>
+                <span class="checkbox__description checkbox__description--green">Brillant</span>
+            </div>
+            <article class="reviews-rates__item column-8">
+                <span class="reviews-rates__name">Jack Johnson</span>
+                <span class="reviews-rates__country-gender-time">England, Male, 25-30</span>
+                <span class="reviews-rates__type reviews-rates__type--color"></span>
+                <span class="reviews-rates__date">16 Aug 2019</span>
+                <p class="reviews-rates__text">
+                    Stayed here twice, had a great stay both times. Very clean, and generally feels nice and we'll maintained. If I'm ever looking for a hostel in Berlin again this will be my first choice.
+                </p>
+            </article>
+            <article class="reviews-rates__item reviews-rates__item--middle column-8">
+                <span class="reviews-rates__name">Alex Flesson</span>
+                <span class="reviews-rates__country-gender-time">England, Male, 25-25</span>
+                <span class="reviews-rates__type reviews-rates__type--color"></span>
+                <span class="reviews-rates__date">10 Aug 2019</span>
+                <p class="reviews-rates__text">
+                    I had an amazing time staying here! I originally booked it because it was recommended for solo travellers and it didn’t disappoint. The library bar is fantastic for meeting other travellers and they also had socials like the Friday pub crawl and karaoke. There isn’t a kitchen but there’s plenty of lovely food places around. The hostel was close to Mockenbrocke and Glesdreick stations and was really easy to get around sightseeing. This is probably one of the nicest hostels I’ve stayed in!
+                </p>
+            </article>
+            <article class="reviews-rates__item column-8">
+                <span class="reviews-rates__name">Liam Smith</span>
+                <span class="reviews-rates__country-gender-time">England, Male, 30-45</span>
+                <span class="reviews-rates__type reviews-rates__type--color"></span>
+                <span class="reviews-rates__date">25 Jul 2019</span>
+                <p class="reviews-rates__text">
+                    Fantastic hostel, very friendly staff, good vibe in the hostel that is hard to leave. Rooms and really good size, no bunk beds just single, big lockers in the rooms, very clean. Location is perfect, just walking distance to all tourist attraction, easy to catch a bus or train. Need to pay for breakfast but totally worth it. Bar on site, happy hour, and cheap to drink. Definitely recommend it.
+                </p>
+            </article>
+            <div class="pagination-container column-8">
+                <input class="paginations" id="paginationsArrowBack" type="radio" name="pagination" disabled/>
+                <label for="paginationsArrowBack" class="tabs__label"><span class="arrow-icon arrow-icon--back"></span></label>
+                <input class="paginations" id="paginations1" type="radio" name="pagination"/>
+                <label for="paginations1" class="tabs__label">1</label>
+                <input class="paginations" id="paginations2" type="radio" name="pagination"/>
+                <label for="paginations2" class="tabs__label">2</label>
+                <input class="paginations" id="paginations3" type="radio" name="pagination"/>
+                <label for="paginations3" class="tabs__label">3</label>
+                <input class="paginations" id="paginations4" type="radio" name="pagination"/>
+                <label for="paginations4" class="tabs__label">4</label>
+                <input class="paginations" id="paginations5" type="radio" name="pagination"/>
+                <label for="paginations5" class="tabs__label">5</label>
+                <input class="paginations" id="paginationsArrowNext" type="radio" name="pagination"/>
+                <label for="paginationsArrowNext" class="tabs__label"><span class="arrow-icon"></span></label>
+            </div>
+        </section>
+    </section>
+    <footer class="footer column-12">
+        <div class="footer-content column-12">
+            <article class="footer-content__item column-3">
+                <h4 class="footer-content__title">Help</h4>
+                <a class="footer__link">Help Center</a>
+                <a class="footer__link">FAQs</a>
+                <a class="footer__link">Privacy Policy</a>
+                <a class="footer__link">Cookie Policy</a>
+                <a class="footer__link">Terms of Use</a>
+            </article>
+            <article class="footer-content__item column-3">
+                <h4 class="footer-content__title">Discover</h4>
+                <a class="footer__link">Trust &amp; Safety</a>
+                <a class="footer__link">Invite Friends</a>
+                <a class="footer__link">Gift Cards</a>
+                <a class="footer__link">Business Travel</a>
+                <a class="footer__link">Guidebooks</a>
+            </article>
+            <article class="footer-content__item column-3">
+                <h4 class="footer-content__title">Hosting</h4>
+                <a class="footer__link">Why Host</a>
+                <a class="footer__link">Refer Hosts</a>
+                <a class="footer__link">Hospitality</a>
+                <a class="footer__link">Responsible Hosting</a>
+                <a class="footer__link">Community Center</a>
+            </article>
+            <article class="footer-content__item column-3">
+                <h4 class="footer-content__title">Community</h4>
+                <a class="footer__link">Partner Program</a>
+                <a class="footer__link">Refer Hosts</a>
+                <a class="footer__link">Agencies</a>
+                <a class="footer__link">Events</a>
+                <a class="footer__link">Marketing Glossary</a>
+            </article>
+        </div>
+    </footer>
+</body>
+</html>

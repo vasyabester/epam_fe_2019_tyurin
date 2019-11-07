@@ -1,0 +1,93 @@
+@import "_vars.scss";
+@import "_color-matrix.scss";
+@import "_reset.scss";
+@import "_extends.scss";
+@import "_mixins.scss";
+
+.button {
+  @include button($btn-height, $btn-width, $btn-border-radius);
+}
+
+.button--primary {
+  @include button--color($primary-default, $primary-hover, $primary-active);
+}
+
+.button--secondary {
+  @include button--color($secondary-default, $secondary-hover, $secondary-active);
+}
+
+.button--success {
+  @include button--color($success-default, $success-hover, $success-active);
+}
+
+.button--danger {
+  @include button--color($danger-default, $danger-hover, $danger-active);
+}
+
+.button--warning {
+  @include button--color($warning-default, $warning-hover, $warning-active);
+}
+
+.button--info {
+  @include button--color($info-default, $info-hover, $info-active);
+}
+
+.checkbox {
+  @include checkbox($checkbox-height, $checkbox-width, $input-border-radius, $checkbox-color-green, $checkbox-disabled-color-green, $checkbox-label-unchecked-color, $checkbox-label-unchecked-disabled-color);
+}
+
+.checkbox--orange {
+  @include checkbox--color($checkbox-color-orange, $checkbox-disabled-color-orange, $checkbox-label-unchecked-color, $checkbox-label-unchecked-disabled-color);
+}
+
+.checkbox--blue {
+  @include checkbox--color($checkbox-color-blue, $checkbox-disabled-color-blue, $checkbox-label-unchecked-color, $checkbox-label-unchecked-disabled-color);
+}
+
+.checkbox--pink {
+  @include checkbox--color($checkbox-color-pink, $checkbox-disabled-color-pink, $checkbox-label-unchecked-color, $checkbox-label-unchecked-disabled-color);
+}
+
+.checkbox--black {
+  @include checkbox--color($checkbox-color-black, $checkbox-disabled-color-black, $checkbox-label-unchecked-color, $checkbox-label-unchecked-disabled-color);
+}
+
+.tab-container {
+  @include tabContainer();
+}
+
+.tab-open {
+  @include tabOpen($tabs-label-color-green, $font-size);
+}
+
+.tab-open--red {
+  @include tabOpen--color($tabs-label-color-red);
+}
+
+.tab-closed {
+  @include tabClosed($tabs-label-color-green, $font-size);
+}
+
+.tab-closed--red {
+  @include tabClosed--color($tabs-label-color-red);
+}
+
+.paginations {
+  @include paginations($checkbox-color-green);
+}
+
+.paginations--orange {
+  @include paginations--color($checkbox-color-orange);
+}
+
+.paginations--blue {
+  @include paginations--color($checkbox-color-blue);
+}
+
+.paginations--pink {
+  @include paginations--color($checkbox-color-pink);
+}
+
+.paginations--black {
+  @include paginations--color($checkbox-color-black);
+}
