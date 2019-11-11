@@ -1,0 +1,95 @@
+@import "color-matrix";
+@import "variables";
+@import "reset";
+@import "extends";
+@import "mixins";
+@import "typography";
+@import "menu";
+@import "tea";
+@import "kitchen";
+@import "shaker";
+@import "bowls";
+@import "footer";
+
+.main-container {
+  width: 1500px;
+  height: 2540px;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  .header {
+    @extend .display-flex-row;
+
+    width: 1500px;
+    height: 665px;
+    background-color: $header-background;
+    box-sizing: border-box;
+    padding-left: 40px;
+
+    .header__content {
+      display: flex;
+      height: inherit;
+      flex-direction: row-reverse;
+      flex: 1;
+
+      .author-container {
+        @include author-container("../img/user.png");
+
+        flex: 2;
+        margin-top: 157px;
+
+        .author-container__topic {
+          width: 276px;
+        }
+      }
+    }
+  }
+}
+
+.pepper-description {
+  @include item-description();
+
+  padding-top: 208px;
+  flex: 1.4;
+  align-items: flex-end;
+
+  .pepper-description__content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.pepper-image {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 400px;
+  padding-left: 40px;
+  flex: 1;
+  box-sizing: border-box;
+
+  .pepper-image__triangle {
+    width: 0;
+    height: 0;
+    border-left: $triangle-border;
+    border-right: $triangle-border;
+    border-top: 239px solid $soft-pink;
+
+    .pepper-image__triangle-icon {
+      @include sprite(22px, 50px, -339px, -284px);
+
+      display: inline-block;
+      position: absolute;
+      top: 57px;
+      left: 173px;
+    }
+  }
+
+  .pepper-image__icon {
+    background-image: url("../img/pepper.png");
+    background-repeat: no-repeat;
+    width: 430px;
+    height: 440px;
+    margin-top: -44px;
+  }
+}

@@ -1,0 +1,39 @@
+.tea {
+  display: flex;
+  width: 1500px;
+  height: 375px;
+  background-color: $item-background;
+
+  .tea-o-clock__zigzag {
+    @include zig-zag("right", $soft-blue);
+  }
+
+  .pot {
+    width: 378px;
+    height: 375px;
+    background-color: $soft-blue;
+  }
+
+  .pot__image {
+    @include sprite(88px, 117px, -147px, -10px);
+
+    position: absolute;
+    margin: 95px 0 0 166px;
+  }
+
+  .pot__big-sign {
+    @include item-image-name($dirty-blue);
+
+    margin: 231px 0 0 148px;
+  }
+
+  .pot_little-sign {
+    @include image-collection-name($dirty-blue);
+
+    margin: -1px 0 0 172px;
+  }
+
+  .tea-o-clock {
+    @include item-container("../img/james-fernand.png");
+  }
+}

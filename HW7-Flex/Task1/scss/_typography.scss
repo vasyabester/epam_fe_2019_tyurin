@@ -1,0 +1,10 @@
+@include font-face($source-sans-pro-regular, $fontsource-sans-pro-regular-path);
+@include font-face($source-sans-pro-light, $fontsource-sans-pro-light-path, 300);
+@include font-face($source-sans-pro-bold, $fontsource-sans-pro-bold-path, bold);
+@include font-face($source-sans-pro-semibold, $fontsource-sans-pro-semibold-path, 600);
+
+.font-regular-size24-height31 {
+  font-family: "SourceSansProRegular", sans-serif;
+  line-height: 31px;
+  font-size: 24px;
+}

@@ -1,0 +1,57 @@
+.shaker {
+  width: 1500px;
+  height: 375px;
+  background-color: $item-background;
+  display: flex;
+
+  .shakers__zigzag {
+    @include zig-zag("left", $soft-green);
+  }
+
+  .shaker__special-shaker {
+    @include item-container("../img/jack-johnson.png");
+
+    padding-left: 24px;
+
+    .item__image-container {
+      margin-left: 146px;
+
+      .item__image {
+        margin-top: 103px;
+        width: 231px;
+        height: 272px;
+      }
+    }
+
+    .author-container {
+      margin-left: 189px;
+    }
+  }
+}
+
+.shakers {
+  display: flex;
+  width: 389px;
+  height: 375px;
+  background-color: $soft-green;
+
+  .shakers__image-shaker {
+    @include sprite(60px, 117px, -255px, -10px);
+
+    position: absolute;
+    margin: 97px 0 0 141px;
+  }
+
+  .shakers__image-shaker-name {
+    @include item-image-name($shaker-image-text-color);
+
+    margin: 234px 0 0 122px;
+  }
+
+  .shakers__image-shaker-name-sign {
+    @include image-collection-name($shaker-image-text-color);
+
+    margin: 265px 0 0 129px;
+    position: absolute;
+  }
+}

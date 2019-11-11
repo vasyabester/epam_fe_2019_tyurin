@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="main-container">
+  <section class="header">
+    <article class="header__content">
+      <div class="menu">
+        <input id="home" type="radio" name="menu" class="menu__item-radio menu__item-radio--home"/>
+        <input id="forRooms" type="radio" name="menu" class="menu__item-radio menu__item-radio--for-rooms"/>
+        <input id="search" type="radio" name="menu" class="menu__item-radio menu__item-radio--search"/>
+        <input id="clear" type="radio" name="menu" class="menu__item-radio-clear"/>
+        <div class="menu-icons">
+          <label for="home" class="menu__label menu__label--home">
+            <span class="menu__icon menu__icon--home"></span>
+          </label>
+          <label for="clear" class="menu__label menu__label--clear menu__label--home-clear">
+            <span class="menu__icon menu__icon--home"></span>
+          </label>
+          <label for="forRooms" class="menu__label menu__label--for-rooms">
+            <span class="menu__icon menu__icon--for-rooms"></span>
+          </label>
+          <label for="clear" class="menu__label menu__label--clear menu__label--for-rooms-clear">
+            <span class="menu__icon menu__icon--for-rooms"></span>
+          </label>
+          <label for="search" class="menu__label menu__label--search">
+            <span class="menu__icon menu__icon--search"></span>
+          </label>
+          <label for="clear" class="menu__label menu__label--clear menu__label--search-clear">
+            <span class="menu__icon menu__icon--search"></span>
+          </label>
+        </div>
+        <aside class="aside-container">
+          <div class="menu-content menu-content--home">
+            <div class="menu-content__header">
+              <h2 class="menu-content__title menu-content__title--home">WAREHOUSE</h2>
+              <input id="cancelHome" type="radio" name="menu" class="menu-content__radio-cancel"/>
+              <label for="cancelHome" class="menu-content__close-icon"></label>
+            </div>
+            <section class="icons-container">
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background1"></span>
+                <span class="icons-container__name">Kitchen</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background2"></span>
+                <span class="icons-container__name">Bedroom</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background3"></span>
+                <span class="icons-container__name">Bathroom</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background4"></span>
+                <span class="icons-container__name">Living room</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background5"></span>
+                <span class="icons-container__name">Dining room</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background6"></span>
+                <span class="icons-container__name">Balcony</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background7"></span>
+                <span class="icons-container__name">Balcony</span>
+              </div>
+            </section>
+          </div>
+          <div class="menu-content menu-content--for-rooms">
+            <div class="menu-content__header">
+              <h2 class="menu-content__title">FOR ROOMS</h2>
+              <input id="cancelRooms" type="radio" name="menu" class="menu-content__radio-cancel"/>
+              <label for="cancelRooms" class="menu-content__close-icon"></label>
+            </div>
+            <section class="icons-container">
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background1"></span>
+                <span class="icons-container__name">Kitchen</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background2"></span>
+                <span class="icons-container__name">Bedroom</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background3"></span>
+                <span class="icons-container__name">Bathroom</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background4"></span>
+                <span class="icons-container__name">Living room</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background5"></span>
+                <span class="icons-container__name">Dining room</span>
+              </div>
+              <div class="icons-container__item">
+                <span class="icons-container__icon icons-container__icon--background6"></span>
+                <span class="icons-container__name">Balcony</span>
+              </div>
+            </section>
+          </div>
+          <div class="menu-content menu-content--search">
+            <div class="menu-content__header">
+              <h2 class="menu-content__title menu-content__title--search">SEARCH</h2>
+              <input id="cancelSearch" type="radio" name="menu" class="menu-content__radio-cancel"/>
+              <label for="cancelSearch" class="menu-content__close-icon"></label>
+            </div>
+            <div class="menu-content__search-field-container">
+              <input id="searchFiled" placeholder="SEARCH" type="text" class="menu-content__search-field"/>
+              <span class="menu-content__search-icon-container">
+                                <span class="menu-content__search-icon"></span>
+                            </span>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="author-container author-container--pepper">
+        <span class="author-container__photo"></span>
+        <span class="author-container__name">BY MATERIA &amp; NENDO</span>
+        <span class="author-container__topic">Good Things come in Paris</span>
+      </div>
+      <div class="pepper-image">
+                    <span class="pepper-image__triangle">
+                        <span class="pepper-image__triangle-icon"></span>
+                    </span>
+        <span class="pepper-image__icon"></span>
+      </div>
+      <div class="pepper-description">
+        <div class="pepper-description__content">
+          <a href="" class="item-description__name">Exclusive pepper</a>
+          <span class="item-description__price">&#36;45.50</span>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="tea">
+    <div class="pot">
+      <span class="pot__image"></span>
+      <span class="pot__big-sign">SEVEN POTS</span>
+      <span class="pot_little-sign">COLLECTION</span>
+    </div>
+    <div class="tea-o-clock__zigzag"></div>
+    <article class="tea-o-clock">
+      <div class="item-description">
+        <a href="" class="item-description__name ">Kittle Thermo Pot</a>
+        <span class="item-description__price">&#36;249.50</span>
+      </div>
+      <div class="item__image-container">
+        <img class="item__image" src="img/pot.png" alt="here must be a pot image"/>
+      </div>
+      <div class="author-container">
+        <span class="author-container__photo"></span>
+        <span class="author-container__name">BY JAMES FERNAND</span>
+        <span class="author-container__topic">Tea O'clock</span>
+      </div>
+    </article>
+  </section>
+  <section class="kitchen">
+    <div class="logo">
+      <span class="logo__ruby"></span>
+      <span class="logo__sign">ROOMS</span>
+      <svg class="logo__container">
+        <circle class="logo__background" r="70" cy="70" cx="70"></circle>
+      </svg>
+    </div>
+  </section>
+  <section class="shaker">
+    <article class="shaker__special-shaker">
+      <div class="item-description">
+        <a href="" class="item-description__name ">Special shaker</a>
+        <span class="item-description__price">&#36;59.99</span>
+      </div>
+      <div class="item__image-container">
+        <img class="item__image" src="img/shaker.png" alt="here must be a shaker">
+      </div>
+      <div class="author-container">
+        <span class="author-container__photo"></span>
+        <span class="author-container__name">BY JACK JOHNSON</span>
+        <span class="author-container__topic">Ebony &amp; Ivory</span>
+      </div>
+    </article>
+    <div class="shakers__zigzag"></div>
+    <div class="shakers">
+      <section class="shakers__image-shaker"></section>
+      <span class="shakers__image-shaker-name">SHAKERS</span>
+      <span class="shakers__image-shaker-name-sign">COLLECTION</span>
+    </div>
+  </section>
+  <section class="bowls">
+    <div class="bowls-collection">
+      <span class="bowls-collection__bowls-image"></span>
+      <span class="bowls-collection__bowl-name">BOWLS</span>
+      <span class="bowls-collection__image-bowl-name-sign">COLLECTION</span>
+    </div>
+    <div class="bowls__zigzag"></div>
+    <article class="generic-bowl">
+      <div class="item-description">
+        <a href="" class="item-description__name">Generic bowl</a>
+        <span class="item-description__price">&#36;177.50</span>
+      </div>
+      <div class="item__image-container">
+        <img class="item__image" src="img/bowls.png" alt="here must be bowls image"/>
+      </div>
+      <div class="author-container">
+        <span class="author-container__photo"></span>
+        <span class="author-container__name">BY JENIFER FLESSON</span>
+        <span class="author-container__topic">Back to Basics</span>
+      </div>
+    </article>
+  </section>
+  <section class="footer">
+    <div class="footer__content">
+      <div class="footer__main-icons">
+        <span class="footer__image footer__image--pepper"></span>
+        <span class="footer__image footer__image--kettle"></span>
+        <span class="footer__image footer__image--shaker"></span>
+        <span class="footer__image footer__image4--stand"></span>
+      </div>
+      <span
+        class="footer__text">2019 WARE HOUSE, USA based company. Image right belong to their respective owners.</span>
+    </div>
+    <div class="footer__logo">
+      <div class="footer__logo-icon">
+        <div class="square square--red"></div>
+        <div class="square__line">
+          <div class="square square--blue"></div>
+          <div class="square square--green"></div>
+        </div>
+      </div>
+      <span class="footer__logo-name">WareHouse</span>
+    </div>
+  </section>
+</div>
+</body>
+</html>

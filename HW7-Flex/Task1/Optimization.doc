@@ -1,0 +1,16 @@
+1. Using sprites for small icons instead separate images
+2. Using semantic tags (it also helps people with disabilities to understand where tag should be located on the page (such as <aside> - side view))
+3. Using sass mixins (for not duplicating code)
+4. Using sass extends (for not duplicating code)
+5. Using sass variables
+6. All html-code was validated with validator.w3c.org and all css code was validated with https://jigsaw.w3.org/css-validator/
+7. All <img> tags have attribute alt (if picture is broken - user will see some message)
+8. Using separate scss-files for every "module"
+9. Using flexbox
+10. Using understandable class-names with BEM (so there is no need to write comments)
+11. Not using !important
+12. Using sass-nestings (blocks of css code became more readable)
+13. The structure of scss code dublicates structure of html
+14. Using "reset" file - for setting main css-rules for page
+15. Not using inline styles
+16. Grouping padding-top, padding-left, padding-right into "padding" (also margin)

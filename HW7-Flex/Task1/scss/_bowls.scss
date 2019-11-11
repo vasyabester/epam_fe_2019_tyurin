@@ -1,0 +1,59 @@
+.bowls {
+  width: 1500px;
+  height: 375px;
+  background-color: $item-background;
+  display: flex;
+
+  .bowls__zigzag {
+    @include zig-zag("right", $soft-pink);
+  }
+
+  .bowls-collection {
+    width: 378px;
+    height: 375px;
+    background-color: $soft-pink;
+
+    .bowls-collection__bowls-image {
+      @include sprite(117px, 117px, -10px, -10px);
+
+      position: absolute;
+      margin: 97px 0 0 152px;
+    }
+
+    .bowls-collection__bowl-name {
+      @include item-image-name($bowls-image-text-color);
+
+      margin: 234px 0 0 174px;
+    }
+
+    .bowls-collection__image-bowl-name-sign {
+      @include image-collection-name($bowls-image-text-color);
+
+      margin: 265px 0 0 -73px;
+      position: absolute;
+    }
+  }
+
+  .generic-bowl {
+    @include item-container("../img/jenifer-fleson.png");
+
+    .item__image-container {
+      margin-left: 92px;
+
+      .item__image {
+        margin-top: 161px;
+        width: 340px;
+        height: 214px;
+      }
+    }
+
+    .author-container {
+      margin-left: 146px;
+
+      .author-container__topic {
+        width: 152px;
+        text-align: center;
+      }
+    }
+  }
+}

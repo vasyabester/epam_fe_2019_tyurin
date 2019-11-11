@@ -1,0 +1,217 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.otf');
+  }
+}
+
+@mixin sprite($width, $height, $position1, $position2) {
+  width: $width;
+  height: $height;
+  background: url('../img/sprites.png') $position1 $position2;
+}
+
+@mixin icons-container() {
+  @extend .display-flex-row;
+
+  flex-wrap: wrap;
+  padding-left: 62px;
+  margin-top: 35px;
+
+  .icons-container__item {
+    margin-right: 24px;
+    flex-direction: column;
+    margin-bottom: 33px;
+    display: flex;
+    align-items: center;
+    width: 96px;
+    height: 100px;
+
+    .icons-container__name {
+      margin-top: 10px;
+      display: flex;
+      line-height: 23px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: "SourceSansProSemibold", sans-serif;
+    }
+
+    .icons-container__icon {
+      background-repeat: no-repeat;
+      display: flex;
+
+      &.icons-container__icon--background1 {
+        @include sprite(50px, 50px, -10px, -284px);
+      }
+
+      &.icons-container__icon--background2 {
+        @include sprite(22px, 50px, -339px, -284px);
+      }
+
+      &.icons-container__icon--background3 {
+        @include sprite(47px, 50px, -80px, -284px);
+      }
+
+      &.icons-container__icon--background4 {
+        @include sprite(47px, 50px, -147px, -284px);
+      }
+
+      &.icons-container__icon--background5 {
+        @include sprite(43px, 50px, -214px, -284px);
+      }
+
+      &.icons-container__icon--background6 {
+        @include sprite(42px, 50px, -277px, -284px);
+      }
+
+      &.icons-container__icon--background7 {
+        @include sprite(56px, 50px, -246px, -147px);
+      }
+    }
+  }
+}
+
+@mixin item-description() {
+  display: flex;
+  flex-direction: column;
+
+  .item-description__name {
+    font-family: "SourceSansProLight", serif;
+    line-height: 36px;
+    font-weight: 300;
+    font-size: 28px;
+    color: $dark-font-color;
+    margin-bottom: 5px;
+  }
+
+  .item-description__price {
+    font-family: "SourceSansProBold", sans-serif;
+    line-height: 36px;
+    font-weight: bold;
+    font-size: 28px;
+    color: $dark-font-color;
+  }
+}
+
+@mixin author-container($user-src) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+
+  .author-container__photo {
+    display: flex;
+    background: url($user-src);
+    width: 68px;
+    height: 68px;
+    margin-bottom: 12px;
+  }
+
+  .author-container__name {
+    display: flex;
+    font-family: "SourceSansProSemibold", sans-serif;
+    color: #578884;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
+    margin-bottom: 17px;
+  }
+
+  .author-container__topic {
+    display: flex;
+    font-size: 50px;
+    line-height: 53px;
+    color: $dark-font-color;
+    font-family: "SourceSansProLight", serif;
+    margin-top: 5px;
+    padding-left: 8px;
+  }
+}
+
+@mixin item-container($user-src) {
+  @extend .display-flex-row;
+
+  width: 1116px;
+  height: 375px;
+  overflow: hidden;
+
+  .item-description {
+    @include item-description();
+
+    padding-left: 16px;
+    padding-top: 35px;
+  }
+
+  .item__image-container {
+    display: flex;
+    margin-left: 55px;
+
+    .item__image {
+      margin-top: 109px;
+      width: 311px;
+      height: 307px;
+    }
+  }
+
+  .author-container {
+    @include author-container($user-src);
+
+    margin-top: 94px;
+    margin-left: 165px;
+  }
+}
+
+@mixin zig-zag($side, $color) {
+  width: 6px;
+  height: 376px;
+
+  @if $side == "left" {
+    background: linear-gradient(-137deg, $color 6px, transparent 0), linear-gradient(320deg, $color 6px, transparent 0);
+    background-position: left bottom;
+  }
+
+  @else if($side == "right") {
+    background: linear-gradient(45deg, $color 6px, transparent 0), linear-gradient(135deg, $color 6px, transparent 0);
+    background-position: right bottom;
+  }
+
+  background-repeat: repeat-y;
+  background-size: 10px 10px;
+}
+
+@mixin menu-content-checked($content-alias) {
+  &.menu__item-radio--#{$content-alias}:checked ~ .menu-icons {
+    & .menu__label--#{$content-alias}-clear {
+      @extend .item-radio__label--selected;
+    }
+
+    & .menu__label--#{$content-alias} {
+      display: none;
+    }
+  }
+
+  &.menu__item-radio--#{$content-alias}:checked ~ .aside-container .menu-content--#{$content-alias} {
+    display: flex;
+  }
+}
+
+@mixin item-image-name($font-color) {
+  @extend .font-regular-size24-height31;
+
+  color: $font-color;
+  display: inline-block;
+}
+
+@mixin image-collection-name($font-color) {
+  height: 18px;
+  width: 79px;
+  font-size: 14px;
+  line-height: 18px;
+  color: $font-color;
+  font-family: "SourceSansProRegular", sans-serif;
+  display: inline-block;
+  font-weight: bold;
+}

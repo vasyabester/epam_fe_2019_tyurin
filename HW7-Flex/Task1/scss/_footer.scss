@@ -1,0 +1,95 @@
+.footer {
+  @extend .display-flex-row;
+
+  width: 1500px;
+  height: 375px;
+  background-image: url("../img/footer.png");
+  color: white;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding: 0 0 30px 42px;
+
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+
+    .footer__main-icons {
+      @extend .display-flex-row;
+
+      margin: 0 0 37px 27px;
+
+      .footer__image {
+        margin-right: 68px;
+
+        &.footer__image--pepper {
+          @include sprite(31px, 71px, -335px, -101px);
+        }
+
+        &.footer__image--kettle {
+          @include sprite(54px, 71px, -172px, -147px);
+        }
+
+        &.footer__image--shaker {
+          @include sprite(36px, 71px, -335px, -10px);
+
+          margin-right: 54px;
+        }
+
+        &.footer__image4--stand {
+          @include sprite(71px, 71px, -81px, -147px);
+        }
+      }
+    }
+
+    .footer__text {
+      @extend .font-regular-size24-height31;
+    }
+  }
+
+  .footer__logo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-end;
+    margin-bottom: 29px;
+
+    .footer__logo-name {
+      @extend .font-regular-size24-height31;
+
+      margin-right: 91px;
+    }
+
+    .footer__logo-icon {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      padding-right: 116px;
+
+      .square__line {
+        @extend .display-flex-row;
+      }
+
+      .square {
+        width: 34px;
+        height: 34px;
+
+        &.square--red {
+          background-color: $soft-pink;
+          display: flex;
+          margin-left: 34px;
+        }
+
+        &.square--blue {
+          display: inline-flex;
+          background-color: $soft-blue;
+        }
+
+        &.square--green {
+          display: inline-flex;
+          background-color: $soft-green;
+        }
+      }
+    }
+  }
+}
