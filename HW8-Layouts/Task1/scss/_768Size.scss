@@ -1,0 +1,218 @@
+@media (max-width: 767px) and (min-width: 480px) {
+  .header {
+    width: 768px;
+    height: 852px;
+    background-image: url("../img/768/header.png");
+
+    .header-container {
+      .header__title {
+        margin-top: 54px;
+      }
+
+      .header__description {
+        margin: 36px 0 20px 0;
+        font-size: 32px;
+        line-height: 39px;
+      }
+
+      .header__text {
+        font-size: 16px;
+        width: 533px;
+        margin-left: 3px;
+      }
+
+      .header__form-container {
+        .header__form {
+          margin-top: 34px;
+        }
+      }
+    }
+  }
+
+  .benefits {
+    width: 768px;
+    height: 720px;
+    padding-top: 60px;
+    padding-left: 40px;
+    flex-flow: column;
+    box-sizing: border-box;
+
+    .benefits__description {
+      width: 570px;
+      display: flex;
+      flex-direction: column;
+
+      .benefits__description-header {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 29px;
+        width: 450px;
+      }
+
+      .benefits__description-content {
+        font-size: 16px;
+        line-height: 27px;
+        margin: 2px 0 22px 0;
+      }
+    }
+
+    .benefits__articles {
+      padding-left: 0;
+      padding-top: 9px;
+      flex-flow: row;
+
+      .benefits__item {
+        width: 330px;
+        margin-right: 29px;
+
+        .benefits__header {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          margin-top: 16px;
+        }
+
+        .benefits__text {
+          font-size: 16px;
+          line-height: 23px;
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+
+  .features {
+    width: 768px;
+    height: 1274px;
+    padding-top: 60px;
+
+    .features__description {
+      .features__header-description {
+        font-size: 30px;
+        line-height: 46px;
+      }
+
+      .features__text {
+        width: 485px;
+        font-size: 16px;
+        line-height: 27px;
+      }
+    }
+
+    .feature-container {
+      display: flex;
+      flex-direction: column;
+      padding-left: 40px;
+      margin-top: 29px;
+
+      .features__list {
+        padding-left: 56px;
+        padding-top: 43px;
+        position: relative;
+
+        .features__item {
+          &:first-child::before {
+            left: 0;
+            top: 35px;
+          }
+
+          &:nth-child(2)::before {
+            left: 0;
+            top: 170px;
+          }
+
+          &:nth-child(3)::before {
+            left: 0;
+            top: 307px;
+          }
+
+          .features__item-description {
+            width: 624px;
+            margin-bottom: 47px;
+          }
+        }
+      }
+    }
+  }
+
+  .images {
+    width: 768px;
+    height: 560px;
+  }
+
+  .faq {
+    box-sizing: border-box;
+    padding-top: 61px;
+    width: 768px;
+
+    .faq__description {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .faq__header {
+        font-size: 30px;
+        line-height: 46px;
+        text-align: center;
+      }
+
+      .faq__text {
+        line-height: 19px;
+      }
+    }
+
+    .faq__container {
+      padding: 37px 0 0 41px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 27px;
+
+      .faq__article {
+        width: 690px;
+        margin: 0 27px 31px 0;
+        background-color: $features-bg-color;
+
+        .faq__article-description {
+          display: none;
+          width: 627px;
+          margin-top: 3px;
+          padding-left: 11px;
+        }
+
+        .faq__article-header {
+          width: 690px;
+          background-color: $features-bg-color;
+          height: 50px;
+          padding: 14px 15px 0 10px;
+          box-sizing: border-box;
+
+          .faq__label {
+            display: inline-flex;
+
+            &::after {
+              @include sprite(20px, 20px, -65px, -65px);
+
+              content: '';
+              float: right;
+            }
+          }
+        }
+
+        .faq__checkbox:checked {
+          & ~ .faq__article-description {
+            display: flex;
+          }
+
+          & ~ .faq__article-header .faq__label::after {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    width: 768px;
+    padding: 10px 0 0 4px;
+  }
+}

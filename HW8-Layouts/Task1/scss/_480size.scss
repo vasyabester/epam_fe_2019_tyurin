@@ -1,0 +1,222 @@
+@media (max-width: 480px) and (min-width: 320px) {
+  .header {
+    width: 480px;
+    height: 1011px;
+    background-image: url("../img/480/header.png");
+
+    .header-container {
+      .header__title {
+        margin-top: 27px;
+      }
+
+      .header__description {
+        font-size: 30px;
+        line-height: 38px;
+        width: 342px;
+        margin: 80px 0 0 35px;
+        text-align: center;
+      }
+
+      .header__text {
+        font-size: 16px;
+        width: 371px;
+        margin: 46px 20px 0 21px;
+      }
+
+      .header__form-container {
+        margin-top: 64px;
+
+        .header__form {
+          margin-top: 34px;
+        }
+      }
+    }
+  }
+
+  .benefits {
+    width: 480px;
+    padding-top: 65px;
+    padding-left: 15px;
+    flex-flow: column;
+    box-sizing: border-box;
+
+    .benefits__description {
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+
+      .benefits__description-header {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 29px;
+        width: 450px;
+      }
+
+      .benefits__description-content {
+        font-size: 16px;
+        line-height: 27px;
+        margin: 2px 0 22px 0;
+      }
+    }
+
+    .benefits__articles {
+      padding: 9px 0 0 0;
+      margin-top: 9px;
+      flex-flow: column;
+
+      .benefits__item {
+        width: 450px;
+        margin: 0 29px 33px 0;
+
+        .benefits__header {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          margin-top: 6px;
+        }
+
+        .benefits__text {
+          font-size: 16px;
+          line-height: 23px;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+
+  .features {
+    width: 480px;
+    padding-top: 47px;
+
+    .features__description {
+      .features__header-description {
+        font-size: 30px;
+        line-height: 46px;
+      }
+
+      .features__text {
+        font-size: 16px;
+        margin-top: 20px;
+        width: 449px;
+        line-height: 25px;
+      }
+    }
+
+    .feature-container {
+      display: flex;
+      flex-direction: column;
+      padding-left: 15px;
+      margin-top: 33px;
+
+      .features__list {
+        padding-left: 50px;
+        padding-top: 34px;
+        position: relative;
+
+        .features__item {
+          &:first-child::before {
+            left: 0;
+            top: 26px;
+          }
+
+          &:nth-child(2)::before {
+            left: 0;
+            top: 194px;
+          }
+
+          &:nth-child(3)::before {
+            left: 0;
+            top: 362px;
+          }
+
+          .features__item-description {
+            width: 400px;
+            margin-bottom: 47px;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .images {
+    width: 480px;
+    margin-top: 20px;
+  }
+
+  .faq {
+    box-sizing: border-box;
+    padding-top: 65px;
+    width: 480px;
+
+    .faq__description {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .faq__header {
+        font-size: 30px;
+        line-height: 46px;
+        text-align: center;
+      }
+
+      .faq__text {
+        line-height: 19px;
+        margin-top: 20px;
+      }
+    }
+
+    .faq__container {
+      padding: 36px 0 0 15px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+
+      .faq__article {
+        margin: 0 27px 20px 0;
+        background-color: $features-bg-color;
+
+        .faq__article-description {
+          display: none;
+          margin-top: 3px;
+          padding-left: 11px;
+          width: 430px;
+        }
+
+        .faq__article-header {
+          width: 450px;
+          background-color: $features-bg-color;
+          height: 50px;
+          padding: 14px 10px 0 10px;
+          box-sizing: border-box;
+
+          .faq__label {
+            display: inline-flex;
+
+            &::after {
+              @include sprite(20px, 20px, -65px, -65px);
+
+              content: '';
+              float: right;
+            }
+          }
+        }
+
+        .faq__checkbox:checked {
+          & ~ .faq__article-description {
+            display: flex;
+          }
+
+          & ~ .faq__article-header .faq__label::after {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    width: 480px;
+    padding: 10px 0 0 4px;
+  }
+}

@@ -1,0 +1,5 @@
+@include font-face($lucida-grande-bold, $fontsource-lucida-grande-bold-path, bold);
+@include font-face($lucida-grande-regular, $fontsource-lucida-grande-regular-path);
+@include font-face($libre-franklin-bold, $fontsource-libre-franklin-bold-path, bold);
+@include font-face($libre-franklin-medium, $fontsource-libre-franklin-medium-path, 500);
+@include font-face($libre-franklin-regular, $fontsource-libre-franklin-regular-path);
