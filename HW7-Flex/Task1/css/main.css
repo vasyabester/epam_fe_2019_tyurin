@@ -184,10 +184,9 @@ input[type=radio] {
   display: none;
 }
 .menu .menu-content__header .menu-content__close-icon {
-  @mi background: url(../img/sprites.png) -340px -197px;
-  background-repeat: no-repeat;
   width: 25px;
   height: 25px;
+  background: url("../img/sprites.png") -340px -197px;
   display: inline-flex;
   cursor: pointer;
 }
