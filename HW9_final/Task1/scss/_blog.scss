@@ -1,0 +1,604 @@
+.header {
+  &--blog-height {
+    height: 80px;
+  }
+}
+
+.blog {
+  padding-top: 56px;
+
+  &__header-container {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    text-align: center;
+  }
+
+  &__header {
+    @extend .primary-header;
+  }
+
+  &__search-container {
+    @include make-xs-column(4);
+    @include make-sm-column(5);
+    @include make-md-column(7);
+    @include make-lg-column(12);
+
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+
+    &::after {
+      @include sprite(20px, 20px, -10px, -246px);
+
+      content: '';
+      position: absolute;
+      right: 34px;
+      top: 62px;
+    }
+  }
+
+  &__search {
+    margin-top: 49px;
+    padding: 10px 20px 10px 10px;
+    box-sizing: border-box;
+    height: 45px;
+    width: 320px;
+    border: 1px solid $dark-grey-light;
+    border-radius: 5px;
+    color: $dark-grey-light;
+    font-family: "HindSiliguriRegular", sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  &__video {
+    margin-top: 31px;
+    margin-left: 38px;
+    font-size: 0;
+
+    &-file-container {
+      @include make-lg-column(6);
+
+      position: relative;
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+      float: left;
+
+      &::after {
+        @include sprite(72px, 72px, -10px, -10px);
+
+        content: '';
+        position: absolute;
+        left: 41%;
+        top: 39%;
+      }
+    }
+
+    &-file {
+      position: relative;
+    }
+
+    &-post {
+      @include make-lg-column(6);
+
+      width: 600px;
+      height: 379px;
+      background-color: $rose;
+      display: inline-block;
+      position: relative;
+      padding: 26px;
+      padding-left: 37px;
+      vertical-align: top;
+      right: 40px;
+
+      &-avatar {
+        width: 52px;
+        height: 52px;
+        background-image: url("../img/neil.png");
+        display: inline-block;
+        margin-left: 2px;
+      }
+
+      &-data-container {
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: top;
+        padding-left: 17px;
+      }
+
+      &-name {
+        @extend .blog-name;
+
+        display: block;
+        vertical-align: top;
+      }
+
+      &-message-container {
+        @extend .blog-data;
+
+        display: block;
+      }
+
+      &-message {
+        @extend .post-message-info;
+
+        &-icon {
+          @include sprite(14px, 13px, -296px, -87px);
+
+          display: inline-block;
+        }
+
+        &-gold-star-icon {
+          @include sprite(14px, 13px, -296px, -153px);
+
+          display: inline-block;
+        }
+
+        &-half-star-icon {
+          @include sprite(14px, 13px, -296px, -120px);
+
+          display: inline-block;
+        }
+
+        &-grey-star-icon {
+          @include sprite(14px, 13px, -296px, -186px);
+
+          display: inline-block;
+        }
+      }
+
+      &-article {
+        margin-top: 32px;
+        margin-left: 3px;
+
+        &-header {
+          @extend .blog-article-header;
+        }
+
+        &-text {
+          @extend .blog-article-text;
+
+          max-width: 460px;
+        }
+
+        &-button {
+          @extend .secondary-button;
+
+          width: 121px;
+          margin-top: 32px;
+        }
+      }
+
+      &::after {
+        border-left: 3px solid $white;
+        border-bottom: 3px solid $white;
+        border-radius: 2px;
+        position: absolute;
+        content: "";
+        width: 78px;
+        height: 70px;
+        display: inline-block;
+        top: 0;
+        right: 0;
+      }
+
+      &::before {
+        @include sprite(40px, 40px, -10px, -186px);
+
+        content: '';
+        position: absolute;
+        left: 90%;
+        top: 4%;
+      }
+    }
+  }
+
+  &__audio {
+    margin-left: 38px;
+    margin-top: 42px;
+    font-size: 0;
+
+    &-file-container {
+      @include make-lg-column(6);
+
+      position: relative;
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+      float: left;
+    }
+
+    &-file {
+      position: relative;
+    }
+
+    &-post {
+      @include make-lg-column(6);
+
+      width: 600px;
+      height: 379px;
+      background-color: $rose;
+      display: inline-block;
+      position: relative;
+      padding: 26px;
+      padding-left: 37px;
+      vertical-align: top;
+      right: 40px;
+      box-shadow: 0 15px 5px -12px rgba(0, 0, 0, 0.2);
+
+      &-avatar {
+        width: 52px;
+        height: 52px;
+        background-image: url("../img/sarah.png");
+        display: inline-block;
+        margin-left: 2px;
+      }
+
+      &-data-container {
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: top;
+        padding-left: 17px;
+      }
+
+      &-name {
+        @extend .blog-name;
+
+        display: block;
+        vertical-align: top;
+      }
+
+      &-message-container {
+        @extend .blog-data;
+
+        display: block;
+      }
+
+      &-message {
+        @extend .post-message-info;
+
+        &-icon {
+          @include sprite(14px, 13px, -296px, -87px);
+
+          display: inline-block;
+        }
+
+        &-gold-star-icon {
+          @include sprite(14px, 13px, -296px, -153px);
+
+          display: inline-block;
+        }
+
+        &-half-star-icon {
+          @include sprite(14px, 13px, -296px, -120px);
+
+          display: inline-block;
+        }
+
+        &-grey-star-icon {
+          @include sprite(14px, 13px, -296px, -186px);
+
+          display: inline-block;
+        }
+      }
+
+      &-article {
+        margin-top: 32px;
+        margin-left: 3px;
+
+        &-header {
+          @extend .blog-article-header;
+        }
+
+        &-text {
+          @extend .blog-article-text;
+
+          max-width: 460px;
+          margin-top: -11px;
+        }
+
+        &-button {
+          @extend .secondary-button;
+
+          width: 121px;
+          margin-top: 32px;
+        }
+      }
+
+      &::after {
+        border-left: 3px solid $white;
+        border-bottom: 3px solid $white;
+        border-radius: 2px;
+        position: absolute;
+        content: "";
+        width: 78px;
+        height: 70px;
+        display: inline-block;
+        top: 0;
+        right: 0;
+      }
+
+      &::before {
+        @include sprite(37px, 40px, -70px, -186px);
+
+        content: '';
+        position: absolute;
+        top: 16px;
+        right: 23px;
+      }
+    }
+  }
+
+  &__picture {
+    margin-top: 50px;
+    margin-left: 38px;
+    font-size: 0;
+
+    &-file-container {
+      @include make-lg-column(6);
+
+      position: relative;
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+      float: left;
+    }
+
+    &-file {
+      position: relative;
+    }
+
+    &-post {
+      @include make-lg-column(6);
+
+      width: 600px;
+      height: 379px;
+      background-color: $rose;
+      display: inline-block;
+      position: relative;
+      padding: 26px;
+      padding-left: 37px;
+      vertical-align: top;
+      right: 40px;
+
+      &-avatar {
+        width: 52px;
+        height: 52px;
+        background-image: url("../img/grace.png");
+        display: inline-block;
+        margin-left: 2px;
+      }
+
+      &-data-container {
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: top;
+        padding-left: 17px;
+      }
+
+      &-name {
+        @extend .blog-name;
+
+        display: block;
+        vertical-align: top;
+      }
+
+      &-message-container {
+        @extend .blog-data;
+
+        display: block;
+      }
+
+      &-message {
+        @extend .post-message-info;
+
+        &-icon {
+          @include sprite(14px, 13px, -296px, -87px);
+
+          display: inline-block;
+        }
+
+        &-gold-star-icon {
+          @include sprite(14px, 13px, -296px, -153px);
+
+          display: inline-block;
+        }
+
+        &-half-star-icon {
+          @include sprite(14px, 13px, -296px, -120px);
+
+          display: inline-block;
+        }
+
+        &-grey-star-icon {
+          @include sprite(14px, 13px, -296px, -186px);
+
+          display: inline-block;
+        }
+      }
+
+      &-article {
+        margin-top: 32px;
+        margin-left: 3px;
+
+        &-header {
+          @extend .blog-article-header;
+        }
+
+        &-text {
+          @extend .blog-article-text;
+
+          max-width: 460px;
+        }
+
+        &-button {
+          @extend .secondary-button;
+
+          width: 121px;
+          margin-top: 32px;
+        }
+      }
+
+      &::after {
+        border-left: 3px solid $white;
+        border-bottom: 3px solid $white;
+        border-radius: 2px;
+        position: absolute;
+        content: "";
+        width: 78px;
+        height: 70px;
+        display: inline-block;
+        top: 0;
+        right: 0;
+      }
+
+      &::before {
+        @include sprite(40px, 40px, -187px, -75px);
+
+        content: '';
+        position: absolute;
+        top: 16px;
+        right: 23px;
+      }
+    }
+  }
+
+  &__alex-message {
+    @include make-lg-column(12);
+
+    margin-top: 48px;
+    font-size: 0;
+    position: relative;
+
+    &-post {
+      padding: 28px 0 0 22px;
+      background-color: $rose;
+      position: relative;
+      height: 379px;
+
+      &::after {
+        border-left: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+        border-radius: 2px;
+        position: absolute;
+        content: "";
+        width: 78px;
+        height: 70px;
+        display: inline-block;
+        top: 0;
+        right: 0;
+      }
+
+      &::before {
+        width: 40px;
+        height: 40px;
+
+        @include sprite(36px, 40px, -127px, -186px);
+
+        content: "";
+        position: absolute;
+        top: 16px;
+        right: 23px;
+      }
+
+      &-avatar {
+        width: 52px;
+        height: 52px;
+        background-image: url("../img/alex.png");
+        display: inline-block;
+        margin-left: 2px;
+      }
+
+      &-data-container {
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: top;
+        padding-left: 17px;
+      }
+
+      &-name {
+        @extend .blog-name;
+
+        display: block;
+        vertical-align: top;
+      }
+
+      &-message-container {
+        @extend .blog-data;
+
+        display: block;
+      }
+
+      &-message {
+        @extend .post-message-info;
+
+        &-icon {
+          @include sprite(14px, 13px, -296px, -87px);
+
+          display: inline-block;
+        }
+
+        &-gold-star-icon {
+          @include sprite(14px, 13px, -296px, -153px);
+
+          display: inline-block;
+        }
+
+        &-half-star-icon {
+          @include sprite(14px, 13px, -296px, -120px);
+
+          display: inline-block;
+        }
+
+        &-grey-star-icon {
+          @include sprite(14px, 13px, -296px, -186px);
+
+          display: inline-block;
+        }
+      }
+
+      &-article {
+        margin-top: 32px;
+        margin-left: 3px;
+
+        &-header {
+          @extend .blog-article-header;
+        }
+
+        &-text {
+          @extend .blog-article-text;
+
+          max-width: 1046px;
+        }
+
+        &-button {
+          @extend .secondary-button;
+
+          width: 121px;
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  &__read-more {
+    @include make-lg-column(12);
+
+    text-align: center;
+    margin-bottom: 79px;
+    margin-top: 62px;
+
+    &-button {
+      @extend .primary-button;
+
+      width: 121px;
+    }
+  }
+}

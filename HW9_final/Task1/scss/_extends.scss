@@ -91,6 +91,15 @@
   color: $dark-grey-light;
 }
 
+.post-message-info {
+  font-family: "HindSiliguriRegular", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  color: $silver;
+  display: inline-block;
+  margin-right: 5px;
+}
+
 .paginations-primary {
   box-sizing: border-box;
   border: 1px solid $dark-grey-light;
@@ -134,4 +143,85 @@
   font-size: 15px;
   line-height: 25px;
   text-align: center;
+}
+
+.blog-name {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriMedium", sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+}
+
+.blog-data {
+  color: $silver;
+  font-family: "HindSiliguriRegular", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.blog-article-header {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriMedium", sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.blog-article-text {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriRegular", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.post-header-page {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriSemiBold", sans-serif;
+  font-size: 28px;
+  line-height: 37px;
+}
+
+.latest-post-head {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriSemiBold", sans-serif;
+  font-size: 24px;
+  line-height: 39px;
+}
+
+.latest-post-container-head {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriMedium", sans-serif;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.blog-article-text-bold {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriBold", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.post-notes-text {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriLight", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.aside-container {
+  background-color: $rose;
+  border-radius: 5px;
+  margin-top: 70px;
+  padding: 30px;
+}
+
+.aside-header {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriSemiBold", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 39px;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 3px;
+  margin-bottom: 16px;
 }

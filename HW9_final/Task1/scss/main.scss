@@ -7,7 +7,11 @@
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
 @import "variables";
 @import "color-matrix";
+@import "global";
 @import "mixins";
 @import "typography";
 @import "extends";
-@import "styles";
+@import "style";
+@import "index";
+@import "blog";
+@import "post";
