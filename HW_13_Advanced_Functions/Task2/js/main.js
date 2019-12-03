@@ -15,8 +15,11 @@ const ladder = {
     return this;
   },
   snowStep() {
-    return `${this.follower} = ${this.step}`;
+    // eslint-disable-next-line
+    console.log(`${this.follower} = ${this.step}`);
+
+    return this;
   },
 };
 
-ladder.up().down().up().up().snowStep();
+ladder.up().down().up().up().snowStep().up().snowStep();
