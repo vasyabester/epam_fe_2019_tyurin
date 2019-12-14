@@ -1,0 +1,900 @@
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  min-height: 100%;
+  height: 100%;
+}
+
+.header {
+  .container {
+    padding-top: 25px;
+
+    .row {
+      .header__logo {
+        color: $dark-grey;
+        font-family: "HindSiliguriBold", sans-serif;
+        font-size: 17px;
+        line-height: 28px;
+      }
+
+      .header__nav {
+        padding-left: 24px;
+        padding-top: 2px;
+
+        .header__navigation-item {
+          color: $dark-grey-light;
+          font-family: "HindSiliguriRegular", sans-serif;
+          font-size: 15px;
+          line-height: 25px;
+          margin-right: 37px;
+          text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+            border-bottom: 1px solid white;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .header-ideas {
+    padding-top: 56px;
+
+    &__name {
+      @include make-xs-column(5);
+      @include make-sm-column(5);
+      @include make-md-column(7);
+      @include make-lg-column(5);
+
+      color: $dark-grey-light;
+      font-size: 28px;
+      line-height: 37px;
+      font-family: "HindSiliguriSemiBold", sans-serif;
+    }
+
+    &__article {
+      @include make-xs-column(5);
+      @include make-sm-column(6);
+      @include make-md-column(8);
+      @include make-lg-column(7);
+
+      padding-top: 2px;
+      color: $dark-grey-light;
+      font-size: 17px;
+      line-height: 26px;
+      font-family: "HindSiliguriRegular", sans-serif;
+    }
+
+    &__buttons-container {
+      @include make-xs-column(5);
+      @include make-sm-column(5);
+      @include make-md-column(4);
+      @include make-lg-column(3);
+    }
+
+    &__primary-button {
+      @extend .primary-button;
+
+      &--explore {
+        width: 100px;
+        margin-top: 23px;
+      }
+    }
+
+    &__secondary-button {
+      @extend .secondary-button;
+
+      &--learn-more {
+        width: 125px;
+        margin-top: 23px;
+        margin-left: 22px;
+      }
+    }
+  }
+
+  &__home-button {
+    @extend .secondary-button;
+
+    width: 45px;
+    position: fixed;
+    display: inline-block;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.3;
+    text-align: center;
+    padding-top: 9px;
+
+    &:hover {
+      opacity: 1;
+      background-color: $white;
+    }
+
+    &-arrow {
+      @include sprite(18px, 11px, -123px, -246px);
+
+      display: inline-block;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.about-us {
+  padding-top: 64px;
+
+  &__header-container {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    text-align: center;
+  }
+
+  &__header {
+    @extend .primary-header;
+  }
+
+  &__header-text {
+    @include make-xs-column(4);
+    @include make-sm-column(6);
+    @include make-md-column(8);
+    @include make-lg-column(12);
+
+    text-align: center;
+    font-family: "LucidaGrandeRegular", sans-serif;
+    color: $dark-grey-light;
+    font-size: 17px;
+    line-height: 26px;
+    padding-top: 9px;
+  }
+
+  .notes-container {
+    @include make-xs-column(6);
+    @include make-sm-column(6);
+    @include make-md-column(7);
+    @include make-lg-column(3);
+
+    margin-top: 61px;
+
+    .notes-container__item {
+      width: 260px;
+      height: 184px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+
+      &-image-typography {
+        @include sprite(65px, 65px, -102px, -10px);
+
+        display: inline-block;
+        position: absolute;
+        box-sizing: border-box;
+        top: 45px;
+        left: 116px;
+      }
+
+      &-image-icon-set {
+        @include sprite(65px, 56px, -95px, -102px);
+
+        display: inline-block;
+        position: absolute;
+        box-sizing: border-box;
+        top: 253px;
+        left: 116px;
+      }
+
+      &-image-accurate {
+        @include sprite(65px, 64px, -10px, -102px);
+
+        display: inline-block;
+        position: absolute;
+        box-sizing: border-box;
+        top: 453px;
+        left: 116px;
+      }
+
+      &-text-typorgaphy {
+        @extend .about-us-items-text;
+
+        position: absolute;
+        top: 132px;
+        left: 101px;
+      }
+
+      &-text-icon-set {
+        @extend .about-us-items-text;
+
+        position: absolute;
+        top: 338px;
+        left: 117px;
+      }
+
+      &-text-accurate {
+        @extend .about-us-items-text;
+
+        position: absolute;
+        top: 544px;
+        left: 113px;
+      }
+
+      &--green {
+        clip-path: polygon(0 0, 88% 0, 88% 19%, 100% 19%, 100% 100%, 0 100%);
+        background: linear-gradient(108.56deg, rgba(230, 246, 65, 0.5) 0%, rgba(41, 252, 154, 0.5) 100%);
+        background-color: $pink;
+      }
+
+      &--blue {
+        clip-path: polygon(0 100%, 0 20%, 12% 20%, 12% 0, 100% 0, 100% 100%);
+        background: linear-gradient(236.77deg, rgba(247, 247, 247, 0.5) 0%, rgba(35, 86, 255, 0.5) 100%);
+        background-color: $light-blue;
+      }
+
+      &--pink {
+        clip-path: polygon(0 0, 88% 0, 88% 19%, 100% 19%, 100% 100%, 0 100%);
+        background: linear-gradient(236.42deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 9, 9, 0.5) 100%);
+        background-color: $pink;
+      }
+    }
+  }
+
+  .notes-video-container {
+    margin-top: 61px;
+
+    @include make-lg-column(9);
+    @include make-md-column(12);
+    @include make-sm-column(9);
+    @include make-xs-column(9);
+
+    .notes-video-play {
+      @include sprite(72px, 72px, -10px, -10px);
+
+      position: absolute;
+      top: 259px;
+      left: 414px;
+    }
+  }
+}
+
+.latest-posts {
+  margin-top: 44px;
+
+  &__header-container {
+    @include make-xs-column(6);
+    @include make-sm-column(8);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    text-align: center;
+  }
+
+  &__header {
+    @extend .primary-header;
+  }
+
+  .latest-posts__container {
+    margin-top: 9px;
+
+    @include make-xs-column(6);
+    @include make-sm-column(8);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    text-align: center;
+
+    .latest-posts__header-text {
+      font-family: "HindSiliguriRegular", sans-serif;
+      font-size: 17px;
+      line-height: 26px;
+      text-align: center;
+      display: inline-flex;
+      width: 442px;
+    }
+  }
+
+  .article-container {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(10);
+    @include make-lg-column(4);
+
+    .latest-posts__image {
+      width: 360px;
+      height: 244px;
+    }
+  }
+
+  .latest-posts-articals-container {
+    @include make-xs-column(4);
+    @include make-sm-column(6);
+    @include make-md-column(8);
+    @include make-lg-column(12);
+
+    padding: 0;
+    margin-top: 61px;
+
+    .latest-posts__item {
+      @include make-xs-column(7);
+      @include make-sm-column(7);
+      @include make-md-column(7);
+      @include make-lg-column(4);
+
+      &-header {
+        @extend .post-header;
+
+        margin-top: 20px;
+        margin-bottom: 6px;
+      }
+
+      &-text {
+        @extend .post-text;
+
+        margin-bottom: 19px;
+      }
+    }
+
+    .latest-posts__message-info {
+      @extend .post-message-info;
+    }
+
+    .latest-posts__message-icon {
+      @include sprite(14px, 13px, -296px, -87px);
+
+      display: inline-block;
+    }
+  }
+}
+
+.latest-portfolio {
+  padding-top: 64px;
+
+  &__header-container {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    text-align: center;
+  }
+
+  &__header {
+    @extend .primary-header;
+  }
+
+  &__container {
+    @include make-xs-column(4);
+    @include make-sm-column(5);
+    @include make-md-column(8);
+    @include make-lg-column(12);
+
+    margin-top: 9px;
+    text-align: center;
+
+    .latest-portfolio__header-text {
+      font-family: "HindSiliguriRegular", sans-serif;
+      font-size: 17px;
+      line-height: 26px;
+      text-align: center;
+      display: inline-flex;
+      width: 442px;
+    }
+  }
+
+  &__item-container {
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(6);
+    @include make-lg-column(4);
+
+    margin-top: 61px;
+
+    .latest-portfolio__item {
+      width: 360px;
+      height: 244px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+
+      &-header {
+        @extend .latest-portfolio-image-header;
+      }
+
+      &-text {
+        @extend .latest-portfolio-image-text;
+
+        display: block;
+      }
+
+      //&--first {
+      //  background: url("../img/latestPortfolio/art-ocean.png") no-repeat;
+      //}
+      //
+      //&--second {
+      //  background: url("../img/latestPortfolio/city-guide.png") no-repeat;
+      //}
+      //
+      //&--third {
+      //  background: url("../img/latestPortfolio/mountains.png") no-repeat;
+      //}
+    }
+  }
+
+  .clear {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(4);
+    @include make-lg-column(4);
+  }
+
+  &__pagination {
+    @include make-xs-column(9);
+    @include make-sm-column(8);
+    @include make-md-column(4);
+    @include make-lg-column(4);
+
+    margin-top: 39px;
+
+    &-item {
+      @extend .paginations-primary;
+
+      &--right {
+        float: right;
+      }
+
+      .latest-portfolio__button {
+        @include sprite(18px, 11px, -123px, -246px);
+
+        display: inline-block;
+
+        &--left {
+          transform: rotate(90deg);
+        }
+
+        &--right {
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+
+  &__see-all-world-button-container {
+    @include make-lg-column(12);
+
+    text-align: center;
+    margin-top: 40px;
+
+    .latest-portfolio__see-all-world-button {
+      @extend .secondary-button;
+
+      width: 136px;
+    }
+  }
+}
+
+.testimonials {
+  height: 529px;
+  background-image: url("../img/testimonial.png");
+  width: 1440px;
+  margin-top: 61px;
+
+  &__header-container {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    text-align: center;
+  }
+
+  &__header {
+    @extend .primary-header;
+
+    margin: 79px 0 54px 0;
+  }
+
+  &__pagination-container {
+    @include make-xs-column(3);
+    @include make-sm-column(3);
+    @include make-md-column(2);
+    @include make-lg-column(3);
+
+    height: 265px;
+    margin-top: 110px;
+    padding: 0 10px;
+
+    .testimonials__pagination-item {
+      @extend .paginations-primary;
+
+      &--left {
+        float: right;
+      }
+
+      &--right {
+        float: left;
+      }
+
+      .testimonials__button {
+        @include sprite(18px, 11px, -123px, -246px);
+
+        display: inline-block;
+
+        &--left {
+          transform: rotate(90deg);
+        }
+
+        &--right {
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+
+  &__photo-container {
+    @include make-xs-column(5);
+    @include make-sm-column(5);
+    @include make-md-column(3);
+    @include make-lg-column(6);
+
+    padding-right: 0;
+
+    .testimonials__words-container {
+      background-color: #494a4d;
+      height: 265px;
+      width: 280px;
+      display: inline-block;
+      color: $white;
+      float: left;
+      box-sizing: border-box;
+      padding: 53px 47px;
+
+      .testimonials__quote {
+        color: $white;
+        font-family: "HindSiliguriSemiBold", sans-serif;
+        font-size: 17px;
+        line-height: 26px;
+
+        &::before {
+          //@include sprite(16px, 17px, -87px, -246px);
+          display: block;
+          content: '“';
+          font-family: "HindSiliguriBold", sans-serif;
+          font-size: 28px;
+          line-height: 45px;
+          position: absolute;
+          top: 31px;
+          left: 52px;
+        }
+      }
+
+      .testimonials__sign {
+        color: $white;
+        font-family: "HindSiliguriRegular", sans-serif;
+        font-size: 15px;
+        line-height: 25px;
+        margin-top: 38px;
+
+        &:last-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .testimonials__photo {
+      background: url("../img/user-photo.png");
+      height: 265px;
+      width: 280px;
+      display: inline-block;
+    }
+  }
+}
+
+.contact-us {
+  padding-top: 62px;
+
+  &__header-container {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    text-align: center;
+  }
+
+  &__header {
+    @extend .primary-header;
+  }
+
+  &__container {
+    @include make-xs-column(5);
+    @include make-sm-column(6);
+    @include make-md-column(10);
+    @include make-lg-column(12);
+
+    margin: 9px 0 60px 0;
+    text-align: center;
+
+    .contact-us__header-text {
+      font-family: "HindSiliguriRegular", sans-serif;
+      font-size: 17px;
+      line-height: 26px;
+      text-align: center;
+      display: inline-flex;
+      width: 442px;
+    }
+  }
+
+  &__network {
+    @include make-xs-column(2);
+    @include make-sm-column(2);
+    @include make-md-column(4);
+    @include make-lg-column(2);
+
+    padding-top: 24px;
+
+    &-icon {
+      display: inline-block;
+      margin-right: 22px;
+
+      &--fb {
+        @include sprite(14px, 23px, -296px, -10px);
+      }
+
+      &--insta {
+        @include sprite(23px, 23px, -252px, -141px);
+      }
+
+      &--ball {
+        @include sprite(23px, 23px, -252px, -98px);
+      }
+    }
+  }
+
+  .clear {
+    @include make-lg-column(2);
+  }
+
+  &__details-container {
+    @include make-lg-column(8);
+  }
+
+  &__details {
+    background-color: #f8f8f8;
+    height: 65px;
+    padding-top: 10px;
+    box-shadow: 0 8px 25px 0 #b7b7b7;
+
+    &-icon {
+      @include sprite(45px, 45px, -187px, -10px);
+
+      display: inline-block;
+      margin-left: 19px;
+    }
+
+    &-text {
+      line-height: 21px;
+      font-size: 17px;
+      color: #4d4949;
+      font-family: "HindSiliguriRegular", sans-serif;
+      display: inline-block;
+      vertical-align: top;
+      max-width: 580px;
+      margin-left: 11px;
+      padding-top: 3px;
+    }
+  }
+}
+
+.what-next-map {
+  height: 611px;
+  background-color: #f8f8f8;
+  width: 1440px;
+
+  .what-will-be-next {
+    @include make-lg-column(4);
+
+    margin-top: 88px;
+
+    &__header {
+      font-family: "HindSiliguriSemiBold", sans-serif;
+      font-size: 24px;
+      line-height: 39px;
+      margin-bottom: 41px;
+    }
+
+    &__item {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 30px;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        box-sizing: border-box;
+        height: 17px;
+        width: 17px;
+        border: 3px solid $dark-grey-light;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+        left: 0;
+        top: 5px;
+        border-radius: 8px;
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 124px;
+        width: 1px;
+        border: 1px solid #ddd;
+        top: 22px;
+        left: 7px;
+      }
+
+      &:last-child {
+        &::after {
+          content: none;
+        }
+      }
+
+      &-header {
+        font-family: "HindSiliguriBold", sans-serif;
+        font-size: 15px;
+        line-height: 26px;
+      }
+    }
+
+    &__text {
+      font-family: "HindSiliguriRegular", sans-serif;
+      font-size: 15px;
+      line-height: 26px;
+      padding-left: 12px;
+      padding-top: 5px;
+    }
+  }
+
+  .form-map-container {
+    @include make-lg-column(8);
+
+    .data-form {
+      width: 380px;
+      background-color: $white;
+      box-sizing: border-box;
+      padding: 30px 30px 63px 30px;
+      float: left;
+      box-shadow: 0 8px 25px 0 #b7b7b7;
+
+      &__label {
+        display: block;
+        font-family: "HindSiliguriRegular", sans-serif;
+        font-size: 17px;
+        line-height: 28px;
+        padding-bottom: 5px;
+        position: relative;
+
+        &--password::after {
+          @include sprite(14px, 8px, -296px, -249px);
+
+          content: '';
+          display: inline-block;
+          position: absolute;
+          right: 38px;
+          top: 10px;
+        }
+
+        &--password::before {
+          content: 'show';
+          display: inline-block;
+          position: absolute;
+          font-family: "HindSiliguriRegular", sans-serif;
+          right: 1px;
+          top: 2px;
+          font-size: 14px;
+          line-height: 23px;
+        }
+      }
+
+      &__input {
+        height: 45px;
+        width: 320px;
+        border-radius: 5px;
+        border: 1px solid $light-grey;
+        margin-bottom: 30px;
+      }
+
+      &__submit-button {
+        @extend .primary-button;
+
+        width: 144px;
+      }
+
+      &__details {
+        font-family: "HindSiliguriRegular", sans-serif;
+        font-size: 17px;
+        line-height: 28px;
+        margin-top: 40px;
+
+        &--email {
+          font-family: "HindSiliguriBold", sans-serif;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__map-image {
+      display: inherit;
+      box-shadow: 0 8px 25px 0 #b7b7b7;
+    }
+  }
+}
+
+.content {
+  padding: 0 0 71px;
+}
+
+.footer {
+  @include make-xs-column(6);
+  @include make-sm-column(7);
+  @include make-md-column(9);
+  @include make-lg-column(12);
+
+  height: 71px;
+  position: relative;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+
+  &__network {
+    @include make-xs-column(4);
+    @include make-sm-column(4);
+    @include make-md-column(4);
+    @include make-lg-column(5);
+
+    padding-top: 24px;
+
+    &-icon {
+      display: inline-block;
+      margin-right: 22px;
+
+      &--fb {
+        @include sprite(14px, 23px, -296px, -10px);
+      }
+
+      &--insta {
+        @include sprite(23px, 23px, -252px, -141px);
+      }
+
+      &--ball {
+        @include sprite(23px, 23px, -252px, -98px);
+      }
+    }
+  }
+
+  &__logo {
+    @include make-xs-column(0);
+    @include make-sm-column(0);
+    @include make-md-column(2);
+    @include make-lg-column(3);
+
+    color: $dark-grey-light;
+    font-family: "HindSiliguriBold", sans-serif;
+    font-size: 17px;
+    line-height: 28px;
+    margin-top: 21px;
+    margin-left: 38px;
+  }
+
+  &__copyright {
+    color: $light-black;
+    font-family: "HindSiliguriRegular", sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    margin-top: 22px;
+    position: absolute;
+    right: 143px;
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,139 @@
+const store = {
+  activePortfolioIndexes: [1, 2, 3],
+};
+
+initialize();
+/* eslint-disable */
+function initialize() {
+  const data = getMockedJson();
+
+  render(data);
+  addEventsToSliderPortfolio(data);
+  addSliderAutomaticalyMoveAbility(data);
+  addSwipeSliderAbility(data);
+}
+
+function render(data) {
+  const contentEl = document.getElementById('content');
+
+  renderAboutUs(contentEl, data);
+  renderLatestPosts(contentEl, data);
+  renderLatestPortfolio(contentEl, data);
+  renderTestimonials(contentEl, data);
+  renderContactUs(contentEl, data);
+}
+/* eslint-enable */
+
+function addSwipeSliderAbility(data) {
+  const sliderContainerEl = document.querySelector('.latest-portfolio').querySelectorAll('.container')[1];
+  let clickStartX = 0;
+
+  sliderContainerEl.addEventListener('mousedown', (event) => {
+    clickStartX = event.clientX;
+  });
+
+  sliderContainerEl.addEventListener('mouseup', (event) => {
+    if (event.clientX - clickStartX > 50) {
+      onLeftButtonClick(data);
+    } else if (event.clientX - clickStartX < -50) {
+      onRightButtonClick(data);
+    }
+  });
+}
+
+function addSliderAutomaticalyMoveAbility(data) {
+  const sliderContainerEl = document.querySelector('.latest-portfolio').querySelectorAll('.container')[1];
+
+  let slidesChanging = setInterval(() => {
+    onRightButtonClick(data);
+  }, 2000);
+
+  sliderContainerEl.addEventListener('mouseover', () => {
+    clearInterval(slidesChanging);
+  });
+
+  sliderContainerEl.addEventListener('mouseout', () => {
+    slidesChanging = setInterval(() => {
+      onRightButtonClick(data);
+    }, 2000);
+  });
+}
+
+function onRightButtonClick(data) {
+  const quantityOfPhotosOnPage = 3;
+  const portfolioListElements = Object.assign([], document.querySelectorAll('.latest-portfolio__item'));
+
+  portfolioListElements.forEach((element) => {
+    element.animate([
+      {left: '0'},
+      {left: '-482px'},
+    ], {
+      duration: 480,
+    });
+  });
+
+  for (let i = 0; i < quantityOfPhotosOnPage; i++) {
+    if (store.activePortfolioIndexes[i] < 10) {
+      store.activePortfolioIndexes[i] = ++store.activePortfolioIndexes[i];
+    } else {
+      store.activePortfolioIndexes[i] = 1;
+    }
+
+    setTimeout(() => {
+      const portfolioItem = data.portfolioList[store.activePortfolioIndexes[i] - 1];
+      portfolioListElements[i].style.backgroundImage = `url("img/latestPortfolio/${portfolioItem.name}.png")`;
+      portfolioListElements[i].querySelector('.latest-portfolio__item-header').textContent = portfolioItem.header;
+      portfolioListElements[i].querySelector('.latest-portfolio__item-text').textContent = portfolioItem.text;
+    }, 400);
+  }
+
+  return this;
+}
+
+function onLeftButtonClick(data) {
+  const quantityOfPhotosOnPage = 3;
+  const portfolioListElements = Object.assign([], document.querySelectorAll('.latest-portfolio__item'));
+
+  portfolioListElements.forEach((element) => {
+    element.animate([
+      {left: '0'},
+      {left: '400px'},
+    ], {
+      duration: 400,
+    });
+  });
+
+  for (let i = 0; i < quantityOfPhotosOnPage; i++) {
+    if (store.activePortfolioIndexes[i] > 1) {
+      store.activePortfolioIndexes[i] = --store.activePortfolioIndexes[i];
+    } else {
+      store.activePortfolioIndexes[i] = 10;
+    }
+
+    setTimeout(() => {
+      const portfolioItem = data.portfolioList[store.activePortfolioIndexes[i] - 1];
+      portfolioListElements[i].style.backgroundImage = `url("img/latestPortfolio/${portfolioItem.name}.png")`;
+      portfolioListElements[i].querySelector('.latest-portfolio__item-header').textContent = portfolioItem.header;
+      portfolioListElements[i].querySelector('.latest-portfolio__item-text').textContent = portfolioItem.text;
+    }, 400);
+  }
+
+  return this;
+}
+
+function addEventsToSliderPortfolio(data) {
+  const rightButton = document.querySelector('.latest-portfolio__pagination-item--right');
+  const leftButton = document.querySelector('.latest-portfolio__pagination-item--left');
+
+  rightButton.addEventListener(
+    'click', () => {
+      onRightButtonClick(data);
+    },
+    false);
+
+  leftButton.addEventListener(
+    'click', () => {
+      onLeftButtonClick(data);
+    },
+    false);
+}
