@@ -360,6 +360,16 @@
     text-align: center;
   }
 
+  &__slider-container {
+    max-width: 1149px;
+    overflow-x: hidden;
+  }
+
+  &__images-container {
+    display: flex;
+    flex-direction: row;
+  }
+
   &__header {
     @extend .primary-header;
   }

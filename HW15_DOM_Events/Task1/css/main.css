@@ -2518,6 +2518,14 @@ body {
     width: 100%;
   }
 }
+.latest-portfolio__slider-container {
+  max-width: 1149px;
+  overflow-x: hidden;
+}
+.latest-portfolio__images-container {
+  display: flex;
+  flex-direction: row;
+}
 .latest-portfolio__container {
   position: relative;
   float: left;

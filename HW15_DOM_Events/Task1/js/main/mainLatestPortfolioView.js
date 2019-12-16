@@ -21,23 +21,20 @@ function renderLatestPortfolio(contentEl, data) {
   `);
 
   const latestPortfolioContainer = document.createElement('div');
-  latestPortfolioContainer.className = 'container';
+  latestPortfolioContainer.className = 'container latest-portfolio__slider-container';
   sectionEl.append(latestPortfolioContainer);
 
   const latestPortfolioRowImageContainer = document.createElement('div');
-  latestPortfolioRowImageContainer.className = 'row';
-
+  latestPortfolioRowImageContainer.className = 'row latest-portfolio__images-container';
 
   for (let i = 0; i < 3; i++){
     const latestPortfolioItemContainer = document.createElement('div');
     latestPortfolioItemContainer.className = 'latest-portfolio__item-container';
-    // latestPortfolioItemContainer.hidden = !data.portfolioList[i].active;
     latestPortfolioRowImageContainer.append(latestPortfolioItemContainer);
 
     const latestPortfolioItem = document.createElement('div');
     latestPortfolioItem.className = 'latest-portfolio__item';
     latestPortfolioItem.style.backgroundImage = `url("img/latestPortfolio/${data.portfolioList[i].name}.png")`;
-    // latestPortfolioItem.setAttribute('hidden', !data.portfolioList[i].active);
     latestPortfolioItemContainer.append(latestPortfolioItem);
 
     const latestPortfolioItemHeader = document.createElement('span');

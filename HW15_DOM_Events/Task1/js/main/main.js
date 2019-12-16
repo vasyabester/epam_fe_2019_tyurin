@@ -61,20 +61,21 @@ function addSliderAutomaticalyMoveAbility(data) {
 
 function onRightButtonClick(data) {
   const quantityOfPhotosOnPage = 3;
+  const nextElement = appendNextElement(data, 'right');
   const portfolioListElements = Object.assign([], document.querySelectorAll('.latest-portfolio__item'));
 
   portfolioListElements.forEach((element) => {
     element.animate([
       {left: '0'},
-      {left: '-482px'},
+      {left: '-400px'},
     ], {
-      duration: 480,
+      duration: 500,
     });
   });
 
   for (let i = 0; i < quantityOfPhotosOnPage; i++) {
     if (store.activePortfolioIndexes[i] < 10) {
-      store.activePortfolioIndexes[i] = ++store.activePortfolioIndexes[i];
+      ++store.activePortfolioIndexes[i];
     } else {
       store.activePortfolioIndexes[i] = 1;
     }
@@ -84,7 +85,9 @@ function onRightButtonClick(data) {
       portfolioListElements[i].style.backgroundImage = `url("img/latestPortfolio/${portfolioItem.name}.png")`;
       portfolioListElements[i].querySelector('.latest-portfolio__item-header').textContent = portfolioItem.header;
       portfolioListElements[i].querySelector('.latest-portfolio__item-text').textContent = portfolioItem.text;
-    }, 400);
+
+      nextElement.remove();
+    }, 500);
   }
 
   return this;
@@ -92,6 +95,7 @@ function onRightButtonClick(data) {
 
 function onLeftButtonClick(data) {
   const quantityOfPhotosOnPage = 3;
+  const nextElement = appendNextElement(data, 'left');
   const portfolioListElements = Object.assign([], document.querySelectorAll('.latest-portfolio__item'));
 
   portfolioListElements.forEach((element) => {
@@ -105,13 +109,17 @@ function onLeftButtonClick(data) {
 
   for (let i = 0; i < quantityOfPhotosOnPage; i++) {
     if (store.activePortfolioIndexes[i] > 1) {
-      store.activePortfolioIndexes[i] = --store.activePortfolioIndexes[i];
+      --store.activePortfolioIndexes[i];
     } else {
       store.activePortfolioIndexes[i] = 10;
     }
 
     setTimeout(() => {
-      const portfolioItem = data.portfolioList[store.activePortfolioIndexes[i] - 1];
+      nextElement.remove();
+
+      const portfolioListElements = Object.assign([], document.querySelectorAll('.latest-portfolio__item'));
+      const portfolioItem = data.portfolioList.find((item) => item.id === store.activePortfolioIndexes[i]);
+
       portfolioListElements[i].style.backgroundImage = `url("img/latestPortfolio/${portfolioItem.name}.png")`;
       portfolioListElements[i].querySelector('.latest-portfolio__item-header').textContent = portfolioItem.header;
       portfolioListElements[i].querySelector('.latest-portfolio__item-text').textContent = portfolioItem.text;
@@ -119,6 +127,42 @@ function onLeftButtonClick(data) {
   }
 
   return this;
+}
+
+function getNextPortfolioID(side) {
+  let nextPortfolioID;
+
+  if (side === 'left') {
+    nextPortfolioID = store.activePortfolioIndexes[0] - 1 < 1 ? 10 : store.activePortfolioIndexes[0] - 1;
+  } else if (side === 'right') {
+    nextPortfolioID = store.activePortfolioIndexes[2] + 1 > 10 ? 1 : store.activePortfolioIndexes[2] + 1;
+  }
+
+  return nextPortfolioID;
+}
+
+function appendNextElement(data, side) {
+  const nextPortfolioID = getNextPortfolioID(side);
+
+  const nextPortfolioItem = data.portfolioList.find((item) => item.id === nextPortfolioID);
+  const nextElement = document.querySelectorAll('.latest-portfolio__item-container')[0].cloneNode(true);
+
+  nextElement.querySelector('.latest-portfolio__item').style.backgroundImage = `url("img/latestPortfolio/${nextPortfolioItem.name}.png")`;
+  nextElement.querySelector('.latest-portfolio__item-header').textContent = nextPortfolioItem.header;
+  nextElement.querySelector('.latest-portfolio__item-text').textContent = nextPortfolioItem.text;
+
+  const sliderContainerEl = document.querySelector('.latest-portfolio').querySelectorAll('.container')[1].querySelector('.row');
+
+  side === 'right' && sliderContainerEl.append(nextElement);
+
+  if (side === 'left') {
+    nextElement.style.position = 'relative';
+    nextElement.style.marginLeft = '-386px';
+
+    sliderContainerEl.prepend(nextElement);
+  }
+
+  return nextElement;
 }
 
 function addEventsToSliderPortfolio(data) {
