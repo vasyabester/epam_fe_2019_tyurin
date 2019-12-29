@@ -6,8 +6,8 @@ class ImagePost extends Post {
     this.img = img;
   }
 
-  generatePostRequest() {
-    super.generatePostRequest();
+  _generatePostRequest() {
+    super._generatePostRequest();
 
     this._postRequest.img = this.img;
   }

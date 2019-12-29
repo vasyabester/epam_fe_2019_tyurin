@@ -164,6 +164,8 @@
           @extend .blog-article-text;
 
           max-width: 460px;
+          height: 151px;
+          overflow-y: hidden;
         }
 
         &-button {
@@ -300,7 +302,9 @@
           @extend .blog-article-text;
 
           max-width: 460px;
-          margin-top: -11px;
+          margin-top: 4px;
+          height: 94px;
+          overflow-y: hidden;
         }
 
         &-button {
@@ -438,6 +442,8 @@
           @extend .blog-article-text;
 
           max-width: 460px;
+          height: 151px;
+          overflow-y: hidden;
         }
 
         &-button {

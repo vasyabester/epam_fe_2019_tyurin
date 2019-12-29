@@ -11,7 +11,7 @@ const onSubmit = (event) => {
     quote: event.target.quote.value,
   };
 
-  const newPost = new Post(formData); // eslint-disable-line
+  const newPost = new ImagePost(formData); // eslint-disable-line
 
   newPost.createNewPost();
 };

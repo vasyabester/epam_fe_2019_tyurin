@@ -7,8 +7,8 @@ class AudioPost extends Post {
     this.iconSrc = iconSrc;
   }
 
-  generatePostRequest() {
-    super.generatePostRequest();
+  _generatePostRequest() {
+    super._generatePostRequest();
 
     this._postRequest.iconSrc = this.iconSrc;
     this._postRequest.src = this.src;

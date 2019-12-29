@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderBlogPosts(contentEl, data, postList) {
+function renderBlogPosts(contentEl, postList) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'blog';
 

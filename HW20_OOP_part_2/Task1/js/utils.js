@@ -51,8 +51,6 @@ function createPostDueToType(post) {
     postObject = new AudioPost(post);
   } else if (post.type === 'picture') {
     postObject = new ImagePost(post);
-  } else {
-    postObject = new Post(post);
   }
 
   return postObject;

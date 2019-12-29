@@ -8,8 +8,8 @@ class VideoPost extends Post {
     this.src = src;
   }
 
-  generatePostRequest() {
-    super.generatePostRequest();
+  _generatePostRequest() {
+    super._generatePostRequest();
 
     this._postRequest.preload = this.preload;
     this._postRequest.poster = this.poster;

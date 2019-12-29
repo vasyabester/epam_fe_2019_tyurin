@@ -3645,6 +3645,8 @@ body {
 }
 .blog__video-post-article-text {
   max-width: 460px;
+  height: 151px;
+  overflow-y: hidden;
 }
 .blog__video-post-article-button {
   width: 121px;
@@ -3769,7 +3771,9 @@ body {
 }
 .blog__audio-post-article-text {
   max-width: 460px;
-  margin-top: -11px;
+  margin-top: 4px;
+  height: 94px;
+  overflow-y: hidden;
 }
 .blog__audio-post-article-button {
   width: 121px;
@@ -3895,6 +3899,8 @@ body {
 }
 .blog__picture-post-article-text {
   max-width: 460px;
+  height: 151px;
+  overflow-y: hidden;
 }
 .blog__picture-post-article-button {
   width: 121px;

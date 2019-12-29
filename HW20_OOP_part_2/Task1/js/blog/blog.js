@@ -1,17 +1,15 @@
 initialize();
 /* eslint-disable */
 function initialize() {
-  const data = getMockedJson();
   const postList = getPostList();
-  console.log(postList);
 
-  render(data, postList)
+  render(postList)
 }
 
-function render(data, postList) {
+function render(postList) {
   const contentEl = document.getElementById('content');
 
-  renderBlogPosts(contentEl, data, postList);
+  renderBlogPosts(contentEl, postList);
   renderReadButton(contentEl);
   renderAddPostModalWindow();
 }
