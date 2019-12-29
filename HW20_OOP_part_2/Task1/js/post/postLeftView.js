@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderPostLeft(contentEl, data, post) {
+function renderPostLeft(contentEl, post) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'post__left';
 
@@ -10,20 +10,22 @@ function renderPostLeft(contentEl, data, post) {
   const postInfo = document.createElement('div');
   postInfo.className = 'post__info';
 
-  postInfo.append(makePostInfoContainer(data, post));
+  postInfo.append(makePostInfoContainer(post));
 
   const postImage = document.createElement('img');
   postImage.className = 'post__image';
   postImage.src = post.img;
   postImage.alt = 'Here must be an image';
 
+  const audioContent = post.type === 'audio' ? makeContainerTrackEl(post): '';
+
   sectionEl.append(
     postHeader,
     postInfo,
     postImage,
-    makeContainerTrackEl(data),
+    audioContent,
     makePostLeftArticleEl(post),
-    makePostLeftItemsContainerEl(data),
+    makePostLeftItemsContainerEl(post),
     makeMoreCommentsEl()
   );
 
@@ -42,7 +44,7 @@ function makeMoreCommentsEl() {
   return moreComments;
 }
 
-function makePostLeftItemsContainerEl(data) {
+function makePostLeftItemsContainerEl(post) {
   const postLeftItemsContainer = document.createElement('div');
   postLeftItemsContainer.className = 'post__left-items-container';
 
@@ -51,12 +53,12 @@ function makePostLeftItemsContainerEl(data) {
 
   const postLeftLikesCounter = document.createElement('p');
   postLeftLikesCounter.className = 'post__left-likes-counter';
-  postLeftLikesCounter.textContent = `${data.blogPosts[1].likes} likes`;
+  postLeftLikesCounter.textContent = `${post.likes} likes`;
 
   const postLeftLine = document.createElement('hr');
   postLeftLine.className = 'post__left-line';
 
-  const comments = makeComments(data);
+  const comments = makeComments(post);
 
   postLeftItemsContainer.append(
     postLeftLikes,
@@ -69,7 +71,7 @@ function makePostLeftItemsContainerEl(data) {
   return postLeftItemsContainer;
 }
 
-function makeComments(data) {
+function makeComments(post) {
   const comments = document.createElement('div');
   comments.className = 'class';
 
@@ -78,9 +80,9 @@ function makeComments(data) {
   postLeftCommentsHeader.textContent = 'Reviews';
   comments.append(postLeftCommentsHeader);
 
-  data.blogPosts[1].commentsList.forEach((comment) => {
-    comments.append(makeComment(comment));
-  });
+  for (let i = 0; i < 3; i++) {
+    comments.append(makeComment(post.commentsList[i]));
+  }
 
   return comments;
 }
@@ -90,7 +92,7 @@ function makePostLeftArticleEl(post) {
 
   postLeftArticle.className = 'post__left-article';
   postLeftArticle.insertAdjacentHTML('beforeend',
-    `<article class="post__left-article">${post.postDescr}</article>
+    `<article class="post__left-article">${post.text}</article>
         <div class="post__left-notes-container">
           <p class="post__left-notes-text">${post.quote}</p>
         </div>`
@@ -99,7 +101,7 @@ function makePostLeftArticleEl(post) {
   return postLeftArticle;
 }
 
-function makePostInfoContainer(data, post) {
+function makePostInfoContainer(post) {
   const postInfoContainer = document.createElement('div');
   postInfoContainer.className = 'post__info-container';
 
@@ -116,14 +118,14 @@ function makePostInfoContainer(data, post) {
   postInfoName.textContent = post.author;
   postInfoDataContainer.append(postInfoName);
 
-  postInfoDataContainer.append(makeInfoMessageContainer(data, post));
+  postInfoDataContainer.append(makeInfoMessageContainer(post));
 
   return postInfoContainer;
 }
 
-function makeInfoMessageContainer(data, post) {
+function makeInfoMessageContainer(post) {
   let stars = '';
-  data.blogPosts[1].stars.forEach((star) => {
+  post.stars.forEach((star) => {
     stars += `<span class="post__info-message-${star}-star-icon"></span>`;
   });
 
@@ -132,24 +134,24 @@ function makeInfoMessageContainer(data, post) {
   postInfoMessageContainer.insertAdjacentHTML('beforeend',
     `<span class="post__info-message">${post.date}</span>
      <span class="post__info-message">&#8226;</span>
-     <span class="post__info-message">${data.blogPosts[1].timeRead}</span>
+     <span class="post__info-message">${post.timeRead}</span>
      <span class="post__info-message">&#8226;</span>
      <span class="post__info-message-icon"></span>
-     <span class="post__info-message">${data.blogPosts[1].comments}</span>
+     <span class="post__info-message">${post.commentsLength}</span>
      ${stars}`
   );
 
   return postInfoMessageContainer;
 }
 
-function makeContainerTrackEl(data) {
+function makeContainerTrackEl(post) {
   const postContainerTrack = document.createElement('audio');
   postContainerTrack.className = 'post__img-container-track';
   postContainerTrack.controls;
   postContainerTrack.textContent = 'Your browser does not support tag audio.';
 
   const audioMusic = document.createElement('source');
-  audioMusic.src = data.blogPosts[1].content.src;
+  audioMusic.src = post.src;
   audioMusic.type = 'audio/mp3';
   postContainerTrack.append(audioMusic);
 

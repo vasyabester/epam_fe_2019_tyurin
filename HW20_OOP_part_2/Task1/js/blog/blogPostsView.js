@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderBlogPosts(contentEl, data) {
+function renderBlogPosts(contentEl, data, postList) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'blog';
 
@@ -28,7 +28,7 @@ function renderBlogPosts(contentEl, data) {
     blogSearchContainer,
   );
 
-  data.blogPosts.forEach((blogPost) => {
+  postList.forEach((blogPost) => {
     sectionEl.append(makeBlogPostItemtEl(blogPost));
   });
 
@@ -37,7 +37,7 @@ function renderBlogPosts(contentEl, data) {
 /* eslint-enable */
 function makeBlogPostItemtEl(blogPost) {
   const blogPostItem = document.createElement('section');
-  blogPostItem.className = `blog__${blogPost.content.type}`;
+  blogPostItem.className = `blog__${blogPost.type}`;
 
   const blogPostContainer = document.createElement('div');
   blogPostContainer.className = 'container';
@@ -48,7 +48,7 @@ function makeBlogPostItemtEl(blogPost) {
   blogPostContainer.append(blogPostRow);
 
   const blogPostArticle = document.createElement('div');
-  blogPostArticle.className = `blog__${blogPost.content.type}-post-article`;
+  blogPostArticle.className = `blog__${blogPost.type}-post-article`;
 
   blogPostRow.append(
     makeBlogFileContainerEl(blogPost),
@@ -61,18 +61,18 @@ function makeBlogPostItemtEl(blogPost) {
 
 function makeBlogFileContainerEl(blogPost) {
   const blogFileContainer = document.createElement('div');
-  blogFileContainer.className = `blog__${blogPost.content.type}-file-container`;
+  blogFileContainer.className = `blog__${blogPost.type}-file-container`;
 
   let content = '';
 
-  if (blogPost.content.type === 'video') {
-    content = `<video class="blog__video-file" poster=${blogPost.content.poster} preload=${blogPost.content.preload}>
-                <source src=${blogPost.content.src} type="video/webm; codecs='vp8, vorbis'">
+  if (blogPost.type === 'video') {
+    content = `<video class="blog__video-file" poster=${blogPost.poster} preload=${blogPost.preload}>
+                <source src=${blogPost.src} type="video/webm; codecs='vp8, vorbis'">
               </video>`;
-  } else if (blogPost.content.type === 'audio') {
-    content = `<img class="blog__audio-file" src="${blogPost.content.iconSrc}"/>`;
-  } else if (blogPost.content.type === 'picture') {
-    content = `<img class="blog__picture-file" src="${blogPost.content.iconSrc}"/>`;
+  } else if (blogPost.type === 'audio') {
+    content = `<img class="blog__audio-file" src="${blogPost.iconSrc}"/>`;
+  } else if (blogPost.type === 'picture') {
+    content = `<img class="blog__picture-file" src="${blogPost.img}"/>`;
   }
 
   blogFileContainer.insertAdjacentHTML('afterbegin', content);
@@ -82,25 +82,25 @@ function makeBlogFileContainerEl(blogPost) {
 
 function makeBlogPostContent(blogPost) {
   const blogPostContent = document.createElement('div');
-  blogPostContent.className = `blog__${blogPost.content.type}-post`;
+  blogPostContent.className = `blog__${blogPost.type}-post`;
 
   let stars = '';
 
   blogPost.stars.forEach((star) => {
-    stars += `<span class="blog__${blogPost.content.type}-post-message-${star}-star-icon"></span>`;
+    stars += `<span class="blog__${blogPost.type}-post-message-${star}-star-icon"></span>`;
   });
 
   blogPostContent.insertAdjacentHTML('beforeend',
-    `<span class="blog__${blogPost.content.type}-post-avatar"></span>
-            <div class="blog__${blogPost.content.type}-post-data-container">
-              <div class="blog__${blogPost.content.type}-post-name">${blogPost.author}</div>
-              <div class="blog__${blogPost.content.type}-post-message-container">
-                <span class="blog__${blogPost.content.type}-post-message">${blogPost.date}</span>
-                <span class="blog__${blogPost.content.type}-post-message">&#8226;</span>
-                <span class="blog__${blogPost.content.type}-post-message">${blogPost.timeRead}</span>
-                <span class="blog__${blogPost.content.type}-post-message">&#8226;</span>
-                <span class="blog__${blogPost.content.type}-post-message-icon"></span>
-                <span class="blog__${blogPost.content.type}-post-message">${blogPost.comments}</span>
+    `<span class="blog__${blogPost.type}-post-avatar"></span>
+            <div class="blog__${blogPost.type}-post-data-container">
+              <div class="blog__${blogPost.type}-post-name">${blogPost.author}</div>
+              <div class="blog__${blogPost.type}-post-message-container">
+                <span class="blog__${blogPost.type}-post-message">${blogPost.date}</span>
+                <span class="blog__${blogPost.type}-post-message">&#8226;</span>
+                <span class="blog__${blogPost.type}-post-message">${blogPost.timeRead}</span>
+                <span class="blog__${blogPost.type}-post-message">&#8226;</span>
+                <span class="blog__${blogPost.type}-post-message-icon"></span>
+                <span class="blog__${blogPost.type}-post-message">${blogPost.commentsLength}</span>
                 ${stars}
               </div>
             </div>`
@@ -108,18 +108,18 @@ function makeBlogPostContent(blogPost) {
 
   let audioTrack = '';
 
-  if (blogPost.content.type === 'audio') {
+  if (blogPost.type === 'audio') {
     audioTrack = `<audio controls class="blog__audio-post-article-track">
-                <source src="${blogPost.content.src}" type="audio/mp3" >
+                <source src="${blogPost.src}" type="audio/mp3" >
                 Browser does not support tag audio.
               </audio>`;
   }
 
   blogPostContent.insertAdjacentHTML('beforeend',
-    ` <h1 class="blog__${blogPost.content.type}-post-article-header">${blogPost.header}</h1>
+    ` <h1 class="blog__${blogPost.type}-post-article-header">${blogPost.title}</h1>
                 ${audioTrack}
-                <p class="blog__${blogPost.content.type}-post-article-text">${blogPost.text}</p>
-                <button class="blog__${blogPost.content.type}-post-article-button">Read more</button>`
+                <p class="blog__${blogPost.type}-post-article-text">${blogPost.text}</p>
+                <button class="blog__${blogPost.type}-post-article-button">Read more</button>`
   );
 
   return blogPostContent;

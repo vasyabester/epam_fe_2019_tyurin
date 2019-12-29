@@ -41,4 +41,20 @@ function validateTitle(title) {
 
   return result;
 }
+
+function createPostDueToType(post) {
+  let postObject;
+
+  if (post.type === 'video') {
+    postObject = new VideoPost(post);
+  } else if (post.type === 'audio') {
+    postObject = new AudioPost(post);
+  } else if (post.type === 'picture') {
+    postObject = new ImagePost(post);
+  } else {
+    postObject = new Post(post);
+  }
+
+  return postObject;
+}
 /* eslint-enable */

@@ -3821,6 +3821,8 @@ body {
 }
 .blog__picture-file {
   position: relative;
+  width: 560px;
+  height: 379px;
 }
 .blog__picture-post {
   position: relative;

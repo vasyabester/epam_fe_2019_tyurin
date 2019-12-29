@@ -10,7 +10,7 @@ function renderAddPostModalWindow() {
   <form class="modal-form" id="loginForm">
      <div class="form-group modal-form-input-container">
       <label for="typeOfPost">Type of post:</label>
-      <input type="text" class="form-control" id="typeOfPost">
+      <input type="text" class="form-control" id="typeOfPost" value="picture" readonly>
     </div>
     <div class="form-group modal-form-input-container">
       <label for="img">Image:</label>
@@ -29,8 +29,8 @@ function renderAddPostModalWindow() {
       <input type="date" class="form-control" id="date">
     </div>
     <div class="form-group modal-form-input-container">
-      <label for="postDescr">Post description:</label>
-      <textarea class="form-control" rows="5" id="postDescr"></textarea>
+      <label for="text">Post description:</label>
+      <textarea class="form-control" rows="5" id="text"></textarea>
     </div>
     <div class="form-group modal-form-input-container">
       <label for="quote">Quote:</label>

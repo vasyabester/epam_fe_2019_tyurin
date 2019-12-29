@@ -1,54 +1,38 @@
 /* eslint-disable */
 function render() {
-  const post = getPost(getLastPostID());
-  console.log(post);
-
+  const post = getPost();
   const contentEl = document.getElementById('content');
   const data = getMockedJson();
-  renderPostLeft(contentEl, data, post);
+
+  renderPostLeft(contentEl, post);
   renderPostRight(contentEl, data);
   renderAddPostModalWindow();
 }
 /* eslint-enable */
 render();
 
-function getPost(id) {
-  const URL = `http://127.0.0.1:3000/api/list/${id}`;
+function getPost() {
+  const currentID = localStorage.getItem('lastPostID');
   const xhr = new XMLHttpRequest();
-  let response;
+  const URL = `http://127.0.0.1:3000/api/list${currentID ? '/' + currentID : ''}`; // eslint-disable-line
+  let post;
 
   xhr.open('GET', URL, false);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send();
 
   if (xhr.status === 200) {
-    response = JSON.parse(xhr.response);
+    const response = JSON.parse(xhr.response);
+    post = currentID ? response : response[response.length - 1];
   } else {
     alert(JSON.parse(xhr.response).message);
   }
 
-  return response;
+  localStorage.clear();
+
+  return createPostDueToType(post); // eslint-disable-line
 }
 
-function getLastPostID() {
-  const URL = 'http://127.0.0.1:3000/api/list';
-  const xhr = new XMLHttpRequest();
-  let postsList;
-
-  xhr.open('GET', URL, false);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send();
-
-  if (xhr.status === 200) {
-    postsList = JSON.parse(xhr.response);
-  } else {
-    alert(JSON.parse(xhr.response).message);
-  }
-
-  const currentID = postsList[postsList.length - 1].id;
-
-  return currentID;
-}
 /* eslint-disable */
 function renderFormData(post) {
   const postInfoName = document.querySelectorAll('.post__info-name')[0];
