@@ -426,18 +426,6 @@
 
         display: block;
       }
-
-      //&--first {
-      //  background: url("../img/latestPortfolio/art-ocean.png") no-repeat;
-      //}
-      //
-      //&--second {
-      //  background: url("../img/latestPortfolio/city-guide.png") no-repeat;
-      //}
-      //
-      //&--third {
-      //  background: url("../img/latestPortfolio/mountains.png") no-repeat;
-      //}
     }
   }
 
@@ -584,7 +572,6 @@
         line-height: 26px;
 
         &::before {
-          //@include sprite(16px, 17px, -87px, -246px);
           display: block;
           content: '“';
           font-family: "HindSiliguriBold", sans-serif;
@@ -789,7 +776,7 @@
       width: 380px;
       background-color: $white;
       box-sizing: border-box;
-      padding: 30px 30px 63px 30px;
+      padding: 30px 30px 48px 30px;
       float: left;
       box-shadow: 0 8px 25px 0 #b7b7b7;
 

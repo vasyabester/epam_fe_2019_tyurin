@@ -424,6 +424,15 @@ template {
   display: none;
 }
 
+.container {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.header__nav {
+  padding-right: 0 !important;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3214,7 +3223,7 @@ body {
   width: 380px;
   background-color: #fff;
   box-sizing: border-box;
-  padding: 30px 30px 63px 30px;
+  padding: 30px 30px 48px 30px;
   float: left;
   box-shadow: 0 8px 25px 0 #b7b7b7;
 }
