@@ -1,0 +1,25 @@
+.header {
+  width: 1440px;
+
+  &--background {
+    background-image: url("../img/header_background.jpg");
+  }
+
+  &--head-height-index {
+    height: 600px;
+  }
+
+  &__logo {
+    @include make-xs-column(1);
+    @include make-sm-column(2);
+    @include make-md-column(4);
+    @include make-lg-column(7);
+  }
+
+  &__nav {
+    @include make-xs-column(3);
+    @include make-sm-column(6);
+    @include make-md-column(5);
+    @include make-lg-column(5);
+  }
+}

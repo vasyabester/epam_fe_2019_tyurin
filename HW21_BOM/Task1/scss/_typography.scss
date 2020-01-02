@@ -1,0 +1,7 @@
+@include font-face($hind-siliguri-bold, $fontsource-hind-siliguri-bold-path, bold);
+@include font-face($hind-siliguri-regular, $fontsource-hind-siliguri-regular-path);
+@include font-face($hind-siliguri-semi-bold, $fontsource-hind-siliguri-semi-bold-path, 600);
+@include font-face($lucida-grande-regular, $fontsource-lucida-grande-regular-path);
+@include font-face($lucida-grande-bold, $fontsource-lucida-grande-bold-path);
+@include font-face($hind-siliguri-medium, $fontsource-hind-siliguri-medium-path, 500);
+@include font-face($hind-siliguri-light, $fontsource-hind-siliguri-light-path, 300);
