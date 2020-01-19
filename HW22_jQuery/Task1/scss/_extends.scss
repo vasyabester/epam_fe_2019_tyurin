@@ -1,0 +1,227 @@
+.primary-button {
+  background: $dark-grey;
+  border-radius: 5px;
+  height: 45px;
+  color: $white;
+  font-size: 15px;
+  line-height: 25px;
+  font-family: "HindSiliguriRegular", sans-serif;
+  cursor: pointer;
+
+  &:hover {
+    background: $button-hover;
+  }
+}
+
+.secondary-button {
+  box-sizing: border-box;
+  height: 45px;
+  border: 1px solid $dark-grey-light;
+  border-radius: 5px;
+  color: $dark-grey-light;
+  font-size: 15px;
+  line-height: 25px;
+  font-family: "HindSiliguriRegular", sans-serif;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+    background: $button-hover;
+  }
+}
+
+.primary-header {
+  text-align: center;
+  font-family: "HindSiliguriSemiBold", sans-serif;
+  color: $dark-grey-light;
+  font-size: 24px;
+  line-height: 39px;
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px solid $dark-grey-light;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+
+  &::after {
+    width: 3px;
+    height: 8px;
+    border-top: 1px solid $dark-grey-light;
+    border-left: 1px solid  $dark-grey-light;
+    border-bottom: 1px solid  $white;
+    position: absolute;
+    content: '';
+    top: 42px;
+    right: -1px;
+  }
+
+  &::before {
+    width: 3px;
+    height: 8px;
+    border-top: 1px solid $dark-grey-light;
+    border-right: 1px solid  $dark-grey-light;
+    border-bottom: 1px solid  $white;
+    position: absolute;
+    content: '';
+    top: 42px;
+    left: -1px;
+  }
+}
+
+.primary-header-border {
+  box-sizing: border-box;
+  height: 8px;
+  width: 93px;
+  border: 1px solid $dark-grey-light;
+  content: " ";
+  position: absolute;
+  border-top: none;
+}
+
+.post-header {
+  font-family: "HindSiliguriMedium", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  color: $dark-grey-light;
+}
+
+.post-text {
+  font-family: "HindSiliguriRegular", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  color: $dark-grey-light;
+}
+
+.post-message-info {
+  font-family: "HindSiliguriRegular", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  color: $silver;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.paginations-primary {
+  box-sizing: border-box;
+  border: 1px solid $dark-grey-light;
+  border-radius: 5px;
+  background-color: $white;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  text-align: center;
+  padding-top: 13px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.about-us-items-text {
+  font-family: "LucidaGrandeRegular", sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  color: $dark-grey-light;
+}
+
+.latest-portfolio-image-header {
+  color: $white;
+  font-family: "HindSiliguriBold", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  display: block;
+  padding-top: 5px;
+  box-sizing: border-box;
+  height: 32px;
+}
+
+.latest-portfolio-image-text {
+  color: $white;
+  font-family: "HindSiliguriLight", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.blog-name {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriMedium", sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+}
+
+.blog-data {
+  color: $silver;
+  font-family: "HindSiliguriRegular", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.blog-article-header {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriMedium", sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.blog-article-text {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriRegular", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.post-header-page {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriSemiBold", sans-serif;
+  font-size: 28px;
+  line-height: 37px;
+}
+
+.latest-post-head {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriSemiBold", sans-serif;
+  font-size: 24px;
+  line-height: 39px;
+}
+
+.latest-post-container-head {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriMedium", sans-serif;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.blog-article-text-bold {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriBold", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.post-notes-text {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriLight", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.aside-container {
+  background-color: $rose;
+  border-radius: 5px;
+  margin-top: 70px;
+  padding: 30px;
+}
+
+.aside-header {
+  color: $dark-grey-light;
+  font-family: "HindSiliguriSemiBold", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 39px;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 3px;
+  margin-bottom: 16px;
+}

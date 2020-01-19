@@ -1,0 +1,14 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.ttf');
+  }
+}
+
+@mixin sprite($width, $height, $position1, $position2) {
+  width: $width;
+  height: $height;
+  background: url('../img/sprites.png') $position1 $position2;
+}
