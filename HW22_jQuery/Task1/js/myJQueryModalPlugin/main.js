@@ -9,8 +9,8 @@
 
     openModal({quantity, type, message}) {
       const footerContent = this.createFooterEl(quantity);
-      const modalWindowTemplate =
-        `<div class="blocker-window">
+      const modalWindowTemplate = (`
+         <div class="blocker-window">
           <div class="modal-window modal-window--${type}">
               <header class="modal-window__header">
                   <span class="glyphicon glyphicon-remove modal-window__close-button" aria-hidden="true"></span>
@@ -18,7 +18,8 @@
               <div class="modal-window__content">${message}</div>
               <footer class="modal-window__footer">${footerContent}</footer>
           </div>
-        </div>`;
+        </div>
+      `);
 
       $('body').append(modalWindowTemplate);
       $('.modal-window').on('click', this.onDialogWindowClicked.bind(this));
