@@ -1,4 +1,4 @@
 dist/
 src/**/styles/
 .idea/
-HW22_jQuery/Task1/server/*
+src/server/*
