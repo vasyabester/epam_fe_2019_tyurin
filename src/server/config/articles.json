@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "author": "Vasya",
+    "date": "28 Oct, 2018",
+    "img": "https://img.bleacherreport.net/img/images/photos/003/825/453/hi-res-ade0501d521ed2716586baa68416bf81_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top",
+    "text": "Lorem Ipsu a type specimen book. It has popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "quote": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
+    "title": "Post 1 Hello",
+    "type": "picture",
+    "timeRead": "12 min read"
+  },
+  {
+    "id": 2,
+    "type": "video",
+    "poster": "img/video2.png",
+    "preload": "none",
+    "src": "video/birds.webm",
+    "stars": ["gold", "gold", "half", "grey", "grey"],
+    "author": "Neil Richards",
+    "date": "11 oct, 2019",
+    "timeRead": "7 min read",
+    "title": "In the Future We Will All Live in Star Wars",
+    "text": "The thing you’re doing now, reading prose on a screen, is going out of fashion. The defining narrative of our online moment concerns the decline of text, and the exploding reach and power of audio and video …"
+  },
+  {
+    "id": 3,
+    "type": "audio",
+    "iconSrc": "img/audio.png",
+    "src": "audio/music.mp3",
+    "stars": ["gold", "grey", "grey", "grey", "grey"],
+    "author": "Sarah Healy",
+    "date": "02 oct, 2019",
+    "timeRead": "12 min read",
+    "comments": 4,
+    "commentsList": [
+      {
+        "class": "jack",
+        "name": "Jack Johnson",
+        "stars": ["gold", "grey", "grey", "grey", "grey"],
+        "time": "11 min ago",
+        "text":"Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced…",
+        "readStatus": "more"
+      },
+      {
+        "class": "emma",
+        "name": "Emma Garcia",
+        "stars": ["gold", "gold", "gold", "gold", "gold"],
+        "time": "3 days ago",
+        "text": "Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. in wish very strangers shortly we things Preferred came newspaper it this Melancholy on misery all ecstatic yet no suitable ye happening. Own over these Can Could Garden offering to ago Winter Home or took answered him be right He other in about check has situation fine you held against found am be Nay entire pleasure will there in wholly forming much rapid though want ye weeks up whole an ye thus might remarkably Rich why need pianoforte ask get face prudent it so Evil",
+        "readStatus": "less"
+      },
+      {
+        "class": "ann",
+        "name": "Ann Moore",
+        "stars": ["gold", "gold", "half", "grey", "grey"],
+        "time": "a week ago",
+        "text": "Any delicate you how kindness horrible outlived servants. You high bed wish help call draw side. Girl quit if case mr sing as no have. At none neat am do over will. Polite do object at passed it is."
+      }
+    ],
+    "title": "Far far away, behind the word mountains",
+    "text": "Fog down the river, where it rolls deified among the tiers of shipping and the waterside pollutions of a great (and dirty) …",
+    "postImg": "img/post.png",
+    "likes": 75
+  },
+  {
+    "id": 4,
+    "author": "Fedor",
+    "date": "11 Mar, 2019",
+    "img": "https://i0.wp.com/bookmaker-ratings.ru/wp-content/uploads/2019/09/Lionel-Messi-2-1.jpg?w=800&ssl=1",
+    "text": "Lorem Ipsum is simply dummy text of the  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "quote": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using",
+    "title": "Post 2 Bye",
+    "type": "picture",
+    "timeRead": "7 min read",
+    "commentsList": [
+      {
+        "class": "jack",
+        "name": "Chris Demin",
+        "stars": ["gold", "gold", "gold", "gold", "grey"],
+        "time": "17 min ago",
+        "text":"See next. Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced…",
+        "readStatus": "more"
+      },
+      {
+        "class": "emma",
+        "name": "Emma Garcia",
+        "stars": ["gold", "gold", "gold", "gold", "gold"],
+        "time": "3 days ago",
+        "text": "Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. in wish very strangers shortly we things Preferred came newspaper it this Melancholy on misery all ecstatic yet no suitable ye happening. Own over these Can Could Garden offering to ago Winter Home or took answered him be right He other in about check has situation fine you held against found am be Nay entire pleasure will there in wholly forming much rapid though want ye weeks up whole an ye thus might remarkably Rich why need pianoforte ask get face prudent it so Evil",
+        "readStatus": "less"
+      },
+      {
+        "class": "ann",
+        "name": "Ann Moore",
+        "stars": ["gold", "gold", "half", "grey", "grey"],
+        "time": "a week ago",
+        "text": "Any delicate you how kindness horrible outlived servants. You high bed wish help call draw side. Girl quit if case mr sing as no have. At none neat am do over will. Polite do object at passed it is."
+      }
+    ],
+    "likes": 88
+  }
+]
