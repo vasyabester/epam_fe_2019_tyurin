@@ -2,4 +2,3 @@ dist/
 src/**/styles/
 .idea/
 src/server/*
-src/js/*

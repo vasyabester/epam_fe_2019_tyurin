@@ -1,17 +1,13 @@
-import { getMockedJson } from '../utils';
-import { LatestPortfolioSlider } from './models/LatestPortfolioSlider';
-
-import { TestimonialSlider } from './models/TestimonialSlider';
-
-import { renderAboutUs } from './views/mainAboutUsView';
-import { renderContactUs } from './views/mainContactUsView';
-import { renderLatestPortfolio} from './views/mainLatestPortfolioView';
-import { renderLatestPosts } from './views/mainLatestPostsView';
-import { renderTestimonials } from './views/mainTestimonialsView';
-
+import {getMockedJson} from '../utils';
+import {LatestPortfolioSlider} from './models/LatestPortfolioSlider';
+import {TestimonialSlider} from './models/TestimonialSlider';
+import {renderAboutUs} from './views/mainAboutUsView';
+import {renderContactUs} from './views/mainContactUsView';
+import {renderLatestPortfolio} from './views/mainLatestPortfolioView';
+import {renderLatestPosts} from './views/mainLatestPostsView';
+import {renderTestimonials} from './views/mainTestimonialsView';
 import '../myJQueryModalPlugin/main';
-
-import { renderAddPostModalWindow } from '../addPostModalWindowView';
+import {renderAddPostModalWindow} from '../addPostModalWindowView';
 import '../newPostController';
 
 initialize();

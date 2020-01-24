@@ -1,8 +1,7 @@
-import { createPostDueToType } from '../utils';
-import { renderAddPostModalWindow } from "../addPostModalWindowView";
-import { getMockedJson } from '../utils';
-import { renderPostLeft } from "./postLeftView";
-import { renderPostRight } from "./postRightView";
+import {createPostDueToType, getMockedJson} from '../utils';
+import {renderAddPostModalWindow} from '../addPostModalWindowView';
+import {renderPostLeft} from './postLeftView';
+import {renderPostRight} from './postRightView';
 
 import '../newPostController';
 
