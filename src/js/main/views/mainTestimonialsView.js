@@ -87,7 +87,7 @@ function makeTestimonialsWordsContainerEl(data) {
   testimonialsWordsContainer.append(
     testimonialsQuote,
     testimonialsSignName,
-    testimonialsSignPosition
+    testimonialsSignPosition,
   );
 
   return testimonialsWordsContainer;

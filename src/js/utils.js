@@ -1,8 +1,8 @@
+/* eslint-disable */
 import { ImagePost } from "./post/models/ImagePost";
 import { VideoPost } from "./post/models/VideoPost";
 import { AudioPost } from "./post/models/AudioPost";
 
-/* eslint-disable */
 export function getMockedJson() {
   //ToDo: change to real REST
   // const rawFile = new XMLHttpRequest();
@@ -37,7 +37,6 @@ export function createPostDueToType(post) {
 
   return postObject;
 }
-/* eslint-enable */
 
 const dataJSON = {
   "articles": [
@@ -300,3 +299,4 @@ const dataJSON = {
   "tags": ["Love", "Signs", "Waterfall", "Inspiration", "Quotes", "Sea",
     "Sense", "Coffee", "Gold", "Images", "Courage", "Dancing", "Video"]
 };
+/* eslint-enable */

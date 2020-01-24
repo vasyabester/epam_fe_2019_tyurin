@@ -60,7 +60,7 @@ function makeTags(tags) {
     `<h2 class="tags__header">Tags</h2>
           <div class="tags-container">
             ${nameTags}
-          </div>`
+          </div>`,
   );
 
   return tagsEl;
@@ -94,7 +94,7 @@ function makeLatestsPostsContainer(latestPosts) {
                 <span class="post__latests-posts-message-container-text-icon"></span>
                 <span class="post__latests-posts-message-container-text">${post.comments}</span>
               </div>
-            </div>`
+            </div>`,
     );
   });
 

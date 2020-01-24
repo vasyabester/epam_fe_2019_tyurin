@@ -62,7 +62,7 @@ function makePostContainerEl(data) {
     latestPostsItem.append(
       latestPostsItemImage,
       latestPostsItemHeader,
-      latestPostItemText
+      latestPostItemText,
     );
 
     latestPostsItem.insertAdjacentHTML('beforeEnd',
@@ -71,7 +71,7 @@ function makePostContainerEl(data) {
     <span class="latest-posts__message-info">${article.timeRead}</span>
     <span class="latest-posts__message-info">&#8226;</span>
     <span class="latest-posts__message-info latest-posts__message-icon"></span>
-    <span class="latest-posts__message-info">${article.comments}</span>`
+    <span class="latest-posts__message-info">${article.comments}</span>`,
     );
   });
 

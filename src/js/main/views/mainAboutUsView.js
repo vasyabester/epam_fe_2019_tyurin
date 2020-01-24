@@ -65,7 +65,7 @@ function makeNotesContainerEl() {
   notesContainer.append(
     notesContainerItem,
     makeNotesContainerSecondItemEl(),
-    makeNotesContainerThirdItemEl()
+    makeNotesContainerThirdItemEl(),
   );
 
   return notesContainer;

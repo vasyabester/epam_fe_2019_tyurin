@@ -1,4 +1,4 @@
-import { Slider } from './Slider';
+import {Slider} from './Slider';
 
 export function LatestPortfolioSlider(portfolioList, quantityOfPhotosOnPage) { // eslint-disable-line
   const latestPortfolioContainer = document.querySelector('.latest-portfolio').querySelectorAll('.container')[1];

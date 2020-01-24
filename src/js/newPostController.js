@@ -1,4 +1,4 @@
-import { ImagePost } from "./post/models/ImagePost";
+import {ImagePost} from './post/models/ImagePost';
 
 const onSubmit = (event) => {
   event.preventDefault();

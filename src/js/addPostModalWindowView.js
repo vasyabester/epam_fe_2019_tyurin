@@ -1,4 +1,4 @@
-import { validate } from "./utils";
+import {validate} from './utils';
 
 /* eslint-disable */
 export function renderAddPostModalWindow() {

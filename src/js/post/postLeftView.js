@@ -65,7 +65,7 @@ function makePostLeftItemsContainerEl(post) {
     postLeftLikesCounter,
     makeNetworkContainer(),
     postLeftLine,
-    comments
+    comments,
   );
 
   return postLeftItemsContainer;
@@ -95,7 +95,7 @@ function makePostLeftArticleEl(post) {
     `<article class="post__left-article">${post.text}</article>
         <div class="post__left-notes-container">
           <p class="post__left-notes-text">${post.quote}</p>
-        </div>`
+        </div>`,
   );
 
   return postLeftArticle;
@@ -138,7 +138,7 @@ function makeInfoMessageContainer(post) {
      <span class="post__info-message">&#8226;</span>
      <span class="post__info-message-icon"></span>
      <span class="post__info-message">${post.commentsLength}</span>
-     ${stars}`
+     ${stars}`,
   );
 
   return postInfoMessageContainer;
@@ -215,7 +215,7 @@ function makeCommentHeader(comment) {
        <div class="comments-container__header-time">
          <span class="comments-container__header-time-icon"></span>
          <span class="comments-container__header-time-number">${comment.time}</span>
-       </div>`
+       </div>`,
   );
 
   return commentsContainerHeader;

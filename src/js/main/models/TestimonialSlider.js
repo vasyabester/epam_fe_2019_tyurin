@@ -1,4 +1,4 @@
-import { Slider } from './Slider';
+import {Slider} from './Slider';
 
 export function TestimonialSlider(testimonials, animationDuration) { // eslint-disable-line
   const testimonialContainer = document.querySelector('.testimonials');
