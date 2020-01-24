@@ -1,5 +1,9 @@
 /* eslint-disable */
+<<<<<<< HEAD
 export function renderContactUs(contentEl, data) {
+=======
+function renderContactUs(contentEl, data) {
+>>>>>>> d0fc807012884c5453a8421e85b3266f4f52c2b8
   const sectionEl = document.createElement('section');
   sectionEl.className = 'contact-us';
   sectionEl.id = 'contact';
@@ -25,7 +29,45 @@ export function renderContactUs(contentEl, data) {
 
   contentEl.append(sectionEl);
 }
+<<<<<<< HEAD
 
+=======
+function renderBlogPosts(contentEl, data) {
+  const sectionEl = document.createElement('section');
+  sectionEl.className = 'blog';
+
+  const headerContainer = document.createElement('div');
+  headerContainer.className = 'container';
+
+  headerContainer.insertAdjacentHTML('beforeend',
+    `<div class="row">
+        <div class="blog__header-container">
+          <h1 class="blog__header">Blog</h1>
+        </div>
+      </div>`);
+
+  const blogSearchContainer = document.createElement('div');
+  blogSearchContainer.className = 'container';
+
+  blogSearchContainer.insertAdjacentHTML('beforeend',
+    `<div class="row">
+        <div class="blog__search-container">
+          <input class="blog__search" type="text" value="Search by author" />
+        </div>
+      </div>`);
+
+  sectionEl.append(
+    headerContainer,
+    blogSearchContainer,
+  );
+
+  data.blogPosts.forEach((blogPost) => {
+    sectionEl.append(makeBlogPostItemtEl(blogPost));
+  });
+
+  contentEl.append(sectionEl);
+}
+>>>>>>> d0fc807012884c5453a8421e85b3266f4f52c2b8
 /* eslint-enable */
 function makeHeaderContainer() {
   const headerContainer = document.createElement('div');
@@ -110,7 +152,11 @@ function makeWhatWillBeNextEl() {
 
   whatWillBeNext.append(
     whatWillBeNextHeader,
+<<<<<<< HEAD
     makeWhatWillBeNextFragment(),
+=======
+    makeWhatWillBeNextFragment()
+>>>>>>> d0fc807012884c5453a8421e85b3266f4f52c2b8
   );
 
   return whatWillBeNext;
@@ -124,7 +170,11 @@ function makeWhatWillBeNextFragment() {
   whatWillBeNextFirstItem.insertAdjacentHTML('beforeend',
     `<h2 class="what-will-be-next__item-header">1. We’ll prepare a proposal</h2>
      <p class="what-will-be-next__text">Required scope, timeline and apr. price will be included if you provide
+<<<<<<< HEAD
       us with detail information about a project.</p>`,
+=======
+      us with detail information about a project.</p>`
+>>>>>>> d0fc807012884c5453a8421e85b3266f4f52c2b8
   );
 
   const whatWillBeNextSecondItem = document.createElement('article');
@@ -132,7 +182,11 @@ function makeWhatWillBeNextFragment() {
   whatWillBeNextSecondItem.insertAdjacentHTML('beforeend',
     `<h2 class="what-will-be-next__item-header">2. Together we discuss it</h2>
      <p class="what-will-be-next__text">Let’s get acquainted and discuss all the possible variant and options.
+<<<<<<< HEAD
        Google Hangouts or Skype usually wirks great.</p>`,
+=======
+       Google Hangouts or Skype usually wirks great.</p>`
+>>>>>>> d0fc807012884c5453a8421e85b3266f4f52c2b8
   );
 
   const whatWillBeNextThirdItem = document.createElement('article');
@@ -140,13 +194,21 @@ function makeWhatWillBeNextFragment() {
   whatWillBeNextThirdItem.insertAdjacentHTML('beforeend',
     `<h2 class="what-will-be-next__item-header">3. Let’s start building</h2>
      <p class="what-will-be-next__text">When the contract is signed and all goals are set we can start the
+<<<<<<< HEAD
        first sprint.</p>`,
+=======
+       first sprint.</p>`
+>>>>>>> d0fc807012884c5453a8421e85b3266f4f52c2b8
   );
 
   whatWillBeNextFragment.append(
     whatWillBeNextFirstItem,
     whatWillBeNextSecondItem,
+<<<<<<< HEAD
     whatWillBeNextThirdItem,
+=======
+    whatWillBeNextThirdItem
+>>>>>>> d0fc807012884c5453a8421e85b3266f4f52c2b8
   );
 
   return whatWillBeNextFragment;
