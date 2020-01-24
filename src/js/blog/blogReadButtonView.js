@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderReadButton(contentEl) {
+export function renderReadButton(contentEl) {
   const readButtonFragment = document.createDocumentFragment();
   const containerEl = document.createElement('div');
 

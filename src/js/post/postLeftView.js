@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderPostLeft(contentEl, post) {
+export function renderPostLeft(contentEl, post) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'post__left';
 

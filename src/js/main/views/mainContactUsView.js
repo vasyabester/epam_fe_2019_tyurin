@@ -25,41 +25,7 @@ export function renderContactUs(contentEl, data) {
 
   contentEl.append(sectionEl);
 }
-function renderBlogPosts(contentEl, data) {
-  const sectionEl = document.createElement('section');
-  sectionEl.className = 'blog';
 
-  const headerContainer = document.createElement('div');
-  headerContainer.className = 'container';
-
-  headerContainer.insertAdjacentHTML('beforeend',
-    `<div class="row">
-        <div class="blog__header-container">
-          <h1 class="blog__header">Blog</h1>
-        </div>
-      </div>`);
-
-  const blogSearchContainer = document.createElement('div');
-  blogSearchContainer.className = 'container';
-
-  blogSearchContainer.insertAdjacentHTML('beforeend',
-    `<div class="row">
-        <div class="blog__search-container">
-          <input class="blog__search" type="text" value="Search by author" />
-        </div>
-      </div>`);
-
-  sectionEl.append(
-    headerContainer,
-    blogSearchContainer,
-  );
-
-  data.blogPosts.forEach((blogPost) => {
-    sectionEl.append(makeBlogPostItemtEl(blogPost));
-  });
-
-  contentEl.append(sectionEl);
-}
 /* eslint-enable */
 function makeHeaderContainer() {
   const headerContainer = document.createElement('div');

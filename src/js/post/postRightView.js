@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderPostRight(contentEl, data) {
+export function renderPostRight(contentEl, data) {
   const postRightFragment = document.createDocumentFragment();
 
   const sectionEl = document.createElement('section');

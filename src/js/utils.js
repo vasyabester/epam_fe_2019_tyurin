@@ -1,3 +1,7 @@
+import { ImagePost } from "./post/models/ImagePost";
+import { VideoPost } from "./post/models/VideoPost";
+import { AudioPost } from "./post/models/AudioPost";
+
 /* eslint-disable */
 export function getMockedJson() {
   //ToDo: change to real REST
@@ -16,11 +20,11 @@ export function getMockedJson() {
   return result;
 }
 
-function validate(title) {
+export function validate(title) {
   return /^[A-Z](?=.*[a-z])[a-zA-Z0-9\s\!\:\-\?\,\.]{5,59}$/.test(title);
 }
 
-function createPostDueToType(post) {
+export function createPostDueToType(post) {
   let postObject;
 
   if (post.type === 'video') {

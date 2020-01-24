@@ -1,13 +1,54 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    index: './src/index.js',
+    blog: './src/blog.js',
+    post: './src/post.js',
   },
+  output: {
+    filename: './src/[name].js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      chunks: ['index'],
+      filename: 'index.html',
+      template: './src/index.html',
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['blog'],
+      filename: 'blog.html',
+      template: './src/blog.html',
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['post'],
+      filename: 'post.html',
+      template: './src/post.html',
+    }),
+    new CopyPlugin([
+      { from: 'src/img/', to: 'img/' },
+      { from: 'src/audio/', to: 'audio/' },
+      { from: 'src/video/', to: 'video/' },
+    ]),
+  ],
   module: {
     rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        use: {
+          loader: 'eslint-loader',
+          options: {
+            failOnError: true,
+          }
+        }
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -21,11 +62,8 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
           'style-loader',
-          // Translates CSS into CommonJS
           'css-loader',
-          // Compiles Sass to CSS
           'sass-loader',
         ],
       },
@@ -51,18 +89,27 @@ module.exports = {
             name: '[name].[ext]'
           }
         }
+      },
+      {
+        test: /\.(mp3)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'audio/',
+            name: '[name].[ext]'
+          }
+        }
+      },
+      {
+        test: /\.(webm)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'video/',
+            name: '[name].[ext]'
+          }
+        }
       }
     ]
-  },
-  plugins: [
-    // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
-  output: {
-    filename: './src/bundle.js',
-    path: path.resolve(__dirname, 'dist'),
   },
 };

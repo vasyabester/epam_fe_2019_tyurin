@@ -1,4 +1,4 @@
-class Post { // eslint-disable-line
+export class Post { // eslint-disable-line
   constructor({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes}) {
     this.id = id;
     this.author = author;

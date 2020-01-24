@@ -1,3 +1,10 @@
+import { createPostDueToType } from '../utils';
+import { renderBlogPosts } from "./blogPostsView";
+import { renderReadButton } from "./blogReadButtonView";
+import { renderAddPostModalWindow } from "../addPostModalWindowView";
+
+import '../newPostController';
+
 initialize();
 
 /* eslint-disable */

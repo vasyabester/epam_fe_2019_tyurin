@@ -1,5 +1,7 @@
+import { Post } from "./Post";
+
 /* eslint-disable */
-class AudioPost extends Post {
+export class AudioPost extends Post {
   constructor({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes, iconSrc, src}) {
     super({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes});
 

@@ -1,3 +1,5 @@
+import { validate } from "./utils";
+
 /* eslint-disable */
 export function renderAddPostModalWindow() {
   const modalBodyEl = document.querySelector('.modal-container-body');
