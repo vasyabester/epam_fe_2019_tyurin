@@ -10,7 +10,7 @@ module.exports = {
     post: './src/post.js',
   },
   output: {
-    filename: './src/[name].js',
+    filename: './[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
