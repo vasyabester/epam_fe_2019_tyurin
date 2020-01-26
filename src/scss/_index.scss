@@ -102,6 +102,16 @@
       width: 150px;
       margin-top: 23px;
       margin-left: 22px;
+      background-color: #f8f8f8;
+    }
+
+    &__delete-all-posts-button {
+      @extend .secondary-button;
+
+      width: 150px;
+      margin-top: 23px;
+      margin-left: 22px;
+      background-color: rgba(254, 121, 150, 0.76);
     }
   }
 

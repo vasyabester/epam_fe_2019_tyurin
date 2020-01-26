@@ -21,7 +21,7 @@ render();
 function getPost() {
   const currentID = localStorage.getItem('lastPostID');
   const xhr = new XMLHttpRequest();
-  const URL = `http://127.0.0.1:3000/api/list${currentID ? '/' + currentID : ''}`; // eslint-disable-line
+  const URL = `http://127.0.0.1:3000/api/articles${currentID ? '/' + currentID : ''}`; // eslint-disable-line
   let post;
 
   xhr.open('GET', URL, false);

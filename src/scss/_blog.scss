@@ -618,4 +618,12 @@
     margin-top: 32px;
     margin-left: 10px;
   }
+
+  &__post-edit-button {
+    @extend .secondary-button;
+
+    width: 121px;
+    margin-top: 32px;
+    margin-left: 10px;
+  }
 }
