@@ -16,7 +16,7 @@ tags:
   - name: Articles
     description: Some list
 paths:
-  /api/list:
+  /api/articles:
     get:
       tags:
         - Articles
@@ -34,7 +34,7 @@ paths:
                   $ref: '#/components/schemas/Article'
         '400':
           description: bad input parameter
-  /api/list/{id}:
+  /api/articles/{id}:
     get:
       tags:
         - Articles
@@ -60,13 +60,13 @@ paths:
                   $ref: '#/components/schemas/Article'
         '400':
           description: bad input parameter
-  /api/create-article:
+  /api/articles:
     post:
       tags:
         - Articles
       summary: add new article
       operationId: addArticle
-      description: Add new article
+      description: Add new article or edit existing one if server gets ID
       responses:
         '201':
           description: item created
@@ -78,6 +78,50 @@ paths:
             schema:
               $ref: '#/components/schemas/Article'
         description: Article to add
+  /api/articles/{id}:
+    delete:
+      tags:
+        - Articles
+      summary: delete articles by id
+      operationId: deleteArticle
+      parameters:
+            - name: id
+              in: path
+              description: ID of article to return
+              required: true
+              schema:
+                 type: integer
+                 format: int64
+      description: Delete existing article by id
+      responses:
+        '201':
+          description: item is deleted
+        '400':
+          description: 'invalid id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+        description: Article to delete
+  /api/articles:
+    delete:
+      tags:
+        - Articles
+      summary: delete all articles in blog
+      operationId: deleteArticles
+      description: Delete all existing articles in blog
+      responses:
+        '201':
+          description: items are deleted
+        '400':
+          description: 'invalid request'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+        description: Articles to delete
 components:
   schemas:
     Article:
