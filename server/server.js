@@ -22,17 +22,15 @@ app.use(cors());
 app.use(express.static(__dirname)); //reading static files
 app.use(express.json()); //initialize json parser
 app.use(express.urlencoded({ extended: true })); //pars url
-
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-
 app.use(function (req, res, next) {
   console.log('LOGGED');
   next();
 });
-
 app.use('/api', articles);
-
+app.get('/', function(req, res) {
+  res.sendFile(path.resolve(__dirname, "index.html"));
+});
 //listen our post, 3000
 app.listen(config.get("port"), function() {
   log.info("Server start running on port " + config.get("port"));

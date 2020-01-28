@@ -1,7 +1,7 @@
-import {createPostDueToType} from '../utils';
 import {renderBlogPosts} from './blogPostsView';
 import {renderReadButton} from './blogReadButtonView';
 import {renderAddPostModalWindow} from '../addPostModalWindowView';
+import {deletePost, addAbilityToDeleteAllPosts, getPostList} from '../model/serverRequests';
 
 import '../newPostController';
 import '../myJQueryModalPlugin/main';
@@ -28,32 +28,7 @@ function render(postList) {
   renderAddPostModalWindow();
   addDeleteButtonListener();
 }
-
 /* eslint-enable */
-
-function getPostList() {
-  const xhr = new XMLHttpRequest();
-  const URL = 'http://127.0.0.1:3000/api/articles';
-  const postList = [];
-  let response;
-
-  xhr.open('GET', URL, false);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send();
-
-  if (xhr.status === 200) {
-    response = JSON.parse(xhr.response);
-  } else {
-    alert(JSON.parse(xhr.response).message);
-  }
-
-  response.forEach((post) => {
-    postList.push(createPostDueToType(post)); // eslint-disable-line
-  });
-
-  return postList;
-}
-
 function addFilterByAuthorField() {
   const searchByAuthorField = document.getElementsByClassName('blog__search')[0];
   const newEvent = new Event('input');
@@ -102,38 +77,20 @@ function isValueOutOfFilter(inputValue, nameTitle) {
 function addDeleteButtonListener() {
   const deleteButton = $('.blog__post-delete-button');
 
-  deleteButton.on('click', () => {
+
+  deleteButton.on('click', (event) => {
+    const clickedDeleteButtonForCurrentPost = event.currentTarget;
+    const postElement = $(clickedDeleteButtonForCurrentPost).parents(".blog__item");
+
     $('body').modalWindowPlugin({
       quantity: 2,
       type: 'info',
       message: 'Are you realy want to delete this post?',
-      onOkButtonClick: deletePost
+      onOkButtonClick: function () {
+        deletePost(postElement);
+      }
     });
   });
-}
-
-function deletePost() {
-  const currentElement = JSON.parse(localStorage.getItem('selectedPost'));
-  const URL = `http://127.0.0.1:3000/api/articles/${currentElement.id}`;
-  const xhr = new XMLHttpRequest();
-
-  xhr.open('delete', URL);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(null);
-
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState !== 4) {
-      return;
-    }
-
-    if (xhr.status !== 200) {
-      alert(JSON.parse(xhr.response).message);
-
-      return;
-    }
-
-    window.location.href = './blog.html';
-  };
 }
 
 function addEditAbility() {
@@ -165,50 +122,25 @@ function addEditAbility() {
 }
 
 function clearAddNewPostWindowOnOpen() {
-$('.header-ideas__add-post-button').on('click', function () {
-  $('#img').attr('disabled', false)
-    .val('');
+  $('.header-ideas__add-post-button').on('click', function () {
+    $('#img').attr('disabled', false)
+      .val('');
 
-  $('#title').attr('disabled', false)
-    .val('');
+    $('#title').attr('disabled', false)
+      .val('');
 
-  $('#author').attr('disabled', false)
-    .val('');
+    $('#author').attr('disabled', false)
+      .val('');
 
-  $('#date').attr('disabled', false)
-    .val('');
+    $('#date').attr('disabled', false)
+      .val('');
 
-  $('#text').val('');
+    $('#text').val('');
 
-  $('#quote').attr('disabled', false)
-    .val('');
+    $('#quote').attr('disabled', false)
+      .val('');
 
-  localStorage.setItem('selectedPost', '');
-});}
+    localStorage.setItem('selectedPost', '');
 
-
-function addAbilityToDeleteAllPosts() {
-  $('.header-ideas__delete-all-posts-button').on('click', function () {
-    const URL = 'http://127.0.0.1:3000/api/articles';
-    const xhr = new XMLHttpRequest();
-
-    xhr.open('delete', URL);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(null);
-
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== 4) {
-        return;
-      }
-
-      if (xhr.status !== 200) {
-        alert(JSON.parse(xhr.response).message);
-
-        return;
-      }
-
-      window.location.href = './blog.html';
-    };
-  });
-}
+  });}
 /* eslint-enable */

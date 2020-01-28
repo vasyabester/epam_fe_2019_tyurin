@@ -100,11 +100,4 @@ export class Post { // eslint-disable-line
       quote: this.quote,
     };
   }
-
-  // _generateID() {
-  //   const newID = new Date().getTime();
-  //   localStorage.setItem('lastPostID', newID);
-  //
-  //   return newID;
-  // }
 }
