@@ -1,4 +1,6 @@
-function TestimonialSlider(testimonials, animationDuration) { // eslint-disable-line
+import {Slider} from './Slider';
+
+export function TestimonialSlider(testimonials, animationDuration) { // eslint-disable-line
   const testimonialContainer = document.querySelector('.testimonials');
   const testimonialButtons = {
     rightButton: document.querySelector('.testimonials__pagination-item--right'),

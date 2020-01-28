@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderBlogPosts(contentEl, postList) {
+export function renderBlogPosts(contentEl, postList) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'blog';
 
@@ -37,7 +37,7 @@ function renderBlogPosts(contentEl, postList) {
 
   contentEl.append(sectionEl);
 }
-/* eslint-enable */
+
 function makeBlogPostItemtEl(blogPost) {
   const blogPostItem = document.createElement('section');
   blogPostItem.className = `blog__${blogPost.type} blog__item`;
@@ -128,3 +128,4 @@ function makeBlogPostContent(blogPost) {
 
   return blogPostContent;
 }
+/* eslint-enable */

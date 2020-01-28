@@ -1,3 +1,10 @@
+import {createPostDueToType, getMockedJson} from '../utils';
+import {renderAddPostModalWindow} from '../addPostModalWindowView';
+import {renderPostLeft} from './postLeftView';
+import {renderPostRight} from './postRightView';
+
+import '../newPostController';
+
 /* eslint-disable */
 function render() {
   const post = getPost();

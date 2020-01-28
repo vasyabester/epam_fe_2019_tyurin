@@ -1,5 +1,7 @@
+import {Post} from './Post';
+
 /* eslint-disable */
-class VideoPost extends Post {
+export class VideoPost extends Post {
   constructor({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes, poster, src, preload}) {
     super({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes});
 

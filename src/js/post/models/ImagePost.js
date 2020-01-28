@@ -1,5 +1,7 @@
+import {Post} from './Post';
+
 /* eslint-disable */
-class ImagePost extends Post {
+export class ImagePost extends Post {
   constructor({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes, img}) {
     super({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes});
 

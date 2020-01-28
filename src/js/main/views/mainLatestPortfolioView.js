@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderLatestPortfolio(contentEl, data) {
+export function renderLatestPortfolio(contentEl, data) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'latest-portfolio';
   sectionEl.id = 'portfolio';

@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderContactUs(contentEl, data) {
+export function renderContactUs(contentEl, data) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'contact-us';
   sectionEl.id = 'contact';
@@ -25,41 +25,7 @@ function renderContactUs(contentEl, data) {
 
   contentEl.append(sectionEl);
 }
-function renderBlogPosts(contentEl, data) {
-  const sectionEl = document.createElement('section');
-  sectionEl.className = 'blog';
 
-  const headerContainer = document.createElement('div');
-  headerContainer.className = 'container';
-
-  headerContainer.insertAdjacentHTML('beforeend',
-    `<div class="row">
-        <div class="blog__header-container">
-          <h1 class="blog__header">Blog</h1>
-        </div>
-      </div>`);
-
-  const blogSearchContainer = document.createElement('div');
-  blogSearchContainer.className = 'container';
-
-  blogSearchContainer.insertAdjacentHTML('beforeend',
-    `<div class="row">
-        <div class="blog__search-container">
-          <input class="blog__search" type="text" value="Search by author" />
-        </div>
-      </div>`);
-
-  sectionEl.append(
-    headerContainer,
-    blogSearchContainer,
-  );
-
-  data.blogPosts.forEach((blogPost) => {
-    sectionEl.append(makeBlogPostItemtEl(blogPost));
-  });
-
-  contentEl.append(sectionEl);
-}
 /* eslint-enable */
 function makeHeaderContainer() {
   const headerContainer = document.createElement('div');
@@ -122,7 +88,7 @@ function makeFormMapContainerEl(data) {
      <input class="data-form__input" type="password" id="password" pattern="^(?=.*[a-zA-Z][0-9])(?!.*\\$&$)[a-zA-Z0-9!#$_]{6,10}$" title="Password must contain uppercase, lowercase letters and digits, from 6 to 10 symbols and could consist of !,#,$,_">
      <button type="submit" class="data-form__submit-button">Send message</button>
      <div class="data-form__details">If you need to have a DNA first, just contact us at <span
-       class="data-form__details--email">email@gmail.com</span></div>`
+       class="data-form__details--email">email@gmail.com</span></div>`,
   );
 
   const formMapContainerMapImage = document.createElement('img');
@@ -144,7 +110,7 @@ function makeWhatWillBeNextEl() {
 
   whatWillBeNext.append(
     whatWillBeNextHeader,
-    makeWhatWillBeNextFragment()
+    makeWhatWillBeNextFragment(),
   );
 
   return whatWillBeNext;
@@ -158,7 +124,7 @@ function makeWhatWillBeNextFragment() {
   whatWillBeNextFirstItem.insertAdjacentHTML('beforeend',
     `<h2 class="what-will-be-next__item-header">1. We’ll prepare a proposal</h2>
      <p class="what-will-be-next__text">Required scope, timeline and apr. price will be included if you provide
-      us with detail information about a project.</p>`
+      us with detail information about a project.</p>`,
   );
 
   const whatWillBeNextSecondItem = document.createElement('article');
@@ -166,7 +132,7 @@ function makeWhatWillBeNextFragment() {
   whatWillBeNextSecondItem.insertAdjacentHTML('beforeend',
     `<h2 class="what-will-be-next__item-header">2. Together we discuss it</h2>
      <p class="what-will-be-next__text">Let’s get acquainted and discuss all the possible variant and options.
-       Google Hangouts or Skype usually wirks great.</p>`
+       Google Hangouts or Skype usually wirks great.</p>`,
   );
 
   const whatWillBeNextThirdItem = document.createElement('article');
@@ -174,13 +140,13 @@ function makeWhatWillBeNextFragment() {
   whatWillBeNextThirdItem.insertAdjacentHTML('beforeend',
     `<h2 class="what-will-be-next__item-header">3. Let’s start building</h2>
      <p class="what-will-be-next__text">When the contract is signed and all goals are set we can start the
-       first sprint.</p>`
+       first sprint.</p>`,
   );
 
   whatWillBeNextFragment.append(
     whatWillBeNextFirstItem,
     whatWillBeNextSecondItem,
-    whatWillBeNextThirdItem
+    whatWillBeNextThirdItem,
   );
 
   return whatWillBeNextFragment;

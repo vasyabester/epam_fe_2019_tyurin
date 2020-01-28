@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderAboutUs(contentEl, data) {
+export function renderAboutUs(contentEl, data) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'about-us';
   sectionEl.id = 'about';
@@ -65,7 +65,7 @@ function makeNotesContainerEl() {
   notesContainer.append(
     notesContainerItem,
     makeNotesContainerSecondItemEl(),
-    makeNotesContainerThirdItemEl()
+    makeNotesContainerThirdItemEl(),
   );
 
   return notesContainer;

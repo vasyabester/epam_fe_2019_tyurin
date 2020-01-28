@@ -1,4 +1,6 @@
-function LatestPortfolioSlider(portfolioList, quantityOfPhotosOnPage) { // eslint-disable-line
+import {Slider} from './Slider';
+
+export function LatestPortfolioSlider(portfolioList, quantityOfPhotosOnPage) { // eslint-disable-line
   const latestPortfolioContainer = document.querySelector('.latest-portfolio').querySelectorAll('.container')[1];
   const latestPortfolioButtons = {
     rightButton: document.querySelector('.latest-portfolio__pagination-item--right'),

@@ -1,5 +1,5 @@
 /* eslint-disable */
-function renderTestimonials(contentEl, data) {
+export function renderTestimonials(contentEl, data) {
   const testimonialsFragment = document.createDocumentFragment();
   const sectionEl = document.createElement('section');
   sectionEl.className = 'testimonials';
@@ -61,6 +61,7 @@ function makeTestimonialsPhotoContainerEl(data) {
 
   const testimonialPhoto = document.createElement('div');
   testimonialPhoto.className = 'testimonials__photo';
+
   testimonialPhoto.style.backgroundImage = `url("img/testimonials/${data.testimonials[0].img}.png")`;
   testimonialsPhotoContainer.append(testimonialPhoto);
 
@@ -86,7 +87,7 @@ function makeTestimonialsWordsContainerEl(data) {
   testimonialsWordsContainer.append(
     testimonialsQuote,
     testimonialsSignName,
-    testimonialsSignPosition
+    testimonialsSignPosition,
   );
 
   return testimonialsWordsContainer;

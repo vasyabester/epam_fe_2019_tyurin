@@ -1,4 +1,4 @@
-function Slider(sliderContainerEl, buttons) { // eslint-disable-line
+export function Slider(sliderContainerEl, buttons) { // eslint-disable-line
   this.sliderContainerEl = sliderContainerEl;
 
   this.infinitySwipe = function () {
