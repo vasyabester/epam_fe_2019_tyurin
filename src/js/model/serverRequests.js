@@ -3,8 +3,10 @@ import {createPostDueToType} from '../utils';
 
 export function deletePost(elementToDelete) {
   const currentElement = JSON.parse(localStorage.getItem('selectedPost'));
-  const URL = `http://127.0.0.1:3000/api/articles/${currentElement.id}`;
+  const URL = `http://127.0.0.1:3000/api/articles/${currentElement._id}`;
   const xhr = new XMLHttpRequest();
+
+  console.log(currentElement);
 
   xhr.open('delete', URL);
   xhr.setRequestHeader('Content-Type', 'application/json');
@@ -58,7 +60,7 @@ export function getPostList() {
 
   xhr.open('GET', URL, false);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send();
+  xhr.send(null);
 
   if (xhr.status === 200) {
     response = JSON.parse(xhr.response);
@@ -81,7 +83,7 @@ export function getPost() {
 
   xhr.open('GET', URL, false);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send();
+  xhr.send(null);
 
   if (xhr.status === 200) {
     const response = JSON.parse(xhr.response);

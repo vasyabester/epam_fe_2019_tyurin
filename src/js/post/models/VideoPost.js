@@ -2,8 +2,8 @@ import {Post} from './Post';
 
 /* eslint-disable */
 export class VideoPost extends Post {
-  constructor({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes, poster, src, preload}) {
-    super({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes});
+  constructor({_id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes, poster, src, preload}) {
+    super({_id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes});
 
     this.poster = poster;
     this.preload = preload;

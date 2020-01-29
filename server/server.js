@@ -12,8 +12,8 @@ const cors = require("cors"); //https://github.com/expressjs/cors
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./config/swagger.yaml");
-
 const articles = require('./appRequests');
+const dataBase = require('./mongoose');
 
 // const apiConfig = require(ABSPATH + '/api');
 // app.use ->  this is middleware

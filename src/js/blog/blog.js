@@ -77,7 +77,6 @@ function isValueOutOfFilter(inputValue, nameTitle) {
 function addDeleteButtonListener() {
   const deleteButton = $('.blog__post-delete-button');
 
-
   deleteButton.on('click', (event) => {
     const clickedDeleteButtonForCurrentPost = event.currentTarget;
     const postElement = $(clickedDeleteButtonForCurrentPost).parents(".blog__item");
@@ -95,7 +94,6 @@ function addDeleteButtonListener() {
 
 function addEditAbility() {
   const editButton = $('.blog__post-edit-button');
-
 
   editButton.on('click', function () {
     setTimeout(function () {
