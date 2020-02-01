@@ -1,13 +1,13 @@
 /* eslint-disable */
 (function () {
-  $.modalWindowPlugin = function (element, {quantity, type, message}) {
-    this.openModal({quantity, type, message});
+  $.modalWindowPlugin = function (element, {quantity, type, message, onOkButtonClick}) {
+    this.openModal({quantity, type, message, onOkButtonClick});
   };
 
   $.modalWindowPlugin.prototype = {
     constructor: $.modalWindowPlugin,
 
-    openModal({quantity, type, message}) {
+    openModal({quantity, type, message, onOkButtonClick}) {
       const footerContent = this.createFooterEl(quantity);
       const modalWindowTemplate = (`
          <div class="blocker-window">
@@ -20,6 +20,8 @@
           </div>
         </div>
       `);
+
+      this._onOkButtonClick = onOkButtonClick;
 
       $('body').append(modalWindowTemplate);
       $('.modal-window').on('click', this.onDialogWindowClicked.bind(this));
@@ -48,10 +50,9 @@
       event.stopPropagation();
 
       if (event.target.value === 'Cancel') {
-        console.log('Cancel');
         this.closeModal();
       } else if (event.target.value === 'Ok') {
-        console.log('Ok');
+        this._onOkButtonClick && this._onOkButtonClick();
         this.closeModal();
       } else if ($(event.target).hasClass('modal-window__close-button')) {
         this.closeModal();

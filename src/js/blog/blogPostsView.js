@@ -123,8 +123,13 @@ function makeBlogPostContent(blogPost) {
                 ${audioTrack}
                 <p class="blog__${blogPost.type}-post-article-text">${blogPost.text}</p>
                 <button class="blog__${blogPost.type}-post-article-button">Read more</button>
-                <button class="blog__post-delete-button" value="delete">Delete post</button>`
+                <button class="blog__post-delete-button" value="delete">Delete post</button>
+                <button class="blog__post-edit-button" data-toggle="modal" data-target="#myModal" value="edit">Edit post</button>`
   );
+
+  blogPostContent.addEventListener('click', function () {
+    localStorage.setItem('selectedPost', JSON.stringify(blogPost));
+  });
 
   return blogPostContent;
 }

@@ -1,9 +1,10 @@
-import {createPostDueToType} from '../utils';
 import {renderBlogPosts} from './blogPostsView';
 import {renderReadButton} from './blogReadButtonView';
 import {renderAddPostModalWindow} from '../addPostModalWindowView';
+import {deletePost, addAbilityToDeleteAllPosts, getPostList} from '../model/serverRequests';
 
 import '../newPostController';
+import '../myJQueryModalPlugin/main';
 
 initialize();
 
@@ -14,6 +15,9 @@ function initialize() {
   render(postList);
   addFilterByAuthorField();
   addFilterByTitleField();
+  addEditAbility();
+  clearAddNewPostWindowOnOpen();
+  addAbilityToDeleteAllPosts();
 }
 
 function render(postList) {
@@ -24,32 +28,7 @@ function render(postList) {
   renderAddPostModalWindow();
   addDeleteButtonListener();
 }
-
 /* eslint-enable */
-
-function getPostList() {
-  const xhr = new XMLHttpRequest();
-  const URL = 'http://127.0.0.1:3000/api/list';
-  const postList = [];
-  let response;
-
-  xhr.open('GET', URL, false);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send();
-
-  if (xhr.status === 200) {
-    response = JSON.parse(xhr.response);
-  } else {
-    alert(JSON.parse(xhr.response).message);
-  }
-
-  response.forEach((post) => {
-    postList.push(createPostDueToType(post)); // eslint-disable-line
-  });
-
-  return postList;
-}
-
 function addFilterByAuthorField() {
   const searchByAuthorField = document.getElementsByClassName('blog__search')[0];
   const newEvent = new Event('input');
@@ -98,12 +77,70 @@ function isValueOutOfFilter(inputValue, nameTitle) {
 function addDeleteButtonListener() {
   const deleteButton = $('.blog__post-delete-button');
 
-  deleteButton.on('click', () => {
+
+  deleteButton.on('click', (event) => {
+    const clickedDeleteButtonForCurrentPost = event.currentTarget;
+    const postElement = $(clickedDeleteButtonForCurrentPost).parents(".blog__item");
+
     $('body').modalWindowPlugin({
       quantity: 2,
       type: 'info',
       message: 'Are you realy want to delete this post?',
+      onOkButtonClick: function () {
+        deletePost(postElement);
+      }
     });
   });
 }
+
+function addEditAbility() {
+  const editButton = $('.blog__post-edit-button');
+
+
+  editButton.on('click', function () {
+    setTimeout(function () {
+      const currentElement = JSON.parse(localStorage.getItem('selectedPost'));
+
+      $('#img').attr('disabled', true)
+        .val(currentElement.img);
+
+      $('#title').attr('disabled', true)
+        .val(currentElement.title);
+
+      $('#author').attr('disabled', true)
+        .val(currentElement.author);
+
+      $('#date').attr('disabled', true)
+        .val(currentElement.date);
+
+      $('#text').val(currentElement.text);
+
+      $('#quote').attr('disabled', true)
+        .val(currentElement.quote);
+    }, 10);
+  });
+}
+
+function clearAddNewPostWindowOnOpen() {
+  $('.header-ideas__add-post-button').on('click', function () {
+    $('#img').attr('disabled', false)
+      .val('');
+
+    $('#title').attr('disabled', false)
+      .val('');
+
+    $('#author').attr('disabled', false)
+      .val('');
+
+    $('#date').attr('disabled', false)
+      .val('');
+
+    $('#text').val('');
+
+    $('#quote').attr('disabled', false)
+      .val('');
+
+    localStorage.setItem('selectedPost', '');
+
+  });}
 /* eslint-enable */
