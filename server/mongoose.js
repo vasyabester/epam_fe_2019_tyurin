@@ -1,7 +1,6 @@
 const mongoose    = require('mongoose'),
   log = require(INCPATH + '/log')(module),
   config = require(INCPATH + '/config');
-Q = require('q');
 
 mongoose.connect(config.get('db'));
 const db = mongoose.connection;
