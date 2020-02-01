@@ -6,8 +6,6 @@ export function deletePost(elementToDelete) {
   const URL = `http://127.0.0.1:3000/api/articles/${currentElement._id}`;
   const xhr = new XMLHttpRequest();
 
-  console.log(currentElement);
-
   xhr.open('delete', URL);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(null);
@@ -24,6 +22,13 @@ export function deletePost(elementToDelete) {
     }
 
     elementToDelete.remove();
+    const blogItem = $('.blog__item').length;
+    if(!blogItem) {
+      const contentEl = $('.blog')[0];
+      contentEl.insertAdjacentHTML('beforeend',
+        `<p class="blog__empty-text">There are no articles here, you can add by clicking the button above
+      </p>`);
+    }
   };
 }
 
@@ -96,6 +101,4 @@ export function getPost() {
 
   return createPostDueToType(post); // eslint-disable-line
 }
-
-
 /* eslint-enable */

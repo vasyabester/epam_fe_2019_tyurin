@@ -1,5 +1,15 @@
 /* eslint-disable */
-export function renderBlogPosts(contentEl, postList) {
+export function displayMainContent(contentEl, postList) {
+  if (postList.length) {
+    renderBlogPosts(contentEl, postList);
+  } else {
+    contentEl.insertAdjacentHTML('beforeend',
+      `<p class="blog__empty-text">There are no articles here, you can add by clicking the button above
+      </p>`);
+  }
+}
+
+function renderBlogPosts(contentEl, postList) {
   const sectionEl = document.createElement('section');
   sectionEl.className = 'blog';
 

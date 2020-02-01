@@ -1,10 +1,6 @@
-//getting static file
 const express = require('express');
 const router = express.Router();
-const log = require(INCPATH + "/log")(module); //log is a function. which is called with the current model to which
-// it is connected
-let articles = require("./config/articles.json");
-
+const log = require(INCPATH + "/log")(module);
 const requestHandlers = require('./mongoose').requestHandlers;
 
 router.get("/", function(req, res) {

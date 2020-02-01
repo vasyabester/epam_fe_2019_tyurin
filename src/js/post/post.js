@@ -8,12 +8,9 @@ import '../newPostController';
 
 /* eslint-disable */
 function render() {
-  console.log('**************');
   const post = getPost();
   const contentEl = document.getElementById('content');
   const data = getMockedJson();
-
-  console.log('!!!!!!!!!!!!!!!!!!!');
 
   renderPostLeft(contentEl, post);
   renderPostRight(contentEl, data);
