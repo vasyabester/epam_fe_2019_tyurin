@@ -62,7 +62,7 @@ export class Post { // eslint-disable-line
   createNewPost() {
     this._generatePostRequest();
 
-    const URL = 'http://127.0.0.1:3000/api/create-article';
+    const URL = 'http://127.0.0.1:3000/api/articles';
     const xhr = new XMLHttpRequest();
 
     xhr.open('post', URL);
@@ -80,13 +80,18 @@ export class Post { // eslint-disable-line
         return;
       }
 
+      localStorage.setItem('lastPostID', JSON.parse(xhr.response).id);
       window.location.href = './post.html';
     };
   }
 
   _generatePostRequest() {
+    const articleID = localStorage.getItem('selectedPost')
+      ? JSON.parse(localStorage.getItem('selectedPost')).id
+      : '';
+
     this._postRequest = {
-      id: this._generateID(),
+      id: articleID,
       type: this.type,
       title: this.title,
       author: this.author,
@@ -94,12 +99,5 @@ export class Post { // eslint-disable-line
       text: this.text,
       quote: this.quote,
     };
-  }
-
-  _generateID() {
-    const newID = new Date().getTime();
-    localStorage.setItem('lastPostID', newID);
-
-    return newID;
   }
 }
