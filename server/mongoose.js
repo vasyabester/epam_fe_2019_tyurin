@@ -28,11 +28,18 @@ const ArticleSchema = new Schema({
 
 const ArticleModel = mongoose.model('Articles', ArticleSchema);
 
-// module.exports.ArticleModel = ArticleModel;
 module.exports.requestHandlers = {
   onGetAllArticles: function (req, res) {
     ArticleModel.find(function (err, articles) {
       res.end(JSON.stringify(articles));
+    });
+  },
+
+  onGetAllAuthors: function (req, res) {
+      ArticleModel.find(function (err, articles) {
+      const allAuthors = articles.map(article => article.author);
+
+      res.end(JSON.stringify(uniqueAuthors(allAuthors)));
     });
   },
 
@@ -69,3 +76,15 @@ module.exports.requestHandlers = {
     });
   }
 };
+
+function uniqueAuthors(authors) {
+  let uniqueAuthors = [];
+
+  for (let author of authors) {
+    if (!uniqueAuthors.includes(author)) {
+      uniqueAuthors.push(author);
+    }
+  }
+
+  return uniqueAuthors;
+}
