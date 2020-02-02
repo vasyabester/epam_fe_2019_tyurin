@@ -2,3 +2,9 @@ dist/
 src/**/styles/
 .idea/
 server/*
+spec/
+webpack.dev.js
+webpack.prod.js
+webpack.common.js
+lib/
+karma.conf.js
