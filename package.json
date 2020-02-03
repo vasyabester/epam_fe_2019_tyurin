@@ -7,8 +7,14 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "jasmine"
+    "test": "karma start"
   },
+  "plugins": [
+    "webpack",
+    "karma-jasmine",
+    "karma-webpack",
+    "karma-chrome-launcher"
+  ],
   "keywords": [
     "RD",
     "Front-End",
@@ -35,8 +41,10 @@
     "husky": "^3.1.0",
     "jasmine": "^3.5.0",
     "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^3.1.0",
     "karma-requirejs": "^1.1.0",
-    "karma-webpack": "^4.0.2",
+    "karma-webpack": "^3.0.1",
     "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
