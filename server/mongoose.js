@@ -28,7 +28,6 @@ const ArticleSchema = new Schema({
 
 const ArticleModel = mongoose.model('Articles', ArticleSchema);
 
-// module.exports.ArticleModel = ArticleModel;
 module.exports.requestHandlers = {
   onGetAllArticles: function (req, res) {
     ArticleModel.find(function (err, articles) {

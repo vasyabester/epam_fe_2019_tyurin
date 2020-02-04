@@ -2,8 +2,8 @@ import {Post} from './Post';
 
 /* eslint-disable */
 export class AudioPost extends Post {
-  constructor({_id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes, iconSrc, src}) {
-    super({_id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes});
+  constructor({iconSrc, src, ...props}) {
+    super(props);
 
     this.src = src;
     this.iconSrc = iconSrc;

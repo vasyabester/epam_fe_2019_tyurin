@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const log = require(INCPATH + "/log")(module);
 const requestHandlers = require('./mongoose').requestHandlers;
 
 router.get("/", function(req, res) {

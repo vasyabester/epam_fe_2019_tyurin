@@ -41,7 +41,7 @@ function addFilterByAuthorField() {
 
 function addFilterByTitleField() {
   const searchByTitleField = document.getElementsByClassName('blog__search')[1];
-  if(searchByTitleField) {
+  if (searchByTitleField) {
     searchByTitleField.addEventListener('input', onSearchByTitleFieldInput, false);
   }
 }

@@ -3,9 +3,13 @@ export function displayMainContent(contentEl, postList) {
   if (postList.length) {
     renderBlogPosts(contentEl, postList);
   } else {
-    contentEl.insertAdjacentHTML('beforeend',
-      `<p class="blog__empty-text">There are no articles here, you can add by clicking the button above
-      </p>`);
+    contentEl.insertAdjacentHTML(
+      'beforeend',
+      `
+      <p class="blog__empty-text">There are no articles here, you can add by clicking the button above
+      </p>
+      `
+    );
   }
 }
 
@@ -16,25 +20,33 @@ function renderBlogPosts(contentEl, postList) {
   const headerContainer = document.createElement('div');
   headerContainer.className = 'container';
 
-  headerContainer.insertAdjacentHTML('beforeend',
-    `<div class="row">
+  headerContainer.insertAdjacentHTML(
+    'beforeend',
+    `
+     <div class="row">
         <div class="blog__header-container">
           <h1 class="blog__header">Blog</h1>
         </div>
-      </div>`);
+     </div>
+    `
+  );
 
   const blogSearchContainer = document.createElement('div');
   blogSearchContainer.className = 'container';
 
-  blogSearchContainer.insertAdjacentHTML('beforeend',
-    `<div class="row">
+  blogSearchContainer.insertAdjacentHTML(
+    'beforeend',
+    `
+      <div class="row">
         <div class="blog__search-container">
           <input class="blog__search" type="text" placeholder="Search by author" " />
         </div>
         <div class="blog__search-container">
           <input class="blog__search" type="text" placeholder="Search by title" " />
         </div>
-      </div>`);
+      </div>
+    `
+  );
 
   sectionEl.append(
     headerContainer,
@@ -103,8 +115,10 @@ function makeBlogPostContent(blogPost) {
     stars += `<span class="blog__${blogPost.type}-post-message-${star}-star-icon"></span>`;
   });
 
-  blogPostContent.insertAdjacentHTML('beforeend',
-    `<span class="blog__${blogPost.type}-post-avatar"></span>
+  blogPostContent.insertAdjacentHTML(
+    'beforeend',
+    `
+    <span class="blog__${blogPost.type}-post-avatar"></span>
             <div class="blog__${blogPost.type}-post-data-container">
               <div class="blog__${blogPost.type}-post-name blog__post-name">${blogPost.author}</div>
               <div class="blog__${blogPost.type}-post-message-container">
@@ -116,25 +130,32 @@ function makeBlogPostContent(blogPost) {
                 <span class="blog__${blogPost.type}-post-message">${blogPost.commentsLength}</span>
                 ${stars}
               </div>
-            </div>`
+            </div>
+    `
   );
 
   let audioTrack = '';
 
   if (blogPost.type === 'audio') {
-    audioTrack = `<audio controls class="blog__audio-post-article-track">
-                <source src="${blogPost.src}" type="audio/mp3" >
+    audioTrack = `
+    <audio controls class="blog__audio-post-article-track">
+       <source src="${blogPost.src}" type="audio/mp3" >
                 Browser does not support tag audio.
-              </audio>`;
+    </audio>
+    `
+    ;
   }
 
-  blogPostContent.insertAdjacentHTML('beforeend',
-    ` <h1 class="blog__${blogPost.type}-post-article-header blog__post-article-header">${blogPost.title}</h1>
+  blogPostContent.insertAdjacentHTML(
+    'beforeend',
+    ` 
+    <h1 class="blog__${blogPost.type}-post-article-header blog__post-article-header">${blogPost.title}</h1>
                 ${audioTrack}
                 <p class="blog__${blogPost.type}-post-article-text">${blogPost.text}</p>
                 <button class="blog__${blogPost.type}-post-article-button">Read more</button>
                 <button class="blog__post-delete-button" value="delete">Delete post</button>
-                <button class="blog__post-edit-button" data-toggle="modal" data-target="#myModal" value="edit">Edit post</button>`
+                <button class="blog__post-edit-button" data-toggle="modal" data-target="#myModal" value="edit">Edit post</button>
+    `
   );
 
   blogPostContent.addEventListener('click', function () {
