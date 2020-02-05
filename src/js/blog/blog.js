@@ -1,4 +1,4 @@
-import {renderBlogPosts} from './blogPostsView';
+import {displayMainContent} from './blogPostsView';
 import {renderReadButton} from './blogReadButtonView';
 import {renderAddPostModalWindow} from '../addPostModalWindowView';
 import {deletePost, addAbilityToDeleteAllPosts, getPostList} from '../model/serverRequests';
@@ -23,25 +23,27 @@ function initialize() {
 function render(postList) {
   const contentEl = document.getElementById('content');
 
-  renderBlogPosts(contentEl, postList);
+  displayMainContent(contentEl, postList);
   renderReadButton(contentEl);
   renderAddPostModalWindow();
   addDeleteButtonListener();
 }
-/* eslint-enable */
+
 function addFilterByAuthorField() {
   const searchByAuthorField = document.getElementsByClassName('blog__search')[0];
   const newEvent = new Event('input');
-
-  searchByAuthorField.addEventListener('input', onSearchByAuthorFieldInput, false);
-  searchByAuthorField.value = localStorage.getItem('filterByAuthor');
-  searchByAuthorField.dispatchEvent(newEvent);
+  if (searchByAuthorField) {
+    searchByAuthorField.addEventListener('input', onSearchByAuthorFieldInput, false);
+    searchByAuthorField.value = localStorage.getItem('filterByAuthor');
+    searchByAuthorField.dispatchEvent(newEvent);
+  }
 }
 
 function addFilterByTitleField() {
   const searchByTitleField = document.getElementsByClassName('blog__search')[1];
-
-  searchByTitleField.addEventListener('input', onSearchByTitleFieldInput, false);
+  if (searchByTitleField) {
+    searchByTitleField.addEventListener('input', onSearchByTitleFieldInput, false);
+  }
 }
 
 function onSearchByAuthorFieldInput(event) {
@@ -73,10 +75,9 @@ function isValueOutOfFilter(inputValue, nameTitle) {
 
   return !regex.test(nameTitle);
 }
-/* eslint-disable */
+
 function addDeleteButtonListener() {
   const deleteButton = $('.blog__post-delete-button');
-
 
   deleteButton.on('click', (event) => {
     const clickedDeleteButtonForCurrentPost = event.currentTarget;
@@ -95,7 +96,6 @@ function addDeleteButtonListener() {
 
 function addEditAbility() {
   const editButton = $('.blog__post-edit-button');
-
 
   editButton.on('click', function () {
     setTimeout(function () {

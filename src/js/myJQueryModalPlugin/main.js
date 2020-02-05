@@ -19,7 +19,8 @@
               <footer class="modal-window__footer">${footerContent}</footer>
           </div>
         </div>
-      `);
+      `
+      );
 
       this._onOkButtonClick = onOkButtonClick;
 

@@ -1,6 +1,7 @@
+/* eslint-disable */
 export class Post { // eslint-disable-line
-  constructor({id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes}) {
-    this.id = id;
+  constructor({_id, author, date, text, quote, title, type, stars, timeRead, commentsList, likes}) {
+    this._id = _id;
     this.author = author;
     this.type = type;
     this.date = date;
@@ -80,18 +81,17 @@ export class Post { // eslint-disable-line
         return;
       }
 
-      localStorage.setItem('lastPostID', JSON.parse(xhr.response).id);
+      localStorage.setItem('lastPostID', JSON.parse(xhr.response)._id);
       window.location.href = './post.html';
     };
   }
 
   _generatePostRequest() {
     const articleID = localStorage.getItem('selectedPost')
-      ? JSON.parse(localStorage.getItem('selectedPost')).id
+      ? JSON.parse(localStorage.getItem('selectedPost'))._id
       : '';
 
     this._postRequest = {
-      id: articleID,
       type: this.type,
       title: this.title,
       author: this.author,
@@ -99,5 +99,10 @@ export class Post { // eslint-disable-line
       text: this.text,
       quote: this.quote,
     };
+
+    if (articleID) {
+      this._postRequest._id = articleID;
+    }
   }
 }
+/* eslint-ebable */

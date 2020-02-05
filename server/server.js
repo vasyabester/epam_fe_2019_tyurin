@@ -11,6 +11,7 @@ const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./config/swagger.yaml");
 const articles = require('./appRequests');
+const dataBase = require('./mongoose');
 
 app.use(cors());
 app.use(express.static(__dirname));
