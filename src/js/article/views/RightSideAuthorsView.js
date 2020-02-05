@@ -49,14 +49,15 @@ export class RightSideAuthorsView {
 
   _selectAuthor(event, needToTrigger = true) {
     if (needToTrigger) {
-      this.mediator.publish('rightAuthorClicked', event.target.innerText, false);
+      this.mediator.publish('rightAuthorClicked', event.target.innerText);
       this._onLeftAuthorClicked(event.target.innerText);
     }
   }
 
   _onLeftAuthorClicked(authorName) {
-    const triggerButton = $('.articles__left-side').find(`button:contains(${authorName})`);
+    const rightAuthorButton = Object.assign([], $('.articles__right-side').find('.articles__button'))
+      .filter((button) => button.innerText === authorName[0]);
 
-    triggerButton.trigger('click', false);
+    $(rightAuthorButton).trigger('click', false);
   }
 }

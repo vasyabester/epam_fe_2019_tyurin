@@ -31,7 +31,7 @@ export class LeftSideAuthorsView {
       buttonContainerEl.insertAdjacentHTML(
         'beforeend',
         `
-          <div class="articles__post-title-container">
+          <div class="articles__tab-post-title-container" hidden="true">
             ${postListEl}
           </div>
         `,
@@ -41,12 +41,20 @@ export class LeftSideAuthorsView {
     return buttonContainerEl;
   }
 
+  /* eslint-disable */
   _addAccordionBehavior($buttonEl) {
     $buttonEl.on('click', function () {
-      $('.articles__button-container--left .articles__post-title-container').not($(this).next()).slideUp(100);
-      $(this).next().slideToggle(200);
+      $(this).addClass('selected')
+        .next().attr('hidden', false);
+
+      $(`.${$(this)[0].classList[0]}`).not(this).each(function () {
+        $(this).toggleClass('selected', false);
+        $(this).next().attr('hidden', true);
+      });
     });
   }
+
+  /* eslint-enable */
 
   _selectAuthor(event, needToTrigger = true) {
     if (needToTrigger) {
@@ -56,8 +64,9 @@ export class LeftSideAuthorsView {
   }
 
   _onRightAuthorClicked(authorName) {
-    const triggerButton = $('.articles__left-side').find(`button:contains(${authorName})`);
+    const leftAuthorButton = Object.assign([], $('.articles__left-side').find('.articles__button'))
+      .filter((button) => button.innerText === authorName[0]);
 
-    triggerButton.trigger('click', false);
+    $(leftAuthorButton).trigger('click', false);
   }
 }

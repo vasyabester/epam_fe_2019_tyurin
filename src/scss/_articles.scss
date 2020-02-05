@@ -11,6 +11,12 @@
 
   &__button-container {
     margin-top: 20px;
+
+    &--left {
+      .articles__tab-post-title-container {
+        position: absolute;
+      }
+    }
   }
 
   &__button {
@@ -21,6 +27,10 @@
     &--block {
       display: block;
       margin-bottom: 50px;
+    }
+
+    &.selected {
+      background-color: rgba(47, 107, 164, 0.87);
     }
 
     &:hover {
