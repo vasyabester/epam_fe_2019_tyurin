@@ -40,10 +40,16 @@
 
   &__left-side {
     @include make-lg-column(9);
+
+    .blogContainer {
+      margin-top: 100px;
+    }
   }
 
   &__right-side {
-    @include make-lg-column(3);
+    width: 231px;
+    position: absolute;
+    right: 0;
   }
 
   &__post-title {
@@ -57,5 +63,19 @@
       margin: -50px 0 5px 0;
       display: none;
     }
+
+    &-button {
+      display: block;
+      background-color: #f8b766;
+      height: 30px;
+      font-size: 18px;
+      margin: 10px;
+      border-radius: 5px;
+    }
   }
+}
+
+.footer {
+  position: absolute !important;
+  bottom: 0 !important;
 }
