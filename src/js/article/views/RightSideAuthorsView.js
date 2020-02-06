@@ -1,8 +1,8 @@
-export class RightSideAuthorsView {
-  constructor(postAuthors, allPosts, mediator) {
-    this.postAuthors = postAuthors;
-    this.allPosts = allPosts;
-    this.mediator = mediator;
+import {AuthorContainerAbstractView} from './AuthorContainerAbstractView';
+
+export class RightSideAuthorsView extends AuthorContainerAbstractView {
+  constructor(...props) {
+    super(...props);
 
     this.mediator.subscribe('leftAuthorClicked', this._onLeftAuthorClicked.bind(this));
   }
@@ -13,11 +13,18 @@ export class RightSideAuthorsView {
 
     this.postAuthors.forEach((postAuthor) => {
       const postsBySelectedAuthor = this.allPosts.filter((post) => post.author === postAuthor);
-      let postListEl = '';
+      const postListEl = document.createDocumentFragment();
 
-      postsBySelectedAuthor.forEach((Post) => {
-        postListEl += `<div class="articles__post-title">${Post.title}</div>`;
+      postsBySelectedAuthor.forEach((post) => {
+        const articlePostButton = document.createElement('button');
+        articlePostButton.className = 'articles__post-title-button';
+        articlePostButton.innerHTML = post.title;
+
+        $(articlePostButton).on('click', this._openPost.bind(this, post));
+
+        postListEl.append(articlePostButton);
       });
+
       const buttonEl = document.createElement('button');
       buttonEl.className = 'articles__button articles__button--block';
       buttonEl.innerHTML = postAuthor;
@@ -27,14 +34,11 @@ export class RightSideAuthorsView {
 
       $(buttonEl).on('click', this._selectAuthor.bind(this));
 
-      buttonContainerEl.insertAdjacentHTML(
-        'beforeend',
-        `
-          <div class="articles__post-title-container">
-            ${postListEl}
-          </div>
-        `,
-      );
+      const tabContainerEl = document.createElement('div');
+      tabContainerEl.className = 'articles__post-title-container';
+      tabContainerEl.append(postListEl);
+
+      buttonContainerEl.append(tabContainerEl);
     });
 
     return buttonContainerEl;

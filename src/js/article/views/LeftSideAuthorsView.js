@@ -1,23 +1,21 @@
-import {makeBlogPostItemtEl} from '../../blog/blogPostsView';
+import {AuthorContainerAbstractView} from './AuthorContainerAbstractView';
 
-export class LeftSideAuthorsView {
-  constructor(postAuthors, allPosts, mediator) {
-    this.postAuthors = postAuthors;
-    this.allPosts = allPosts;
-    this.mediator = mediator;
+export class LeftSideAuthorsView extends AuthorContainerAbstractView {
+  constructor(...props) {
+    super(...props);
 
     this.mediator.subscribe('rightAuthorClicked', this._onRightAuthorClicked.bind(this));
   }
 
   render() {
-    const leftSideContainerFragment = document.createDocumentFragment();
+    const mainContainerFragment = document.createDocumentFragment();
 
     this.mainContainer = document.createElement('div');
-    this.mainContainer.className = 'blogContainer';
+    this.mainContainer.className = 'blog-container';
 
-    leftSideContainerFragment.append(this._renderButtonContainerEl(), this.mainContainer);
+    mainContainerFragment.append(this._renderButtonContainerEl(), this.mainContainer);
 
-    return leftSideContainerFragment;
+    return mainContainerFragment;
   }
 
   _renderButtonContainerEl() {
@@ -85,32 +83,5 @@ export class LeftSideAuthorsView {
       .filter((button) => button.innerText === authorName[0]);
 
     $(leftAuthorButton).trigger('click', false);
-  }
-
-  _openPost(post) {
-    const URL = `http://127.0.0.1:3000/api/articles/${post._id}`;
-    const xhr = new XMLHttpRequest();
-
-    xhr.open('get', URL, false);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(null);
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== 4) {
-        return;
-      }
-
-      if (xhr.status !== 200) {
-        alert(JSON.parse(xhr.response).message);
-
-        return;
-      }
-    };
-
-    this._renderPost(JSON.parse(xhr.response));
-  }
-
-  _renderPost(post) {
-    this.mainContainer.innerHTML = '';
-    this.mainContainer.append(makeBlogPostItemtEl(post));
   }
 }

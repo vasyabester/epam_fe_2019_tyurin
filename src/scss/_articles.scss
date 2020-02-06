@@ -9,16 +9,6 @@
     background: #f8f8f8;
   }
 
-  &__button-container {
-    margin-top: 20px;
-
-    &--left {
-      .articles__tab-post-title-container {
-        position: absolute;
-      }
-    }
-  }
-
   &__button {
     @extend .primary-button;
 
@@ -41,8 +31,13 @@
   &__left-side {
     @include make-lg-column(9);
 
-    .blogContainer {
+    .blog-container {
       margin-top: 100px;
+
+      .blog__post-delete-button,
+      .blog__post-edit-button {
+        display: none;
+      }
     }
   }
 
@@ -71,6 +66,20 @@
       font-size: 18px;
       margin: 10px;
       border-radius: 5px;
+    }
+  }
+
+  &__button-container {
+    margin-top: 20px;
+
+    &--left {
+      .articles__tab-post-title-container {
+        position: absolute;
+
+        .articles__post-title-button {
+          display: inline-block;
+        }
+      }
     }
   }
 }
