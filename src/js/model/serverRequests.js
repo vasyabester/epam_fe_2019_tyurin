@@ -26,8 +26,10 @@ export function deletePost(elementToDelete) {
     if(!blogItem) {
       const contentEl = $('.blog')[0];
       contentEl.insertAdjacentHTML('beforeend',
-        `<p class="blog__empty-text">There are no articles here, you can add by clicking the button above
-      </p>`);
+        `
+        <p class="blog__empty-text">There are no articles here, you can add by clicking the button above
+        </p>
+        `);
     }
   };
 }
