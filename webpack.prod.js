@@ -44,5 +44,18 @@ module.exports = merge(common, {
         useShortDoctype: true
       }
     }),
+    new HtmlWebpackPlugin({
+      chunks: ['articles'],
+      filename: 'articles.html',
+      template: './src/articles.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
+    }),
   ],
 });

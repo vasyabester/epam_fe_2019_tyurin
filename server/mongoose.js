@@ -35,6 +35,14 @@ module.exports.requestHandlers = {
     });
   },
 
+  onGetAllAuthors: function (req, res) {
+      ArticleModel.find(function (err, articles) {
+      const allAuthors = articles.map(article => article.author);
+
+      res.end(JSON.stringify(uniqueAuthors(allAuthors)));
+    });
+  },
+
   onGetOneArticle: function(req, res) {
     ArticleModel.findById(req.params.id, function(err, article) {
       res.end(JSON.stringify(article));
@@ -68,3 +76,15 @@ module.exports.requestHandlers = {
     });
   }
 };
+
+function uniqueAuthors(authors) {
+  let uniqueAuthors = [];
+
+  for (let author of authors) {
+    if (!uniqueAuthors.includes(author)) {
+      uniqueAuthors.push(author);
+    }
+  }
+
+  return uniqueAuthors;
+}

@@ -8,6 +8,7 @@ module.exports = {
     index: './src/index.js',
     blog: './src/blog.js',
     post: './src/post.js',
+    articles: './src/articles.js',
   },
   output: {
     filename: './[name].js',
@@ -29,6 +30,11 @@ module.exports = {
       chunks: ['post'],
       filename: 'post.html',
       template: './src/post.html'
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['articles'],
+      filename: 'articles.html',
+      template: './src/articles.html'
     }),
     new CopyPlugin([
       { from: 'src/img/', to: 'img/' },

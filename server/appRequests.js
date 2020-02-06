@@ -8,6 +8,7 @@ router.get("/", function(req, res) {
 
 router.get("/articles", requestHandlers.onGetAllArticles)
       .get("/articles/:id", requestHandlers.onGetOneArticle)
+      .get("/authors", requestHandlers.onGetAllAuthors)
       .post("/articles", requestHandlers.onPostArticle)
       .delete("/articles/:id", requestHandlers.onDeleteArticle)
       .delete("/articles", requestHandlers.onDeleteAllArticles);
