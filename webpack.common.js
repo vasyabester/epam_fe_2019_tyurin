@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -19,27 +19,27 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: ['index'],
       filename: 'index.html',
-      template: './src/index.html'
+      template: './src/index.html',
     }),
     new HtmlWebpackPlugin({
       chunks: ['blog'],
       filename: 'blog.html',
-      template: './src/blog.html'
+      template: './src/blog.html',
     }),
     new HtmlWebpackPlugin({
       chunks: ['post'],
       filename: 'post.html',
-      template: './src/post.html'
+      template: './src/post.html',
     }),
     new HtmlWebpackPlugin({
       chunks: ['articles'],
       filename: 'articles.html',
-      template: './src/articles.html'
+      template: './src/articles.html',
     }),
     new CopyPlugin([
-      { from: 'src/img/', to: 'img/' },
-      { from: 'src/audio/', to: 'audio/' },
-      { from: 'src/video/', to: 'video/' },
+      {from: 'src/img/', to: 'img/'},
+      {from: 'src/audio/', to: 'audio/'},
+      {from: 'src/video/', to: 'video/'},
     ]),
   ],
   module: {
@@ -52,8 +52,8 @@ module.exports = {
           loader: 'eslint-loader',
           options: {
             failOnError: true,
-          }
-        }
+          },
+        },
       },
       {
         test: /\.js$/,
@@ -61,9 +61,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.s[ac]ss$/i,
@@ -83,7 +83,7 @@ module.exports = {
             options: {
               outputPath: 'fonts/',
             },
-          }
+          },
         ],
       },
       {
@@ -92,9 +92,9 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'img/',
-            name: '[name].[ext]'
-          }
-        }
+            name: '[name].[ext]',
+          },
+        },
       },
       {
         test: /\.(mp3)$/,
@@ -102,9 +102,9 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'audio/',
-            name: '[name].[ext]'
-          }
-        }
+            name: '[name].[ext]',
+          },
+        },
       },
       {
         test: /\.(webm)$/,
@@ -112,10 +112,10 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'video/',
-            name: '[name].[ext]'
-          }
-        }
-      }
-    ]
+            name: '[name].[ext]',
+          },
+        },
+      },
+    ],
   },
 };

@@ -1,16 +1,19 @@
-/* eslint-disable */
-import {appendAuthorsButtonsInTop, appendAuthorsButtonsAside} from './article';
+export class Mediator {
+  constructor() {
+    this.events = {};
+  }
 
+  subscribe(event, callback) {
+    if (this.events[event]) {
+      this.events[event].push(callback);
+    } else {
+      this.events[event] = [callback];
+    }
+  }
 
-export function rightButtonClicked(authorName) {
-  const triggerButton = $('.articles__left-side').find(`button:contains(${authorName})`);
-
-  triggerButton.trigger('click', false);
+  publish(event, ...args) {
+    if (this.events[event]) {
+      this.events[event].forEach((callback) => callback(args));
+    }
+  }
 }
-
-export function leftButtonClicked(authorName) {
-  const triggerButton = $('.articles__right-side').find(`button:contains(${authorName})`);
-
-  triggerButton.trigger('click', false);
-}
-/* eslint-enable */

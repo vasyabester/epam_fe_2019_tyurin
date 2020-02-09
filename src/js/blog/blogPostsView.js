@@ -60,7 +60,7 @@ function renderBlogPosts(contentEl, postList) {
   contentEl.append(sectionEl);
 }
 
-function makeBlogPostItemtEl(blogPost) {
+export function makeBlogPostItemtEl(blogPost) {
   const blogPostItem = document.createElement('section');
   blogPostItem.className = `blog__${blogPost.type} blog__item`;
 
@@ -110,8 +110,9 @@ function makeBlogPostContent(blogPost) {
   blogPostContent.className = `blog__${blogPost.type}-post`;
 
   let stars = '';
+  const blogStart = blogPost.stars || ['gold', 'gold', 'gold', 'gold', 'gold',];
 
-  blogPost.stars.forEach((star) => {
+  blogStart.forEach((star) => {
     stars += `<span class="blog__${blogPost.type}-post-message-${star}-star-icon"></span>`;
   });
 

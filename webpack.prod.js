@@ -15,8 +15,8 @@ module.exports = merge(common, {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
     new HtmlWebpackPlugin({
       chunks: ['blog'],
@@ -28,8 +28,8 @@ module.exports = merge(common, {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
     new HtmlWebpackPlugin({
       chunks: ['post'],
@@ -41,8 +41,8 @@ module.exports = merge(common, {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
     new HtmlWebpackPlugin({
       chunks: ['articles'],
@@ -54,8 +54,8 @@ module.exports = merge(common, {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
   ],
 });
