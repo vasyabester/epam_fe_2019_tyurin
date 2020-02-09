@@ -1,4 +1,5 @@
 import {makeBlogPostItemtEl} from '../../blog/blogPostsView';
+import {Post} from '../../post/models/Post';
 
 export class AuthorContainerAbstractView {
   constructor(postAuthors, allPosts, mediator) {
@@ -8,29 +9,17 @@ export class AuthorContainerAbstractView {
   }
 
   _openPost(post) {
-    const URL = `http://127.0.0.1:3000/api/articles/${post._id}`;
-    const xhr = new XMLHttpRequest();
+    const postModel = new Post(post);
 
-    xhr.open('get', URL, false);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(null);
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== 4) {
-        return;
-      }
+    this._renderPost(postModel.getPost(post));
 
-      if (xhr.status !== 200) {
-        alert(JSON.parse(xhr.response).message);
-
-        return;
-      }
-    };
-
-    this._renderPost(JSON.parse(xhr.response));
+    return this;
   }
 
   _renderPost(post) {
     $('.blog-container').text('')
       .append(makeBlogPostItemtEl(post));
+
+    return this;
   }
 }

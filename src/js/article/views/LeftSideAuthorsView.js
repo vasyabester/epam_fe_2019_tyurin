@@ -23,37 +23,47 @@ export class LeftSideAuthorsView extends AuthorContainerAbstractView {
     buttonContainerEl.className = 'articles__button-container--left';
 
     this.postAuthors.forEach((postAuthor) => {
-      const postsBySelectedAuthor = this.allPosts.filter((post) => post.author === postAuthor);
-      const postListEl = document.createDocumentFragment();
+      const buttonEl = this._createButtonContainerOneAuthor(postAuthor);
+      const tabContainerEl = this._createTabContainerEl(postAuthor);
 
-      postsBySelectedAuthor.forEach((post) => {
-        const articlePostButton = document.createElement('button');
-        articlePostButton.className = 'articles__post-title-button';
-        articlePostButton.innerHTML = post.title;
-
-        $(articlePostButton).on('click', this._openPost.bind(this, post));
-
-        postListEl.append(articlePostButton);
-      });
-
-      const buttonEl = document.createElement('button');
-      buttonEl.className = 'articles__button';
-      buttonEl.innerHTML = postAuthor;
-      buttonContainerEl.append(buttonEl);
-
-      this._addAccordionBehavior($(buttonEl));
-
-      $(buttonEl).on('click', this._selectAuthor.bind(this));
-
-      const tabContainerEl = document.createElement('div');
-      tabContainerEl.className = 'articles__tab-post-title-container';
-      tabContainerEl.hidden = true;
-      tabContainerEl.append(postListEl);
-
-      buttonContainerEl.append(tabContainerEl);
+      buttonContainerEl.append(buttonEl, tabContainerEl);
     });
 
     return buttonContainerEl;
+  }
+
+  _createButtonContainerOneAuthor(postAuthor) {
+    const buttonEl = document.createElement('button');
+    buttonEl.className = 'articles__button';
+    buttonEl.innerHTML = postAuthor;
+
+    this._addAccordionBehavior($(buttonEl));
+
+    $(buttonEl).on('click', this._selectAuthor.bind(this));
+
+    return buttonEl;
+  }
+
+  _createTabContainerEl(postAuthor) {
+    const postsBySelectedAuthor = this.allPosts.filter((post) => post.author === postAuthor);
+    const postListEl = document.createDocumentFragment();
+
+    postsBySelectedAuthor.forEach((post) => {
+      const articlePostButton = document.createElement('button');
+      articlePostButton.className = 'articles__post-title-button';
+      articlePostButton.innerHTML = post.title;
+
+      $(articlePostButton).on('click', this._openPost.bind(this, post));
+
+      postListEl.append(articlePostButton);
+    });
+
+    const tabContainerEl = document.createElement('div');
+    tabContainerEl.className = 'articles__tab-post-title-container';
+    tabContainerEl.hidden = true;
+    tabContainerEl.append(postListEl);
+
+    return tabContainerEl;
   }
 
   /* eslint-disable */
